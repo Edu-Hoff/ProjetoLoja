@@ -7,7 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\InfCoContato\InfoContato.csproj" />
+    <ProjectReference Include="..\InfCoContato\InfCoContato.csproj" />
+    <ProjectReference Include="..\InfoContato\InfoContato.csproj" />
   </ItemGroup>
 
 </Project>

@@ -12,3 +12,4 @@ D:\EduFaculdade\Semestre3\OO\TrabalhoProjetoLoja\ProjetoLoja\obj\Debug\net8.0\re
 D:\EduFaculdade\Semestre3\OO\TrabalhoProjetoLoja\ProjetoLoja\obj\Debug\net8.0\ProjetoLoja.pdb
 D:\EduFaculdade\Semestre3\OO\TrabalhoProjetoLoja\ProjetoLoja\obj\Debug\net8.0\ProjetoLoja.genruntimeconfig.cache
 D:\EduFaculdade\Semestre3\OO\TrabalhoProjetoLoja\ProjetoLoja\obj\Debug\net8.0\ref\ProjetoLoja.dll
+d:\EduFaculdade\Semestre3\OO\TrabalhoProjetoLoja\ProjetoLoja\obj\Debug\net8.0\ProjetoLoja.sourcelink.json

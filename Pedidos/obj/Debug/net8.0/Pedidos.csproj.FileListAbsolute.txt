@@ -1,0 +1,12 @@
+D:\EduFaculdade\Semestre3\OO\TrabalhoProjetoLoja\Pedidos\bin\Debug\net8.0\Pedidos.deps.json
+d:\EduFaculdade\Semestre3\OO\TrabalhoProjetoLoja\Pedidos\bin\Debug\net8.0\Pedidos.dll
+d:\EduFaculdade\Semestre3\OO\TrabalhoProjetoLoja\Pedidos\bin\Debug\net8.0\Pedidos.pdb
+d:\EduFaculdade\Semestre3\OO\TrabalhoProjetoLoja\Pedidos\obj\Debug\net8.0\Pedidos.GeneratedMSBuildEditorConfig.editorconfig
+d:\EduFaculdade\Semestre3\OO\TrabalhoProjetoLoja\Pedidos\obj\Debug\net8.0\Pedidos.AssemblyInfoInputs.cache
+d:\EduFaculdade\Semestre3\OO\TrabalhoProjetoLoja\Pedidos\obj\Debug\net8.0\Pedidos.AssemblyInfo.cs
+d:\EduFaculdade\Semestre3\OO\TrabalhoProjetoLoja\Pedidos\obj\Debug\net8.0\Pedidos.csproj.CoreCompileInputs.cache
+d:\EduFaculdade\Semestre3\OO\TrabalhoProjetoLoja\Pedidos\obj\Debug\net8.0\Pedidos.sourcelink.json
+d:\EduFaculdade\Semestre3\OO\TrabalhoProjetoLoja\Pedidos\obj\Debug\net8.0\Pedidos.dll
+d:\EduFaculdade\Semestre3\OO\TrabalhoProjetoLoja\Pedidos\obj\Debug\net8.0\refint\Pedidos.dll
+d:\EduFaculdade\Semestre3\OO\TrabalhoProjetoLoja\Pedidos\obj\Debug\net8.0\Pedidos.pdb
+D:\EduFaculdade\Semestre3\OO\TrabalhoProjetoLoja\Pedidos\obj\Debug\net8.0\ref\Pedidos.dll

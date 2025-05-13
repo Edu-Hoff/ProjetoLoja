@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\EduFaculdade\\Semestre3\\OO\\TrabalhoProjetoLoja\\InfCoContato\\InfoContato.csproj": {}
+    "D:\\EduFaculdade\\Semestre3\\OO\\TrabalhoProjetoLoja\\InfoContato\\InfoContato.csproj": {}
   },
   "projects": {
-    "D:\\EduFaculdade\\Semestre3\\OO\\TrabalhoProjetoLoja\\InfCoContato\\InfoContato.csproj": {
+    "D:\\EduFaculdade\\Semestre3\\OO\\TrabalhoProjetoLoja\\InfoContato\\InfoContato.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\EduFaculdade\\Semestre3\\OO\\TrabalhoProjetoLoja\\InfCoContato\\InfoContato.csproj",
+        "projectUniqueName": "D:\\EduFaculdade\\Semestre3\\OO\\TrabalhoProjetoLoja\\InfoContato\\InfoContato.csproj",
         "projectName": "InfoContato",
-        "projectPath": "D:\\EduFaculdade\\Semestre3\\OO\\TrabalhoProjetoLoja\\InfCoContato\\InfoContato.csproj",
+        "projectPath": "D:\\EduFaculdade\\Semestre3\\OO\\TrabalhoProjetoLoja\\InfoContato\\InfoContato.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "D:\\EduFaculdade\\Semestre3\\OO\\TrabalhoProjetoLoja\\InfCoContato\\obj\\",
+        "outputPath": "D:\\EduFaculdade\\Semestre3\\OO\\TrabalhoProjetoLoja\\InfoContato\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config"

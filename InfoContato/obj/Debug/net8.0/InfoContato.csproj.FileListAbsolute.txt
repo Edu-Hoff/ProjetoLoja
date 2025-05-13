@@ -1,0 +1,12 @@
+d:\EduFaculdade\Semestre3\OO\TrabalhoProjetoLoja\InfoContato\bin\Debug\net8.0\InfoContato.deps.json
+d:\EduFaculdade\Semestre3\OO\TrabalhoProjetoLoja\InfoContato\bin\Debug\net8.0\InfoContato.dll
+d:\EduFaculdade\Semestre3\OO\TrabalhoProjetoLoja\InfoContato\bin\Debug\net8.0\InfoContato.pdb
+d:\EduFaculdade\Semestre3\OO\TrabalhoProjetoLoja\InfoContato\obj\Debug\net8.0\InfoContato.GeneratedMSBuildEditorConfig.editorconfig
+d:\EduFaculdade\Semestre3\OO\TrabalhoProjetoLoja\InfoContato\obj\Debug\net8.0\InfoContato.AssemblyInfoInputs.cache
+d:\EduFaculdade\Semestre3\OO\TrabalhoProjetoLoja\InfoContato\obj\Debug\net8.0\InfoContato.AssemblyInfo.cs
+d:\EduFaculdade\Semestre3\OO\TrabalhoProjetoLoja\InfoContato\obj\Debug\net8.0\InfoContato.csproj.CoreCompileInputs.cache
+d:\EduFaculdade\Semestre3\OO\TrabalhoProjetoLoja\InfoContato\obj\Debug\net8.0\InfoContato.sourcelink.json
+d:\EduFaculdade\Semestre3\OO\TrabalhoProjetoLoja\InfoContato\obj\Debug\net8.0\InfoContato.dll
+d:\EduFaculdade\Semestre3\OO\TrabalhoProjetoLoja\InfoContato\obj\Debug\net8.0\refint\InfoContato.dll
+d:\EduFaculdade\Semestre3\OO\TrabalhoProjetoLoja\InfoContato\obj\Debug\net8.0\InfoContato.pdb
+d:\EduFaculdade\Semestre3\OO\TrabalhoProjetoLoja\InfoContato\obj\Debug\net8.0\ref\InfoContato.dll
