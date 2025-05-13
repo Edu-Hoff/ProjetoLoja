@@ -1,0 +1,14 @@
+D:\EduFaculdade\Semestre3\OO\TrabalhoProjetoLoja\ProjetoLoja\bin\Debug\net8.0\ProjetoLoja.exe
+D:\EduFaculdade\Semestre3\OO\TrabalhoProjetoLoja\ProjetoLoja\bin\Debug\net8.0\ProjetoLoja.deps.json
+D:\EduFaculdade\Semestre3\OO\TrabalhoProjetoLoja\ProjetoLoja\bin\Debug\net8.0\ProjetoLoja.runtimeconfig.json
+D:\EduFaculdade\Semestre3\OO\TrabalhoProjetoLoja\ProjetoLoja\bin\Debug\net8.0\ProjetoLoja.dll
+D:\EduFaculdade\Semestre3\OO\TrabalhoProjetoLoja\ProjetoLoja\bin\Debug\net8.0\ProjetoLoja.pdb
+D:\EduFaculdade\Semestre3\OO\TrabalhoProjetoLoja\ProjetoLoja\obj\Debug\net8.0\ProjetoLoja.GeneratedMSBuildEditorConfig.editorconfig
+D:\EduFaculdade\Semestre3\OO\TrabalhoProjetoLoja\ProjetoLoja\obj\Debug\net8.0\ProjetoLoja.AssemblyInfoInputs.cache
+D:\EduFaculdade\Semestre3\OO\TrabalhoProjetoLoja\ProjetoLoja\obj\Debug\net8.0\ProjetoLoja.AssemblyInfo.cs
+D:\EduFaculdade\Semestre3\OO\TrabalhoProjetoLoja\ProjetoLoja\obj\Debug\net8.0\ProjetoLoja.csproj.CoreCompileInputs.cache
+D:\EduFaculdade\Semestre3\OO\TrabalhoProjetoLoja\ProjetoLoja\obj\Debug\net8.0\ProjetoLoja.dll
+D:\EduFaculdade\Semestre3\OO\TrabalhoProjetoLoja\ProjetoLoja\obj\Debug\net8.0\refint\ProjetoLoja.dll
+D:\EduFaculdade\Semestre3\OO\TrabalhoProjetoLoja\ProjetoLoja\obj\Debug\net8.0\ProjetoLoja.pdb
+D:\EduFaculdade\Semestre3\OO\TrabalhoProjetoLoja\ProjetoLoja\obj\Debug\net8.0\ProjetoLoja.genruntimeconfig.cache
+D:\EduFaculdade\Semestre3\OO\TrabalhoProjetoLoja\ProjetoLoja\obj\Debug\net8.0\ref\ProjetoLoja.dll
