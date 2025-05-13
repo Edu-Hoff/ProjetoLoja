@@ -2,16 +2,6 @@
   "version": 3,
   "targets": {
     "net8.0": {
-      "InfCoContato/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v8.0",
-        "compile": {
-          "bin/placeholder/InfCoContato.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/InfCoContato.dll": {}
-        }
-      },
       "InfoContato/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
@@ -25,11 +15,6 @@
     }
   },
   "libraries": {
-    "InfCoContato/1.0.0": {
-      "type": "project",
-      "path": "../InfCoContato/InfCoContato.csproj",
-      "msbuildProject": "../InfCoContato/InfCoContato.csproj"
-    },
     "InfoContato/1.0.0": {
       "type": "project",
       "path": "../InfoContato/InfoContato.csproj",
@@ -38,40 +23,38 @@
   },
   "projectFileDependencyGroups": {
     "net8.0": [
-      "InfCoContato >= 1.0.0",
       "InfoContato >= 1.0.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\User\\.nuget\\packages\\": {}
+    "C:\\Users\\ehveiga\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\EduFaculdade\\Semestre3\\OO\\TrabalhoProjetoLoja\\Entidades\\Entidades.csproj",
+      "projectUniqueName": "C:\\Users\\ehveiga\\Downloads\\ProjetoLoja\\Entidades\\Entidades.csproj",
       "projectName": "Entidades",
-      "projectPath": "D:\\EduFaculdade\\Semestre3\\OO\\TrabalhoProjetoLoja\\Entidades\\Entidades.csproj",
-      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "D:\\EduFaculdade\\Semestre3\\OO\\TrabalhoProjetoLoja\\Entidades\\obj\\",
+      "projectPath": "C:\\Users\\ehveiga\\Downloads\\ProjetoLoja\\Entidades\\Entidades.csproj",
+      "packagesPath": "C:\\Users\\ehveiga\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ehveiga\\Downloads\\ProjetoLoja\\Entidades\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\ehveiga\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\EduFaculdade\\Semestre3\\OO\\TrabalhoProjetoLoja\\InfCoContato\\InfCoContato.csproj": {
-              "projectPath": "D:\\EduFaculdade\\Semestre3\\OO\\TrabalhoProjetoLoja\\InfCoContato\\InfCoContato.csproj"
-            },
-            "D:\\EduFaculdade\\Semestre3\\OO\\TrabalhoProjetoLoja\\InfoContato\\InfoContato.csproj": {
-              "projectPath": "D:\\EduFaculdade\\Semestre3\\OO\\TrabalhoProjetoLoja\\InfoContato\\InfoContato.csproj"
+            "C:\\Users\\ehveiga\\Downloads\\ProjetoLoja\\InfoContato\\InfoContato.csproj": {
+              "projectPath": "C:\\Users\\ehveiga\\Downloads\\ProjetoLoja\\InfoContato\\InfoContato.csproj"
             }
           }
         }
@@ -106,7 +89,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.408/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.407/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
