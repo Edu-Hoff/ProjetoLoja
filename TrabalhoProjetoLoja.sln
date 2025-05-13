@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pedidos", "Pedidos\Pedidos.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InfoContato", "InfoContato\InfoContato.csproj", "{05305030-98C5-402A-9B3A-88A4C5ED10B9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GerenciamentoLoja", "GerenciamentoLoja\GerenciamentoLoja.csproj", "{79DEBECF-040E-4FDB-ACFA-0060E5FF880A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{05305030-98C5-402A-9B3A-88A4C5ED10B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{05305030-98C5-402A-9B3A-88A4C5ED10B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{05305030-98C5-402A-9B3A-88A4C5ED10B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79DEBECF-040E-4FDB-ACFA-0060E5FF880A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79DEBECF-040E-4FDB-ACFA-0060E5FF880A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79DEBECF-040E-4FDB-ACFA-0060E5FF880A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79DEBECF-040E-4FDB-ACFA-0060E5FF880A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

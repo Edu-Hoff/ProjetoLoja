@@ -3,7 +3,9 @@ using System.Text;
 using System.Security.Cryptography;
 using System.IO;
 
-
+//
+//  GerenciadorLoja gl = new GerenciadorLoja(); 
+//
     string HashSenha(string senha)
     {
         using (SHA256 sha256 = SHA256.Create())
