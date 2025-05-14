@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ehveiga\\Downloads\\ProjetoLoja\\Entidades\\Entidades.csproj": {}
+    "C:\\Users\\llaskoski\\Documents\\ProjetoLoja\\Entidades\\Entidades.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ehveiga\\Downloads\\ProjetoLoja\\Entidades\\Entidades.csproj": {
+    "C:\\Users\\llaskoski\\Documents\\ProjetoLoja\\Entidades\\Entidades.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ehveiga\\Downloads\\ProjetoLoja\\Entidades\\Entidades.csproj",
+        "projectUniqueName": "C:\\Users\\llaskoski\\Documents\\ProjetoLoja\\Entidades\\Entidades.csproj",
         "projectName": "Entidades",
-        "projectPath": "C:\\Users\\ehveiga\\Downloads\\ProjetoLoja\\Entidades\\Entidades.csproj",
-        "packagesPath": "C:\\Users\\ehveiga\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ehveiga\\Downloads\\ProjetoLoja\\Entidades\\obj\\",
+        "projectPath": "C:\\Users\\llaskoski\\Documents\\ProjetoLoja\\Entidades\\Entidades.csproj",
+        "packagesPath": "C:\\Users\\llaskoski\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\llaskoski\\Documents\\ProjetoLoja\\Entidades\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ehveiga\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\llaskoski\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,8 +28,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\ehveiga\\Downloads\\ProjetoLoja\\InfoContato\\InfoContato.csproj": {
-                "projectPath": "C:\\Users\\ehveiga\\Downloads\\ProjetoLoja\\InfoContato\\InfoContato.csproj"
+              "C:\\Users\\llaskoski\\Documents\\ProjetoLoja\\InfoContato\\InfoContato.csproj": {
+                "projectPath": "C:\\Users\\llaskoski\\Documents\\ProjetoLoja\\InfoContato\\InfoContato.csproj"
               }
             }
           }
@@ -43,7 +43,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net8.0": {
@@ -59,26 +60,40 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[8.0.14, 8.0.14]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[8.0.14, 8.0.14]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[8.0.14, 8.0.14]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.407/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.202/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\ehveiga\\Downloads\\ProjetoLoja\\InfoContato\\InfoContato.csproj": {
+    "C:\\Users\\llaskoski\\Documents\\ProjetoLoja\\InfoContato\\InfoContato.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ehveiga\\Downloads\\ProjetoLoja\\InfoContato\\InfoContato.csproj",
+        "projectUniqueName": "C:\\Users\\llaskoski\\Documents\\ProjetoLoja\\InfoContato\\InfoContato.csproj",
         "projectName": "InfoContato",
-        "projectPath": "C:\\Users\\ehveiga\\Downloads\\ProjetoLoja\\InfoContato\\InfoContato.csproj",
-        "packagesPath": "C:\\Users\\ehveiga\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ehveiga\\Downloads\\ProjetoLoja\\InfoContato\\obj\\",
+        "projectPath": "C:\\Users\\llaskoski\\Documents\\ProjetoLoja\\InfoContato\\InfoContato.csproj",
+        "packagesPath": "C:\\Users\\llaskoski\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\llaskoski\\Documents\\ProjetoLoja\\InfoContato\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ehveiga\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\llaskoski\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -103,7 +118,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net8.0": {
@@ -119,12 +135,26 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[8.0.14, 8.0.14]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[8.0.14, 8.0.14]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[8.0.14, 8.0.14]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.407/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.202/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ehveiga\\Downloads\\ProjetoLoja\\Pedidos\\Pedidos.csproj": {}
+    "C:\\Users\\llaskoski\\Documents\\ProjetoLoja\\Pedidos\\Pedidos.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ehveiga\\Downloads\\ProjetoLoja\\Pedidos\\Pedidos.csproj": {
+    "C:\\Users\\llaskoski\\Documents\\ProjetoLoja\\Pedidos\\Pedidos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ehveiga\\Downloads\\ProjetoLoja\\Pedidos\\Pedidos.csproj",
+        "projectUniqueName": "C:\\Users\\llaskoski\\Documents\\ProjetoLoja\\Pedidos\\Pedidos.csproj",
         "projectName": "Pedidos",
-        "projectPath": "C:\\Users\\ehveiga\\Downloads\\ProjetoLoja\\Pedidos\\Pedidos.csproj",
-        "packagesPath": "C:\\Users\\ehveiga\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ehveiga\\Downloads\\ProjetoLoja\\Pedidos\\obj\\",
+        "projectPath": "C:\\Users\\llaskoski\\Documents\\ProjetoLoja\\Pedidos\\Pedidos.csproj",
+        "packagesPath": "C:\\Users\\llaskoski\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\llaskoski\\Documents\\ProjetoLoja\\Pedidos\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ehveiga\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\llaskoski\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -39,7 +39,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net8.0": {
@@ -55,12 +56,26 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[8.0.14, 8.0.14]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[8.0.14, 8.0.14]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[8.0.14, 8.0.14]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.407/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.202/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
