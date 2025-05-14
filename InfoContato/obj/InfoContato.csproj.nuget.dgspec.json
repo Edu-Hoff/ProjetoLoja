@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\llaskoski\\Documents\\ProjetoLoja\\InfoContato\\InfoContato.csproj": {}
+    "C:\\Users\\MLleal\\ProjetoLoja\\InfoContato\\InfoContato.csproj": {}
   },
   "projects": {
-    "C:\\Users\\llaskoski\\Documents\\ProjetoLoja\\InfoContato\\InfoContato.csproj": {
+    "C:\\Users\\MLleal\\ProjetoLoja\\InfoContato\\InfoContato.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\llaskoski\\Documents\\ProjetoLoja\\InfoContato\\InfoContato.csproj",
+        "projectUniqueName": "C:\\Users\\MLleal\\ProjetoLoja\\InfoContato\\InfoContato.csproj",
         "projectName": "InfoContato",
-        "projectPath": "C:\\Users\\llaskoski\\Documents\\ProjetoLoja\\InfoContato\\InfoContato.csproj",
-        "packagesPath": "C:\\Users\\llaskoski\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\llaskoski\\Documents\\ProjetoLoja\\InfoContato\\obj\\",
+        "projectPath": "C:\\Users\\MLleal\\ProjetoLoja\\InfoContato\\InfoContato.csproj",
+        "packagesPath": "C:\\Users\\MLleal\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\MLleal\\ProjetoLoja\\InfoContato\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\llaskoski\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\MLleal\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "X2U9HnH8doo=",
+  "dgSpecHash": "8Z/MA5GYUv4=",
   "success": true,
-  "projectFilePath": "C:\\Users\\llaskoski\\Documents\\ProjetoLoja\\GerenciamentoLoja\\GerenciamentoLoja.csproj",
+  "projectFilePath": "C:\\Users\\MLleal\\ProjetoLoja\\GerenciamentoLoja\\GerenciamentoLoja.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\llaskoski\\.nuget\\packages\\microsoft.netcore.app.ref\\8.0.14\\microsoft.netcore.app.ref.8.0.14.nupkg.sha512",
-    "C:\\Users\\llaskoski\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\8.0.14\\microsoft.windowsdesktop.app.ref.8.0.14.nupkg.sha512",
-    "C:\\Users\\llaskoski\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\8.0.14\\microsoft.aspnetcore.app.ref.8.0.14.nupkg.sha512"
+    "C:\\Users\\MLleal\\.nuget\\packages\\microsoft.netcore.app.ref\\8.0.14\\microsoft.netcore.app.ref.8.0.14.nupkg.sha512",
+    "C:\\Users\\MLleal\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\8.0.14\\microsoft.windowsdesktop.app.ref.8.0.14.nupkg.sha512",
+    "C:\\Users\\MLleal\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\8.0.14\\microsoft.aspnetcore.app.ref.8.0.14.nupkg.sha512"
   ],
   "logs": []
 }

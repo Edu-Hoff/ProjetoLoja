@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\llaskoski\\Documents\\ProjetoLoja\\ProjetoLoja\\ProjetoLoja.csproj": {}
+    "C:\\Users\\MLleal\\ProjetoLoja\\ProjetoLoja\\ProjetoLoja.csproj": {}
   },
   "projects": {
-    "C:\\Users\\llaskoski\\Documents\\ProjetoLoja\\GerenciamentoLoja\\GerenciamentoLoja.csproj": {
+    "C:\\Users\\MLleal\\ProjetoLoja\\GerenciamentoLoja\\GerenciamentoLoja.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\llaskoski\\Documents\\ProjetoLoja\\GerenciamentoLoja\\GerenciamentoLoja.csproj",
+        "projectUniqueName": "C:\\Users\\MLleal\\ProjetoLoja\\GerenciamentoLoja\\GerenciamentoLoja.csproj",
         "projectName": "GerenciamentoLoja",
-        "projectPath": "C:\\Users\\llaskoski\\Documents\\ProjetoLoja\\GerenciamentoLoja\\GerenciamentoLoja.csproj",
-        "packagesPath": "C:\\Users\\llaskoski\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\llaskoski\\Documents\\ProjetoLoja\\GerenciamentoLoja\\obj\\",
+        "projectPath": "C:\\Users\\MLleal\\ProjetoLoja\\GerenciamentoLoja\\GerenciamentoLoja.csproj",
+        "packagesPath": "C:\\Users\\MLleal\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\MLleal\\ProjetoLoja\\GerenciamentoLoja\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\llaskoski\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\MLleal\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -79,17 +79,17 @@
         }
       }
     },
-    "C:\\Users\\llaskoski\\Documents\\ProjetoLoja\\ProjetoLoja\\ProjetoLoja.csproj": {
+    "C:\\Users\\MLleal\\ProjetoLoja\\ProjetoLoja\\ProjetoLoja.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\llaskoski\\Documents\\ProjetoLoja\\ProjetoLoja\\ProjetoLoja.csproj",
+        "projectUniqueName": "C:\\Users\\MLleal\\ProjetoLoja\\ProjetoLoja\\ProjetoLoja.csproj",
         "projectName": "ProjetoLoja",
-        "projectPath": "C:\\Users\\llaskoski\\Documents\\ProjetoLoja\\ProjetoLoja\\ProjetoLoja.csproj",
-        "packagesPath": "C:\\Users\\llaskoski\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\llaskoski\\Documents\\ProjetoLoja\\ProjetoLoja\\obj\\",
+        "projectPath": "C:\\Users\\MLleal\\ProjetoLoja\\ProjetoLoja\\ProjetoLoja.csproj",
+        "packagesPath": "C:\\Users\\MLleal\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\MLleal\\ProjetoLoja\\ProjetoLoja\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\llaskoski\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\MLleal\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -103,8 +103,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\llaskoski\\Documents\\ProjetoLoja\\GerenciamentoLoja\\GerenciamentoLoja.csproj": {
-                "projectPath": "C:\\Users\\llaskoski\\Documents\\ProjetoLoja\\GerenciamentoLoja\\GerenciamentoLoja.csproj"
+              "C:\\Users\\MLleal\\ProjetoLoja\\GerenciamentoLoja\\GerenciamentoLoja.csproj": {
+                "projectPath": "C:\\Users\\MLleal\\ProjetoLoja\\GerenciamentoLoja\\GerenciamentoLoja.csproj"
               }
             }
           }

@@ -27,19 +27,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\llaskoski\\.nuget\\packages\\": {}
+    "C:\\Users\\MLleal\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\llaskoski\\Documents\\ProjetoLoja\\Entidades\\Entidades.csproj",
+      "projectUniqueName": "C:\\Users\\MLleal\\ProjetoLoja\\Entidades\\Entidades.csproj",
       "projectName": "Entidades",
-      "projectPath": "C:\\Users\\llaskoski\\Documents\\ProjetoLoja\\Entidades\\Entidades.csproj",
-      "packagesPath": "C:\\Users\\llaskoski\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\llaskoski\\Documents\\ProjetoLoja\\Entidades\\obj\\",
+      "projectPath": "C:\\Users\\MLleal\\ProjetoLoja\\Entidades\\Entidades.csproj",
+      "packagesPath": "C:\\Users\\MLleal\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\MLleal\\ProjetoLoja\\Entidades\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\llaskoski\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\MLleal\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -53,8 +53,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\llaskoski\\Documents\\ProjetoLoja\\InfoContato\\InfoContato.csproj": {
-              "projectPath": "C:\\Users\\llaskoski\\Documents\\ProjetoLoja\\InfoContato\\InfoContato.csproj"
+            "C:\\Users\\MLleal\\ProjetoLoja\\InfoContato\\InfoContato.csproj": {
+              "projectPath": "C:\\Users\\MLleal\\ProjetoLoja\\InfoContato\\InfoContato.csproj"
             }
           }
         }
