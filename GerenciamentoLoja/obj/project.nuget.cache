@@ -1,12 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "8Z/MA5GYUv4=",
+  "dgSpecHash": "xKIeMdNAgHo=",
   "success": true,
-  "projectFilePath": "C:\\Users\\MLleal\\ProjetoLoja\\GerenciamentoLoja\\GerenciamentoLoja.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\MLleal\\.nuget\\packages\\microsoft.netcore.app.ref\\8.0.14\\microsoft.netcore.app.ref.8.0.14.nupkg.sha512",
-    "C:\\Users\\MLleal\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\8.0.14\\microsoft.windowsdesktop.app.ref.8.0.14.nupkg.sha512",
-    "C:\\Users\\MLleal\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\8.0.14\\microsoft.aspnetcore.app.ref.8.0.14.nupkg.sha512"
-  ],
+  "projectFilePath": "C:\\Users\\ehveiga\\Downloads\\ProjetoLoja\\GerenciamentoLoja\\GerenciamentoLoja.csproj",
+  "expectedPackageFiles": [],
   "logs": []
 }

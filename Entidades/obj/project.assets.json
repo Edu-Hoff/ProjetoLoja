@@ -27,19 +27,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\MLleal\\.nuget\\packages\\": {}
+    "C:\\Users\\ehveiga\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\MLleal\\ProjetoLoja\\Entidades\\Entidades.csproj",
+      "projectUniqueName": "C:\\Users\\ehveiga\\Downloads\\ProjetoLoja\\Entidades\\Entidades.csproj",
       "projectName": "Entidades",
-      "projectPath": "C:\\Users\\MLleal\\ProjetoLoja\\Entidades\\Entidades.csproj",
-      "packagesPath": "C:\\Users\\MLleal\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\MLleal\\ProjetoLoja\\Entidades\\obj\\",
+      "projectPath": "C:\\Users\\ehveiga\\Downloads\\ProjetoLoja\\Entidades\\Entidades.csproj",
+      "packagesPath": "C:\\Users\\ehveiga\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ehveiga\\Downloads\\ProjetoLoja\\Entidades\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\MLleal\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ehveiga\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -53,8 +53,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\MLleal\\ProjetoLoja\\InfoContato\\InfoContato.csproj": {
-              "projectPath": "C:\\Users\\MLleal\\ProjetoLoja\\InfoContato\\InfoContato.csproj"
+            "C:\\Users\\ehveiga\\Downloads\\ProjetoLoja\\InfoContato\\InfoContato.csproj": {
+              "projectPath": "C:\\Users\\ehveiga\\Downloads\\ProjetoLoja\\InfoContato\\InfoContato.csproj"
             }
           }
         }
@@ -68,8 +68,7 @@
         "enableAudit": "true",
         "auditLevel": "low",
         "auditMode": "direct"
-      },
-      "SdkAnalysisLevel": "9.0.200"
+      }
     },
     "frameworks": {
       "net8.0": {
@@ -85,26 +84,12 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[8.0.14, 8.0.14]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Ref",
-            "version": "[8.0.14, 8.0.14]"
-          },
-          {
-            "name": "Microsoft.WindowsDesktop.App.Ref",
-            "version": "[8.0.14, 8.0.14]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.202/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.409/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
