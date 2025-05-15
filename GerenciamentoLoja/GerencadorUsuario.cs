@@ -29,7 +29,7 @@ public class GerencadorUsuario
         {
             if (user.UserName == nome && user.Senha == senha)
             {
-                user.Senha = novaSenha;
+                user.Senha = HashSenha(novaSenha);
                 return;
             }
         }
