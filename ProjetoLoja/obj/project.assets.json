@@ -6,7 +6,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
-          "InfoContato": "1.0.0"
+          "InfoContato": "1.0.0",
+          "Pedidos": "1.0.0"
         },
         "compile": {
           "bin/placeholder/GerenciamentoLoja.dll": {}
@@ -24,6 +25,19 @@
         "runtime": {
           "bin/placeholder/InfoContato.dll": {}
         }
+      },
+      "Pedidos/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "InfoContato": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Pedidos.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Pedidos.dll": {}
+        }
       }
     }
   },
@@ -37,6 +51,11 @@
       "type": "project",
       "path": "../InfoContato/InfoContato.csproj",
       "msbuildProject": "../InfoContato/InfoContato.csproj"
+    },
+    "Pedidos/1.0.0": {
+      "type": "project",
+      "path": "../Pedidos/Pedidos.csproj",
+      "msbuildProject": "../Pedidos/Pedidos.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -45,34 +64,32 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ehveiga\\.nuget\\packages\\": {}
+    "C:\\Users\\User\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ehveiga\\Downloads\\ProjetoLoja\\ProjetoLoja\\ProjetoLoja.csproj",
+      "projectUniqueName": "C:\\Users\\User\\Documents\\ProjetoLoja\\ProjetoLoja\\ProjetoLoja.csproj",
       "projectName": "ProjetoLoja",
-      "projectPath": "C:\\Users\\ehveiga\\Downloads\\ProjetoLoja\\ProjetoLoja\\ProjetoLoja.csproj",
-      "packagesPath": "C:\\Users\\ehveiga\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ehveiga\\Downloads\\ProjetoLoja\\ProjetoLoja\\obj\\",
+      "projectPath": "C:\\Users\\User\\Documents\\ProjetoLoja\\ProjetoLoja\\ProjetoLoja.csproj",
+      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\User\\Documents\\ProjetoLoja\\ProjetoLoja\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\ehveiga\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\ehveiga\\Downloads\\ProjetoLoja\\GerenciamentoLoja\\GerenciamentoLoja.csproj": {
-              "projectPath": "C:\\Users\\ehveiga\\Downloads\\ProjetoLoja\\GerenciamentoLoja\\GerenciamentoLoja.csproj"
+            "C:\\Users\\User\\Documents\\ProjetoLoja\\GerenciamentoLoja\\GerenciamentoLoja.csproj": {
+              "projectPath": "C:\\Users\\User\\Documents\\ProjetoLoja\\GerenciamentoLoja\\GerenciamentoLoja.csproj"
             }
           }
         }
@@ -86,7 +103,8 @@
         "enableAudit": "true",
         "auditLevel": "low",
         "auditMode": "direct"
-      }
+      },
+      "SdkAnalysisLevel": "9.0.200"
     },
     "frameworks": {
       "net8.0": {
@@ -102,12 +120,30 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[8.0.14, 8.0.14]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[8.0.14, 8.0.14]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[8.0.14, 8.0.14]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[8.0.14, 8.0.14]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.409/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
