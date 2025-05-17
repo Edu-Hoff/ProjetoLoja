@@ -5,9 +5,10 @@ using System.Security.Cryptography;
 
 namespace GerenciamentoLoja;
 
-public class GerencadorUsuario
+public class GerenciadorUsuario : GerenciamentoVetor
 {
-    public Usuario[] todosUsuarios = new Usuario[4];
+    public GerenciadorUsuario(){}
+    public Usuario[] todosUsuarios = new Usuario[0];
     
     public string HashSenha(string senha)
     {

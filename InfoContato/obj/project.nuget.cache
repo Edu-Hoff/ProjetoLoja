@@ -1,12 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "7RCCNP1EKiY=",
+  "dgSpecHash": "NnfMvqh66ao=",
   "success": true,
-  "projectFilePath": "C:\\Users\\User\\Documents\\ProjetoLoja\\InfoContato\\InfoContato.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\User\\.nuget\\packages\\microsoft.netcore.app.ref\\8.0.14\\microsoft.netcore.app.ref.8.0.14.nupkg.sha512",
-    "C:\\Users\\User\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\8.0.14\\microsoft.windowsdesktop.app.ref.8.0.14.nupkg.sha512",
-    "C:\\Users\\User\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\8.0.14\\microsoft.aspnetcore.app.ref.8.0.14.nupkg.sha512"
-  ],
+  "projectFilePath": "C:\\Users\\ehveiga\\Downloads\\ProjetoLoja\\InfoContato\\InfoContato.csproj",
+  "expectedPackageFiles": [],
   "logs": []
 }

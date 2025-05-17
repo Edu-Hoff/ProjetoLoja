@@ -7,14 +7,30 @@
   "targets": {
     ".NETCoreApp,Version=v8.0": {
       "Pedidos/1.0.0": {
+        "dependencies": {
+          "InfoContato": "1.0.0"
+        },
         "runtime": {
           "Pedidos.dll": {}
+        }
+      },
+      "InfoContato/1.0.0": {
+        "runtime": {
+          "InfoContato.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }
   },
   "libraries": {
     "Pedidos/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "InfoContato/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
