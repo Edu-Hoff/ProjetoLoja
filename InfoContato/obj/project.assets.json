@@ -8,19 +8,19 @@
     "net8.0": []
   },
   "packageFolders": {
-    "C:\\Users\\G A M E R\\.nuget\\packages\\": {}
+    "C:\\Users\\User\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\G A M E R\\ProjetoLoja\\InfoContato\\InfoContato.csproj",
+      "projectUniqueName": "D:\\EduFaculdade\\Semestre3\\OO\\TrabalhoProjetoLoja\\InfoContato\\InfoContato.csproj",
       "projectName": "InfoContato",
-      "projectPath": "C:\\Users\\G A M E R\\ProjetoLoja\\InfoContato\\InfoContato.csproj",
-      "packagesPath": "C:\\Users\\G A M E R\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\G A M E R\\ProjetoLoja\\InfoContato\\obj\\",
+      "projectPath": "D:\\EduFaculdade\\Semestre3\\OO\\TrabalhoProjetoLoja\\InfoContato\\InfoContato.csproj",
+      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+      "outputPath": "D:\\EduFaculdade\\Semestre3\\OO\\TrabalhoProjetoLoja\\InfoContato\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\G A M E R\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -64,7 +64,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.407/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.408/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

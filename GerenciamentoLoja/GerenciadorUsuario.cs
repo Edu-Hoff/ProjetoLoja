@@ -36,15 +36,30 @@ public class GerenciadorUsuario : GerenciamentoVetor
         }
         //Excecao
     }
+    
+    public void AlterarUsername(String nome, String senha)
+    {
+        senha = HashSenha(senha);
+        //TodosUsuarios Vetor com todos usuario
+        foreach (Usuario user in todosUsuarios)
+        {
+            if (user.UserName == nome && user.Senha == senha)
+            {
+                user.Senha = HashSenha(novaSenha);
+                return;
+            }
+        }
+        //Excecao
+    }
 
-    public void ExcluiUsuario (Usuario alvo)
+    public void ExcluiUsuario(Usuario alvo)
     {
         //TodosUsuarios Vetor com todos usuario
-        foreach (Usuario user in todosUsuarios)  
+        foreach (Usuario user in todosUsuarios)
         {
-            if(user == alvo)
+            if (user == alvo)
             {
-                
+
                 return;
             }
         }

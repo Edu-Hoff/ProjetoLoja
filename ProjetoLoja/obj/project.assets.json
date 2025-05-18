@@ -83,19 +83,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\G A M E R\\.nuget\\packages\\": {}
+    "C:\\Users\\User\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\G A M E R\\ProjetoLoja\\ProjetoLoja\\ProjetoLoja.csproj",
+      "projectUniqueName": "D:\\EduFaculdade\\Semestre3\\OO\\TrabalhoProjetoLoja\\ProjetoLoja\\ProjetoLoja.csproj",
       "projectName": "ProjetoLoja",
-      "projectPath": "C:\\Users\\G A M E R\\ProjetoLoja\\ProjetoLoja\\ProjetoLoja.csproj",
-      "packagesPath": "C:\\Users\\G A M E R\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\G A M E R\\ProjetoLoja\\ProjetoLoja\\obj\\",
+      "projectPath": "D:\\EduFaculdade\\Semestre3\\OO\\TrabalhoProjetoLoja\\ProjetoLoja\\ProjetoLoja.csproj",
+      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+      "outputPath": "D:\\EduFaculdade\\Semestre3\\OO\\TrabalhoProjetoLoja\\ProjetoLoja\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\G A M E R\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -107,8 +107,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\G A M E R\\ProjetoLoja\\GerenciamentoLoja\\GerenciamentoLoja.csproj": {
-              "projectPath": "C:\\Users\\G A M E R\\ProjetoLoja\\GerenciamentoLoja\\GerenciamentoLoja.csproj"
+            "D:\\EduFaculdade\\Semestre3\\OO\\TrabalhoProjetoLoja\\GerenciamentoLoja\\GerenciamentoLoja.csproj": {
+              "projectPath": "D:\\EduFaculdade\\Semestre3\\OO\\TrabalhoProjetoLoja\\GerenciamentoLoja\\GerenciamentoLoja.csproj"
             }
           }
         }
@@ -143,7 +143,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.407/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.408/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
