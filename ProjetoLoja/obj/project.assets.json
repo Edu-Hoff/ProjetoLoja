@@ -83,34 +83,32 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ehveiga\\.nuget\\packages\\": {}
+    "C:\\Users\\G A M E R\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ehveiga\\Downloads\\ProjetoLoja\\ProjetoLoja\\ProjetoLoja.csproj",
+      "projectUniqueName": "C:\\Users\\G A M E R\\ProjetoLoja\\ProjetoLoja\\ProjetoLoja.csproj",
       "projectName": "ProjetoLoja",
-      "projectPath": "C:\\Users\\ehveiga\\Downloads\\ProjetoLoja\\ProjetoLoja\\ProjetoLoja.csproj",
-      "packagesPath": "C:\\Users\\ehveiga\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ehveiga\\Downloads\\ProjetoLoja\\ProjetoLoja\\obj\\",
+      "projectPath": "C:\\Users\\G A M E R\\ProjetoLoja\\ProjetoLoja\\ProjetoLoja.csproj",
+      "packagesPath": "C:\\Users\\G A M E R\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\G A M E R\\ProjetoLoja\\ProjetoLoja\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\ehveiga\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\G A M E R\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\ehveiga\\Downloads\\ProjetoLoja\\GerenciamentoLoja\\GerenciamentoLoja.csproj": {
-              "projectPath": "C:\\Users\\ehveiga\\Downloads\\ProjetoLoja\\GerenciamentoLoja\\GerenciamentoLoja.csproj"
+            "C:\\Users\\G A M E R\\ProjetoLoja\\GerenciamentoLoja\\GerenciamentoLoja.csproj": {
+              "projectPath": "C:\\Users\\G A M E R\\ProjetoLoja\\GerenciamentoLoja\\GerenciamentoLoja.csproj"
             }
           }
         }
@@ -145,7 +143,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.409/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.407/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
