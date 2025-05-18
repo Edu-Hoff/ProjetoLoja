@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\EduFaculdade\\Semestre3\\OO\\TrabalhoProjetoLoja\\InfoContato\\InfoContato.csproj": {}
+    "C:\\Users\\User\\Desktop\\ProjetoLoja\\InfoContato\\InfoContato.csproj": {}
   },
   "projects": {
-    "D:\\EduFaculdade\\Semestre3\\OO\\TrabalhoProjetoLoja\\InfoContato\\InfoContato.csproj": {
+    "C:\\Users\\User\\Desktop\\ProjetoLoja\\InfoContato\\InfoContato.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\EduFaculdade\\Semestre3\\OO\\TrabalhoProjetoLoja\\InfoContato\\InfoContato.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Desktop\\ProjetoLoja\\InfoContato\\InfoContato.csproj",
         "projectName": "InfoContato",
-        "projectPath": "D:\\EduFaculdade\\Semestre3\\OO\\TrabalhoProjetoLoja\\InfoContato\\InfoContato.csproj",
+        "projectPath": "C:\\Users\\User\\Desktop\\ProjetoLoja\\InfoContato\\InfoContato.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "D:\\EduFaculdade\\Semestre3\\OO\\TrabalhoProjetoLoja\\InfoContato\\obj\\",
+        "outputPath": "C:\\Users\\User\\Desktop\\ProjetoLoja\\InfoContato\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -37,7 +37,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net8.0": {
@@ -53,12 +54,26 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[8.0.14, 8.0.14]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[8.0.14, 8.0.14]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[8.0.14, 8.0.14]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.408/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

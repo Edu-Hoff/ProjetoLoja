@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\EduFaculdade\\Semestre3\\OO\\TrabalhoProjetoLoja\\GerenciamentoLoja\\GerenciamentoLoja.csproj": {}
+    "C:\\Users\\User\\Desktop\\ProjetoLoja\\GerenciamentoLoja\\GerenciamentoLoja.csproj": {}
   },
   "projects": {
-    "D:\\EduFaculdade\\Semestre3\\OO\\TrabalhoProjetoLoja\\Entidades\\Entidades.csproj": {
+    "C:\\Users\\User\\Desktop\\ProjetoLoja\\Entidades\\Entidades.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\EduFaculdade\\Semestre3\\OO\\TrabalhoProjetoLoja\\Entidades\\Entidades.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Desktop\\ProjetoLoja\\Entidades\\Entidades.csproj",
         "projectName": "Entidades",
-        "projectPath": "D:\\EduFaculdade\\Semestre3\\OO\\TrabalhoProjetoLoja\\Entidades\\Entidades.csproj",
+        "projectPath": "C:\\Users\\User\\Desktop\\ProjetoLoja\\Entidades\\Entidades.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "D:\\EduFaculdade\\Semestre3\\OO\\TrabalhoProjetoLoja\\Entidades\\obj\\",
+        "outputPath": "C:\\Users\\User\\Desktop\\ProjetoLoja\\Entidades\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -26,8 +26,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\EduFaculdade\\Semestre3\\OO\\TrabalhoProjetoLoja\\InfoContato\\InfoContato.csproj": {
-                "projectPath": "D:\\EduFaculdade\\Semestre3\\OO\\TrabalhoProjetoLoja\\InfoContato\\InfoContato.csproj"
+              "C:\\Users\\User\\Desktop\\ProjetoLoja\\InfoContato\\InfoContato.csproj": {
+                "projectPath": "C:\\Users\\User\\Desktop\\ProjetoLoja\\InfoContato\\InfoContato.csproj"
               }
             }
           }
@@ -41,7 +41,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net8.0": {
@@ -57,23 +58,37 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[8.0.14, 8.0.14]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[8.0.14, 8.0.14]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[8.0.14, 8.0.14]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.408/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\EduFaculdade\\Semestre3\\OO\\TrabalhoProjetoLoja\\GerenciamentoLoja\\GerenciamentoLoja.csproj": {
+    "C:\\Users\\User\\Desktop\\ProjetoLoja\\GerenciamentoLoja\\GerenciamentoLoja.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\EduFaculdade\\Semestre3\\OO\\TrabalhoProjetoLoja\\GerenciamentoLoja\\GerenciamentoLoja.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Desktop\\ProjetoLoja\\GerenciamentoLoja\\GerenciamentoLoja.csproj",
         "projectName": "GerenciamentoLoja",
-        "projectPath": "D:\\EduFaculdade\\Semestre3\\OO\\TrabalhoProjetoLoja\\GerenciamentoLoja\\GerenciamentoLoja.csproj",
+        "projectPath": "C:\\Users\\User\\Desktop\\ProjetoLoja\\GerenciamentoLoja\\GerenciamentoLoja.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "D:\\EduFaculdade\\Semestre3\\OO\\TrabalhoProjetoLoja\\GerenciamentoLoja\\obj\\",
+        "outputPath": "C:\\Users\\User\\Desktop\\ProjetoLoja\\GerenciamentoLoja\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -88,14 +103,14 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\EduFaculdade\\Semestre3\\OO\\TrabalhoProjetoLoja\\Entidades\\Entidades.csproj": {
-                "projectPath": "D:\\EduFaculdade\\Semestre3\\OO\\TrabalhoProjetoLoja\\Entidades\\Entidades.csproj"
+              "C:\\Users\\User\\Desktop\\ProjetoLoja\\Entidades\\Entidades.csproj": {
+                "projectPath": "C:\\Users\\User\\Desktop\\ProjetoLoja\\Entidades\\Entidades.csproj"
               },
-              "D:\\EduFaculdade\\Semestre3\\OO\\TrabalhoProjetoLoja\\InfoContato\\InfoContato.csproj": {
-                "projectPath": "D:\\EduFaculdade\\Semestre3\\OO\\TrabalhoProjetoLoja\\InfoContato\\InfoContato.csproj"
+              "C:\\Users\\User\\Desktop\\ProjetoLoja\\InfoContato\\InfoContato.csproj": {
+                "projectPath": "C:\\Users\\User\\Desktop\\ProjetoLoja\\InfoContato\\InfoContato.csproj"
               },
-              "D:\\EduFaculdade\\Semestre3\\OO\\TrabalhoProjetoLoja\\Pedidos\\Pedidos.csproj": {
-                "projectPath": "D:\\EduFaculdade\\Semestre3\\OO\\TrabalhoProjetoLoja\\Pedidos\\Pedidos.csproj"
+              "C:\\Users\\User\\Desktop\\ProjetoLoja\\Pedidos\\Pedidos.csproj": {
+                "projectPath": "C:\\Users\\User\\Desktop\\ProjetoLoja\\Pedidos\\Pedidos.csproj"
               }
             }
           }
@@ -109,7 +124,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net8.0": {
@@ -125,23 +141,37 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[8.0.14, 8.0.14]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[8.0.14, 8.0.14]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[8.0.14, 8.0.14]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.408/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\EduFaculdade\\Semestre3\\OO\\TrabalhoProjetoLoja\\InfoContato\\InfoContato.csproj": {
+    "C:\\Users\\User\\Desktop\\ProjetoLoja\\InfoContato\\InfoContato.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\EduFaculdade\\Semestre3\\OO\\TrabalhoProjetoLoja\\InfoContato\\InfoContato.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Desktop\\ProjetoLoja\\InfoContato\\InfoContato.csproj",
         "projectName": "InfoContato",
-        "projectPath": "D:\\EduFaculdade\\Semestre3\\OO\\TrabalhoProjetoLoja\\InfoContato\\InfoContato.csproj",
+        "projectPath": "C:\\Users\\User\\Desktop\\ProjetoLoja\\InfoContato\\InfoContato.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "D:\\EduFaculdade\\Semestre3\\OO\\TrabalhoProjetoLoja\\InfoContato\\obj\\",
+        "outputPath": "C:\\Users\\User\\Desktop\\ProjetoLoja\\InfoContato\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -167,7 +197,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net8.0": {
@@ -183,23 +214,37 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[8.0.14, 8.0.14]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[8.0.14, 8.0.14]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[8.0.14, 8.0.14]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.408/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\EduFaculdade\\Semestre3\\OO\\TrabalhoProjetoLoja\\Pedidos\\Pedidos.csproj": {
+    "C:\\Users\\User\\Desktop\\ProjetoLoja\\Pedidos\\Pedidos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\EduFaculdade\\Semestre3\\OO\\TrabalhoProjetoLoja\\Pedidos\\Pedidos.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Desktop\\ProjetoLoja\\Pedidos\\Pedidos.csproj",
         "projectName": "Pedidos",
-        "projectPath": "D:\\EduFaculdade\\Semestre3\\OO\\TrabalhoProjetoLoja\\Pedidos\\Pedidos.csproj",
+        "projectPath": "C:\\Users\\User\\Desktop\\ProjetoLoja\\Pedidos\\Pedidos.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "D:\\EduFaculdade\\Semestre3\\OO\\TrabalhoProjetoLoja\\Pedidos\\obj\\",
+        "outputPath": "C:\\Users\\User\\Desktop\\ProjetoLoja\\Pedidos\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -214,8 +259,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\EduFaculdade\\Semestre3\\OO\\TrabalhoProjetoLoja\\InfoContato\\InfoContato.csproj": {
-                "projectPath": "D:\\EduFaculdade\\Semestre3\\OO\\TrabalhoProjetoLoja\\InfoContato\\InfoContato.csproj"
+              "C:\\Users\\User\\Desktop\\ProjetoLoja\\InfoContato\\InfoContato.csproj": {
+                "projectPath": "C:\\Users\\User\\Desktop\\ProjetoLoja\\InfoContato\\InfoContato.csproj"
               }
             }
           }
@@ -229,7 +274,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net8.0": {
@@ -245,12 +291,26 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[8.0.14, 8.0.14]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[8.0.14, 8.0.14]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[8.0.14, 8.0.14]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.408/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

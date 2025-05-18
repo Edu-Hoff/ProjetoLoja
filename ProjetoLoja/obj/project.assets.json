@@ -88,11 +88,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\EduFaculdade\\Semestre3\\OO\\TrabalhoProjetoLoja\\ProjetoLoja\\ProjetoLoja.csproj",
+      "projectUniqueName": "C:\\Users\\User\\Desktop\\ProjetoLoja\\ProjetoLoja\\ProjetoLoja.csproj",
       "projectName": "ProjetoLoja",
-      "projectPath": "D:\\EduFaculdade\\Semestre3\\OO\\TrabalhoProjetoLoja\\ProjetoLoja\\ProjetoLoja.csproj",
+      "projectPath": "C:\\Users\\User\\Desktop\\ProjetoLoja\\ProjetoLoja\\ProjetoLoja.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "D:\\EduFaculdade\\Semestre3\\OO\\TrabalhoProjetoLoja\\ProjetoLoja\\obj\\",
+      "outputPath": "C:\\Users\\User\\Desktop\\ProjetoLoja\\ProjetoLoja\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -107,8 +107,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\EduFaculdade\\Semestre3\\OO\\TrabalhoProjetoLoja\\GerenciamentoLoja\\GerenciamentoLoja.csproj": {
-              "projectPath": "D:\\EduFaculdade\\Semestre3\\OO\\TrabalhoProjetoLoja\\GerenciamentoLoja\\GerenciamentoLoja.csproj"
+            "C:\\Users\\User\\Desktop\\ProjetoLoja\\GerenciamentoLoja\\GerenciamentoLoja.csproj": {
+              "projectPath": "C:\\Users\\User\\Desktop\\ProjetoLoja\\GerenciamentoLoja\\GerenciamentoLoja.csproj"
             }
           }
         }
@@ -122,7 +122,8 @@
         "enableAudit": "true",
         "auditLevel": "low",
         "auditMode": "direct"
-      }
+      },
+      "SdkAnalysisLevel": "9.0.200"
     },
     "frameworks": {
       "net8.0": {
@@ -138,12 +139,30 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[8.0.14, 8.0.14]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[8.0.14, 8.0.14]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[8.0.14, 8.0.14]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[8.0.14, 8.0.14]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.408/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
