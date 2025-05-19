@@ -9,6 +9,7 @@
   <ItemGroup>
     <ProjectReference Include="..\InfCoContato\InfCoContato.csproj" />
     <ProjectReference Include="..\InfoContato\InfoContato.csproj" />
+    <ProjectReference Include="..\Pedidos\Pedidos.csproj" />
   </ItemGroup>
 
 </Project>

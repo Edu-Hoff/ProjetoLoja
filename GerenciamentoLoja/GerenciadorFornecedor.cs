@@ -10,8 +10,6 @@ public class GerenciadorFornecedor : Fornecedor
 
     public void CadastraFornecedor()
     {
-        Console.WriteLine("Id do fornecedor: \n");
-        Id = Console.ReadLine();
         Console.WriteLine("Nome do fornecedor: \n");
         Nome = Console.ReadLine();
         Console.WriteLine("Descrição do fornecedor: \n");
@@ -21,6 +19,13 @@ public class GerenciadorFornecedor : Fornecedor
         Console.WriteLine("Email do fornecedor: \n");
         Email = Console.ReadLine();
 
+
+        Fornecedor novo = new Fornecedor(todosFornecedores.Length, Nome, Descricao, Telefone, Email);
+
+
+        //AdicionarItem(ref todosFornecedores,novo);
+        
+        /*
         Fornecedor[] novoVetorFornecedores = new Fornecedor[todosFornecedores.Length + 1]; //novo vetor com uma posição a mais que o original
         //usado para copiar os elementos do antigo vetor e adicionar novos fornecedores
 
@@ -30,6 +35,7 @@ public class GerenciadorFornecedor : Fornecedor
         }
         novoVetorFornecedores[novoVetorFornecedores.Length - 1] = new Fornecedor(Id, Nome, Descricao, Telefone, Email); //adiciona o novo fornecedor na última posição do vetor
         todosFornecedores = novoVetorFornecedores; //atualiza o vetor com o fornecedor recém adicionado
+        */
     }
     public void AlteraFornecedor()
     {
