@@ -1,5 +1,6 @@
 using System;
 using System.Globalization;
+using InfoContato;
 
 namespace GerenciamentoLoja;
 
@@ -44,7 +45,7 @@ public abstract class GerenciamentoVetor
 
     //Funcao para generica procurar um item
     //Retorna o indice do item no vetor, -1 se nao esta no vetor ou -2 se o vetor nao existia ou nao tinha nada 
-    public int ProcuraItem<T>(T[] vetor, int Id)
+    public int ProcuraItem<T>(T[] vetor, int Id) where T : ObjetoComId
     {
         if (vetor == null || vetor.Count() == 0)
         {
@@ -54,14 +55,14 @@ public abstract class GerenciamentoVetor
 
         for (int i = 0; i < vetor.Length; i++)
         {
-            if (vetor[i].Id == Id)
+            if (vetor[i].Id== Id)
             {
-                return item;
+                return i;
             }
         }
         return -1;
     }
-
+    
     //Funcoes de edicoes tem que ser individual, basta procurar o aluno e editar o vetor no indice retornado, se existente 
 
 }
