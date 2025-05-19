@@ -15,7 +15,7 @@ public class Usuario
 
     public String UserName { get; set; }
     public String Senha {get;set;}
-    private bool Admin {get;set;}
+    public bool Admin {get;set;}
 
     
 }

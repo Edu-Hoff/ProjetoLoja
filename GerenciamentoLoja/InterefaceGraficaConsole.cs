@@ -1,4 +1,5 @@
 using System;
+using GerenciamentoLoja;
 using InfoContato;
 
 namespace ProjetoLoja;
@@ -13,24 +14,36 @@ public class InterefaceGraficaConsole
         int op = int.Parse(Console.ReadLine());
         do
         {
+            GerenciadorUsuario GerenciadorUser = new GerenciadorUsuario();
             if (op == 1)
             {
-                Console.WriteLine("Usuário: ");
-                String User = Console.ReadLine();
-                Console.WriteLine("Senha: ");
-                String Senha = Console.ReadLine();
-                FazerLogin();
-            }
-            else
-                if (op == 2)
-            {
-                FazerCadastro();
-            }
-            else
-            {
-                Console.WriteLine("Opção inválida")
+                Usuario user = GerenciadorUser.FazerLogin();
+                if (user != null)
+                {
+                    if (user.Admin)
+                    {
+                        //chama menu de admin
+                    }
+                    else
+                    {
+                        //chama menu de não admin
+                    }
                 }
+            }
+            else if (op == 2)
+            {
+                GerenciadorUser.FazerCadastro();
+            }
+            //exception op invalida
         } while (op != 1 && op != 2);
+    }
+    public void MenuAdmin()
+    {
+        
+    }
+    public void MenuNaoAdmin()
+    {
+        
     }
     public void MenuFornecedores()
     {

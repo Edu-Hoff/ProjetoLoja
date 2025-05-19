@@ -2,6 +2,7 @@ using System;
 using InfoContato;
 using System.Text;
 using System.Security.Cryptography;
+using System.Security.Cryptography.X509Certificates;
 
 namespace GerenciamentoLoja;
 
@@ -30,6 +31,25 @@ public class GerenciadorUsuario : GerenciamentoVetor
     public void AlterarUsername(Usuario user, String username)
     {
         user.UserName = username;
+
+    }
+    public Usuario FazerLogin()
+    {
+        Console.WriteLine("Usuário: ");
+        String Nome = Console.ReadLine();
+        Console.WriteLine("Senha: ");
+        String Senha = Console.ReadLine();
+        foreach (Usuario user in todosUsuarios)
+        {
+            if (user.UserName == Nome && user.Senha == HashSenha(Senha))
+            {
+                return user;
+            }
+        }
+        return null; //não sei se pode
+    }
+    public void FazerCadastro()
+    {
 
     }
 }
