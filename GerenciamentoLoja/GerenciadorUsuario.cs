@@ -9,7 +9,7 @@ namespace GerenciamentoLoja;
 public class GerenciadorUsuario : GerenciamentoVetor
 {
     public GerenciadorUsuario() { }
-    public Usuario[] todosUsuarios = new Usuario[0];
+    public Usuario[] TodosUsuarios = new Usuario[0];
 
     public string HashSenha(string senha)
     {
@@ -39,7 +39,7 @@ public class GerenciadorUsuario : GerenciamentoVetor
         String Nome = Console.ReadLine();
         Console.WriteLine("Senha: ");
         String Senha = Console.ReadLine();
-        foreach (Usuario user in todosUsuarios)
+        foreach (Usuario user in TodosUsuarios)
         {
             if (user.UserName == Nome && user.Senha == HashSenha(Senha))
             {

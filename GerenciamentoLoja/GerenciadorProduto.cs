@@ -23,11 +23,11 @@ public class GerenciadorProduto
         NovoVetorProdutos[NovoVetorProdutos.Length - 1] = new Produto(Nome, Valor, Quantidade);
         TodosProdutos = NovoVetorProdutos;
     }
-    public void AlteraProduto(int Id) // revisar
+    public void AlteraProduto(String Nome) // revisar
     {
         foreach (Produto prod in TodosProdutos)
         {
-            if (Id == prod.Id) // adicionar classe ObjetoComId (por isso o erro, dps adiciono)
+            if (Nome == prod.Nome) // adicionar classe ObjetoComId (por isso o erro, dps adiciono)
             {
                 Console.WriteLine("Qual dos parâmetros do produto deseja modificar?\n1 - Nome\n2 - Valor\n3 - Quantidade em estoque");
                 int op = int.Parse(Console.ReadLine());
@@ -73,7 +73,7 @@ public class GerenciadorProduto
             }
         }
     }
-    public void ExcluiProduto(int Id)
+    public void ExcluiProduto(String Nome)
     {
 
     }
