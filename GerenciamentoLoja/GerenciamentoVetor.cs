@@ -62,12 +62,11 @@ public abstract class GerenciamentoVetor
         }
         return -1;
     }
-    
-    public int ProcuraItemPorNome<T>(T[] vetor, String Nome) where T : ObjetoComNome
+
+    public int ProcuraItemExpecificoPorNome<T>(T[] vetor, String Nome) where T : ObjetoComNome
     {
         if (vetor == null || vetor.Count() == 0)
         {
-            vetor = new T[0];
             return -1;
         }
 
@@ -79,6 +78,24 @@ public abstract class GerenciamentoVetor
             }
         }
         return -1;
+    }
+
+    public T[] ProcuraItensComNome<T>(T[] vetor, String Nome) where T : ObjetoComNome
+    {
+        T[] newVet = new T[0];
+        if (vetor == null || vetor.Count() == 0)
+        {
+            return newVet;
+        }
+
+        for (int i = 0; i < vetor.Length; i++)
+        {
+            if (vetor[i].Nome.Contains(Nome))
+            {
+                newVet = AdicionarItem(newVet, vetor[i]);
+            }
+        }
+        return newVet;
     }
 
     //Funcoes de edicoes tem que ser individual, basta procurar o aluno e editar o vetor no indice retornado, se existente 
