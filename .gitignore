@@ -135,3 +135,4 @@ replay_pid*
 *.DS_Store
 *.dSYM
 *.AssemblyAttributes.cs
+*Assembly*
