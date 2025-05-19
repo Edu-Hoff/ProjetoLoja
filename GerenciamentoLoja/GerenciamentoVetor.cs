@@ -45,7 +45,7 @@ public abstract class GerenciamentoVetor
 
     //Funcao para generica procurar um item
     //Retorna o indice do item no vetor, -1 se nao esta no vetor 
-    public int ProcuraItem<T>(T[] vetor, int Id) where T : ObjetoComId
+    public int ProcuraItemPorId<T>(T[] vetor, int Id) where T : ObjetoComId
     {
         if (vetor == null || vetor.Count() == 0)
         {
@@ -55,7 +55,7 @@ public abstract class GerenciamentoVetor
 
         for (int i = 0; i < vetor.Length; i++)
         {
-            if (vetor[i].Id== Id)
+            if (vetor[i].Id == Id)
             {
                 return i;
             }
@@ -63,6 +63,24 @@ public abstract class GerenciamentoVetor
         return -1;
     }
     
+    public int ProcuraItemPorNome<T>(T[] vetor, String Nome) where T : ObjetoComNome
+    {
+        if (vetor == null || vetor.Count() == 0)
+        {
+            vetor = new T[0];
+            return -1;
+        }
+
+        for (int i = 0; i < vetor.Length; i++)
+        {
+            if (vetor[i].Nome == Nome)
+            {
+                return i;
+            }
+        }
+        return -1;
+    }
+
     //Funcoes de edicoes tem que ser individual, basta procurar o aluno e editar o vetor no indice retornado, se existente 
 
 }
