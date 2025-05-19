@@ -6,7 +6,7 @@ namespace InfoContato;
 public class Usuario
 {
     //Recebe a senha depois do Hash
-    public Usuario(String name, String senha, bool admin)
+    public Usuario(String name, String senha, bool admin=false)
     {
         UserName = name;
         Senha = senha;

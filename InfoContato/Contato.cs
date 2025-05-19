@@ -1,9 +1,11 @@
 using System;
+using InfoContato;
 
 namespace Entidades;
 
-public abstract class Contato
+public abstract class Contato : ObjetoComId
 {
+    
     public String Nome { get; set; }
     public String Email { get; set; }
     public String Telefone { get; set; }

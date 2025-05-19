@@ -44,19 +44,19 @@ public abstract class GerenciamentoVetor
 
     //Funcao para generica procurar um item
     //Retorna o indice do item no vetor, -1 se nao esta no vetor ou -2 se o vetor nao existia ou nao tinha nada 
-    public int ProcuraItem<T>(T[] vetor, T item)
+    public int ProcuraItem<T>(T[] vetor, int Id)
     {
         if (vetor == null || vetor.Count() == 0)
         {
             vetor = new T[0];
-            return -2;
+            return -1;
         }
 
         for (int i = 0; i < vetor.Length; i++)
         {
-            if (EqualityComparer<T>.Default.Equals(vetor[i], item))
+            if (vetor[i].Id == Id)
             {
-                return i;
+                return item;
             }
         }
         return -1;

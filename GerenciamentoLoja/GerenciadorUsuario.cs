@@ -7,9 +7,9 @@ namespace GerenciamentoLoja;
 
 public class GerenciadorUsuario : GerenciamentoVetor
 {
-    public GerenciadorUsuario(){}
+    public GerenciadorUsuario() { }
     public Usuario[] todosUsuarios = new Usuario[0];
-    
+
     public string HashSenha(string senha)
     {
         using (SHA256 sha256 = SHA256.Create())
@@ -22,47 +22,13 @@ public class GerenciadorUsuario : GerenciamentoVetor
         }
     }
 
-    public void AlterarSenha(String nome, String senha, String novaSenha)
+    public void AlterarSenha(Usuario user, String novaSenha)
     {
-        senha = HashSenha(senha);
-        //TodosUsuarios Vetor com todos usuario
-        foreach (Usuario user in todosUsuarios)
-        {
-            if (user.UserName == nome && user.Senha == senha)
-            {
-                user.Senha = HashSenha(novaSenha);
-                return;
-            }
-        }
-        //Excecao
-    }
-    
-    public void AlterarUsername(String nome, String senha)
-    {
-        senha = HashSenha(senha);
-        //TodosUsuarios Vetor com todos usuario
-        foreach (Usuario user in todosUsuarios)
-        {
-            if (user.UserName == nome && user.Senha == senha)
-            {
-                user.Senha = HashSenha(novaSenha);
-                return;
-            }
-        }
-        //Excecao
+        user.Senha = HashSenha(novaSenha);
     }
 
-    public void ExcluiUsuario(Usuario alvo)
+    public void AlterarUsername(Usuario user, String username)
     {
-        //TodosUsuarios Vetor com todos usuario
-        foreach (Usuario user in todosUsuarios)
-        {
-            if (user == alvo)
-            {
-
-                return;
-            }
-        }
-        //Excecao
+        user.UserName = username;
     }
 }
