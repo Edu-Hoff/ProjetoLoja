@@ -1,30 +1,37 @@
 using System;
 using System.Data.Common;
 using Entidades;
+using ProjetoLoja;
 
 namespace GerenciamentoLoja;
 
-public class GerenciadorFornecedor : Fornecedor
+public class GerenciadorFornecedor:GerenciamentoVetor
 {
-    Fornecedor[] todosFornecedores = new Fornecedor[5]; //vetor inicial
+    public GerenciadorFornecedor(BaseDados BD)
+    {
+        this.BD = BD; 
+    }
+    private BaseDados BD { get; set; }
 
     public void CadastraFornecedor()
     {
         Console.WriteLine("Nome do fornecedor: \n");
-        Nome = Console.ReadLine();
+        String Nome = Console.ReadLine();
         Console.WriteLine("Descrição do fornecedor: \n");
-        Descricao = Console.ReadLine();
+        String Descricao = Console.ReadLine();
         Console.WriteLine("Telefone do fornecedor: \n");
-        Telefone = Console.ReadLine();
+        String Telefone = Console.ReadLine();
         Console.WriteLine("Email do fornecedor: \n");
-        Email = Console.ReadLine();
+        String Email = Console.ReadLine();
 
 
-        Fornecedor novo = new Fornecedor(todosFornecedores.Length, Nome, Descricao, Telefone, Email);
+        Fornecedor novo = new Fornecedor(BD.TodosFornecedores.Length, Nome, Descricao, Telefone, Email);
+
+        BD.TodosFornecedores = AdicionarItem(BD.TodosFornecedores, novo);
 
 
         //AdicionarItem(ref todosFornecedores,novo);
-        
+
         /*
         Fornecedor[] novoVetorFornecedores = new Fornecedor[todosFornecedores.Length + 1]; //novo vetor com uma posição a mais que o original
         //usado para copiar os elementos do antigo vetor e adicionar novos fornecedores
@@ -40,20 +47,20 @@ public class GerenciadorFornecedor : Fornecedor
     public void AlteraFornecedor()
     {
         Console.Write("Informe o Id do fornecedor:\n");
-        String IdCodigo = Console.ReadLine();
+        int IdCodigo = int.Parse(Console.ReadLine());
 
-        for (int i = 0; i < todosFornecedores.Length; i++)
+        for (int i = 0; i < BD.TodosFornecedores.Length; i++)
         {
-            if (todosFornecedores[i].Id == IdCodigo) //se os dois códigos forem iguais, altera as informações de tal código
+            if (BD.TodosFornecedores[i].Id == IdCodigo) //se os dois códigos forem iguais, altera as informações de tal código
             {
                 Console.Write("Novo nome do fornecedor:\n");
-                todosFornecedores[i].Nome = Console.ReadLine();
+                BD.TodosFornecedores[i].Nome = Console.ReadLine();
                 Console.Write("Nova descrição do fornecedor:\n");
-                todosFornecedores[i].Descricao = Console.ReadLine();
+                BD.TodosFornecedores[i].Descricao = Console.ReadLine();
                 Console.Write("Novo telefone do fornecedor:\n");
-                todosFornecedores[i].Telefone = Console.ReadLine();
+                BD.TodosFornecedores[i].Telefone = Console.ReadLine();
                 Console.Write("Novo email do fornecedor:\n");
-                todosFornecedores[i].Email = Console.ReadLine();
+                BD.TodosFornecedores[i].Email = Console.ReadLine();
 
                 Console.WriteLine("Fornecedor alterado com sucesso!\n");
             }
@@ -67,19 +74,19 @@ public class GerenciadorFornecedor : Fornecedor
 
     public void ConsultarFornecedor()
     {
-        Console.Write("Consultar por (1) Código ou (2) Nome: \n");\
+        Console.Write("Consultar por (1) Código ou (2) Nome: \n");
         int opcaoFornecedor = int.Parse(Console.ReadLine());
 
         if (opcaoFornecedor == 1) //código
         {
             Console.Write("Informe o código do fornecedor: \n");
-            String codigoFornecedor = Console.ReadLine();
+            int codigoFornecedor = int.Parse(Console.ReadLine());
 
-            for (int i = 0; i < todosFornecedores.Length; i++)
+            for (int i = 0; i < BD.TodosFornecedores.Length; i++)
             {
-                if (codigoFornecedor == todosFornecedores.Id) //se o código digitado for igual ao código salvo no vetor, mostra o fornecedor
+                if (codigoFornecedor == BD.TodosFornecedores[i].Id) //se o código digitado for igual ao código salvo no vetor, mostra o fornecedor
                 {
-                    ObterFornecedor();
+                    BD.TodosFornecedores[i].ObterFornecedor();
                 }
                 else
                 {
@@ -92,11 +99,11 @@ public class GerenciadorFornecedor : Fornecedor
             Console.Write("Informe o nome do fornecedor: \n");
             String nomeFornecedor = Console.ReadLine();
 
-            for (int i = 0; i < todosFornecedores.Length; i++)
+            for (int i = 0; i < BD.TodosFornecedores.Length; i++)
             {
-                if (nomeFornecedor == todosFornecedores.Nome) //se o nome digitado for igual ao nome salvo no vetor, mostra o fornecedor
+                if (nomeFornecedor == BD.TodosFornecedores[i].Nome) //se o nome digitado for igual ao nome salvo no vetor, mostra o fornecedor
                 {
-                    ObterFornecedor();
+                    BD.TodosFornecedores[i].ObterFornecedor();
                 }
                 else
                 {

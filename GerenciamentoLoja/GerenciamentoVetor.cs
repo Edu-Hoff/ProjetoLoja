@@ -7,7 +7,7 @@ namespace GerenciamentoLoja;
 public abstract class GerenciamentoVetor
 {
     //Passar o vetor por referencia "ref" antes da variavel 
-    public void AdicionarItem<T>(ref T[] vetor, T item)
+    public T[] AdicionarItem<T>(T[] vetor, T item)
     {
         int tamanho = (vetor != null) ? vetor.Length + 1 : 1;
         T[] novoVetor = new T[tamanho];
@@ -17,7 +17,7 @@ public abstract class GerenciamentoVetor
                 novoVetor[i] = vetor[i];
         }
         novoVetor[tamanho - 1] = item;
-        vetor = novoVetor;
+        return novoVetor;
     }
 
     //Passar o vetor por referencia "ref" antes da variavel 
