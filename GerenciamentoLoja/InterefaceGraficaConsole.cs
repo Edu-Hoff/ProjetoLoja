@@ -15,6 +15,10 @@ public class InterefaceGraficaConsole
         {
             if (op == 1)
             {
+                Console.WriteLine("Usuário: ");
+                String User = Console.ReadLine();
+                Console.WriteLine("Senha: ");
+                String Senha = Console.ReadLine();
                 FazerLogin();
             }
             else

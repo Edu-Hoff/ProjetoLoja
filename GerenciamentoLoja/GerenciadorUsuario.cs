@@ -30,6 +30,6 @@ public class GerenciadorUsuario : GerenciamentoVetor
     public void AlterarUsername(Usuario user, String username)
     {
         user.UserName = username;
-        
+
     }
 }
