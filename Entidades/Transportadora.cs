@@ -1,14 +1,15 @@
 using System;
+using InfoContato;
 
 namespace Entidades;
 
-public class Transportadora
+public class Transportadora : ObjetoComNome
 {
-    public Transportadora(String NomeTransportadora, double ValorPorKM)
+    public Transportadora(String Nome, double ValorPorKM)
     {
-        this.NomeTransportadora = NomeTransportadora;
+        this.Nome = Nome;
         this.ValorPorKM = ValorPorKM;
     }
-    String NomeTransportadora   { get; set; }
+    String Nome   { get; set; }
     double ValorPorKM           { get; set; }
 }

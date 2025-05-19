@@ -1,7 +1,9 @@
 using System;
+using System.Net.Http.Headers;
 using System.Security.Cryptography.X509Certificates;
 using Entidades;
 using InfoContato;
+using Pedidos;
 
 namespace ProjetoLoja;
 
@@ -11,6 +13,7 @@ public class BaseDados
     public Transportadora[] TodasTransportaras { get; set; }
     public Cliente[] TodosClientes { get; set; }
     public Usuario[] TodosUsuarios { get; set; }
+    public Produto[] TodosProdutos { get; set;}
 
     public BaseDados()
     {
