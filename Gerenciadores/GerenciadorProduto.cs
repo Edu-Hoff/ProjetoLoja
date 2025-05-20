@@ -8,7 +8,7 @@ namespace Gerenciadores;
 public class GerenciadorProduto
 {
     Produto[] TodosProdutos = new Produto[5];
-    public void CadastraProduto()
+   /* public void CadastraProduto()
     {
         Console.WriteLine("Informe o nome produto:");
         String Nome = Console.ReadLine();
@@ -25,6 +25,7 @@ public class GerenciadorProduto
         NovoVetorProdutos[NovoVetorProdutos.Length - 1] = new Produto(Nome, Valor, Quantidade);
         TodosProdutos = NovoVetorProdutos;
     }
+    */
     public void AlteraProduto(String Nome) // revisar
     {
         foreach (Produto prod in TodosProdutos)
