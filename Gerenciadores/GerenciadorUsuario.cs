@@ -3,9 +3,9 @@ using InfoContato;
 using System.Text;
 using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
-using ProjetoLoja;
+using BaseDeDados;
 
-namespace GerenciamentoLoja;
+namespace Gerenciadores;
 
 public class GerenciadorUsuario : GerenciamentoVetor
 {
@@ -34,26 +34,30 @@ public class GerenciadorUsuario : GerenciamentoVetor
 
     public void AlterarUsername(Usuario user, String username)
     {
-        user.UserName = username;
+        user.Nome = username;
 
     }
-    public Usuario FazerLogin()
+    public Usuario FazerLogin(String Nome, String Senha)
     {
-        Console.WriteLine("Usuário: ");
-        String Nome = Console.ReadLine();
-        Console.WriteLine("Senha: ");
-        String Senha = Console.ReadLine();
+        String HSenha = HashSenha(Senha);
         foreach (Usuario user in BD.TodosUsuarios)
         {
-            if (user.UserName == Nome && user.Senha == HashSenha(Senha))
+            if (user.Nome == Nome && user.Senha == HSenha)
             {
                 return user;
             }
         }
         return null; //não sei se pode
     }
-    public void FazerCadastro()
+    public bool FazerCadastro(String Nome, String Senha, String Admin)
     {
-
+        int ind = ProcuraItemExpecificoPorNome(BD.TodosUsuarios, Nome);
+        if (ind == -1)
+        {
+            AdicionarItem(BD.TodosUsuarios, new Usuario(Nome, HashSenha(Senha), Admin == "S" || Admin == "s" ? true : false));
+            return true;
+        }
+        //else exception
+        return false;
     }
 }

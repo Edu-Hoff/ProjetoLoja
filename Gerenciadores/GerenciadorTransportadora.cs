@@ -1,7 +1,7 @@
 using System;
-using ProjetoLoja;
+using BaseDeDados;
 
-namespace GerenciamentoLoja;
+namespace Gerenciadores;
 
 public class GerenciadorTransportadora
 {

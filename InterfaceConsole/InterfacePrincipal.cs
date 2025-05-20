@@ -1,46 +1,70 @@
 using System;
-using GerenciamentoLoja;
+using Gerenciadores;
 using InfoContato;
 using InterfaceConsole;
 using Pedidos;
 
 namespace ProjetoLoja;
 
-public class InterfacePrincipal
+public class InterfacePrincipal : GerenciadorEntradas
 {
-    GerenciadorEntradas GenEnt = new GerenciadorEntradas();
-    Usuario[] User = new Usuario[2]; // mover vetor p. base de dados
+    GerenciadorLoja GerL{ get; set; }
+    public InterfacePrincipal(GerenciadorLoja GerL)
+    {
+        this.GerL = GerL;
+    }
+
+
     public void MenuInicial()
     {
-        Console.WriteLine("1 - Fazer login");
-        Console.WriteLine("2 - Cadastrar novo usuário");
-        do
+        while (true)
         {
-            int op = GenEnt.LerIntConsole();
-            GerenciadorUsuario GerenciadorUser = new GerenciadorUsuario();
-            if (op == 1)
+            int op;
+            Console.WriteLine("1 - Fazer login");
+            Console.WriteLine("2 - Cadastrar novo usuário");
+            Console.WriteLine("0 - Sair");
+            do
             {
-                Usuario user = GerenciadorUser.FazerLogin();
-                if (user != null)
+                op = LerIntConsole();
+                if (op == 1)
                 {
-                    if (user.Admin)
+                    String Nome = LerString("Informe seu username: ");
+                    String Senha = LerString("Informe sua senha: ");
+                    Usuario user = GerL.GerU.FazerLogin(Nome, Senha);
+                    if (user != null)
                     {
-                        MenuAdmin();
-                    }
-                    else
-                    {
-                        MenuNaoAdmin();
+                        Console.Clear();
+                        if (user.Admin)
+                        {
+                            MenuAdmin(user);
+                        }
+                        else
+                        {
+                            MenuCliente(user);
+                        }
                     }
                 }
-            }
-            else if (op == 2)
-            {
-                GerenciadorUser.FazerCadastro();
-            }
-            //exception op invalida
-        } while (op != 1 && op != 2);
+                else if (op == 2)
+                {
+                    String Nome = LerString("Informe seu username: ");
+                    String Senha = LerString("Informe sua senha: ");
+                    String Admin = LerString("Administrador S/N: ");
+                    Console.Clear();
+                    if (GerL.GerU.FazerCadastro(Nome, Senha, Admin))
+                    {
+                        Console.WriteLine("Cadastro Realizado");
+                        Console.WriteLine("---------------------------");
+                    }
+                    // else exception
+                }
+                //exception op invalida
+            } while (op != 1 && op != 2 && op != 0);
+            if (op == 0) break;
+        }
     }
-    public void MenuAdmin()
+
+
+    public void MenuAdmin(Usuario user)
     {
         int op;
         do
@@ -51,176 +75,34 @@ public class InterfacePrincipal
             Console.WriteLine("3 - Usuario");
             Console.WriteLine("4 - Transportadora");
             Console.WriteLine("0 - Sair");
-            op = int.Parse(Console.ReadLine());
+            op = LerIntConsole();
             switch (op)
             {
                 case 1:
-                    MenuFornecedores();
-                    break;
+                    {
+                        InterfaceFornecedor IF = new InterfaceFornecedor();
+                        IF.MenuFornecedores(GerL.GerF);
+                        break;
+                    }
                 case 2:
-                    MenuProdutos();
+                    //MenuProdutos();
                     break;
                 case 3:
-                    MenuUsuarios();
+                    //MenuUsuarios();
                     break;
                 case 4:
-                    MenuTransportadoras();
+                    //MenuTransportadoras();
                     break;
                 default:
                     //exception
+                    Console.Clear();
                     break;
             }
         } while (op != 0);
 
     }
-    public void MenuNaoAdmin()
+    public void MenuCliente(Usuario user)
     {
 
-    }
-    public void MenuFornecedores()
-    {
-        int op;
-        do //executa enquanto o usuário não digitar 0 para sair
-        {
-            Console.WriteLine("-------Gerenciar fornecedores-------");
-            Console.WriteLine("1 - Cadastrar fornecedor");
-            Console.WriteLine("2 - Alterar fornecedor");
-            Console.WriteLine("3 - Excluir fornecedor");
-            Console.WriteLine("4 - Consultar fornecedor");
-            Console.WriteLine("0 - Voltar");
-            Console.Write("Escolha: \n");
-            op = int.Parse(Console.ReadLine());
-            switch (op)
-            {
-                case 1:
-
-                    break;
-                case 2:
-
-                    break;
-                case 3:
-
-                    break;
-                case 4:
-
-                    break;
-                default:
-                    //exception
-                    break;
-            }
-            op = int.Parse(Console.ReadLine());
-
-        } while (op != 0);
-    }
-    public void MenuProdutos()
-    {
-        int op;
-
-        do //executa enquanto o usuário não digitar 0 para sair
-        {
-            GerenciadorProduto GerenciadorProduto = new GerenciadorProduto();
-            Console.WriteLine("-------Gerenciar produtos-------");
-            Console.WriteLine("1 - Cadastrar produto");
-            Console.WriteLine("2 - Alterar produto");
-            Console.WriteLine("3 - Excluir produto");
-            Console.WriteLine("4 - Consultar produto");
-            Console.WriteLine("0 - Voltar");
-            Console.Write("Escolha: \n");
-
-            op = int.Parse(Console.ReadLine());
-            String Nome;
-            switch (op)
-            {
-                case 1:
-                    GerenciadorProduto.CadastraProduto();
-                    break;
-                case 2:
-                    Nome = Console.ReadLine();
-                    GerenciadorProduto.AlteraProduto(Nome);
-                    break;
-                case 3:
-                    Nome = Console.ReadLine();
-                    GerenciadorProduto.ExcluiProduto(Nome);
-                    break;
-                case 4:
-                    //por nome ou id
-                    break;
-                default:
-                    //exception
-                    break;
-            }
-
-        } while (op != 0);
-    }
-    public void MenuUsuarios()
-    {
-        int op;
-
-        do //executa enquanto o usuário não digitar 0 para sair
-        {
-            Console.WriteLine("-------Gerenciar usuarios-------");
-            Console.WriteLine("1 - Cadastrar usuário");
-            Console.WriteLine("2 - Alterar usuário");
-            Console.WriteLine("3 - Excluir usuário");
-            Console.WriteLine("4 - Consultar usuário");
-            Console.WriteLine("0 - Voltar");
-            Console.Write("Escolha: \n");
-
-            op = int.Parse(Console.ReadLine());
-            switch (op)
-            {
-                case 1:
-
-                    break;
-                case 2:
-
-                    break;
-                case 3:
-
-                    break;
-                case 4:
-
-                    break;
-                default:
-                    //exception
-                    break;
-            }
-        } while (op != 0);
-    }
-    public void MenuTransportadoras()
-    {
-        int op;
-
-        do //executa enquanto o usuário não digitar 0 para sair
-        {
-            Console.WriteLine("-------Gerenciar transportadoras-------");
-            Console.WriteLine("1 - Cadastrar transportadora");
-            Console.WriteLine("2 - Alterar transportadora");
-            Console.WriteLine("3 - Excluir transportadora");
-            Console.WriteLine("4 - Consultar transportadora");
-            Console.WriteLine("0 - Voltar");
-            Console.Write("Escolha: \n");
-
-            op = int.Parse(Console.ReadLine());
-            switch (op)
-            {
-                case 1:
-
-                    break;
-                case 2:
-
-                    break;
-                case 3:
-
-                    break;
-                case 4:
-
-                    break;
-                default:
-                    //exception
-                    break;
-            }
-
-        } while (op != 0);
     }
 }

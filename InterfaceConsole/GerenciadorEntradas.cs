@@ -4,7 +4,7 @@ namespace InterfaceConsole;
 
 public class GerenciadorEntradas
 {
-    public GerenciadorEntradas  (){}
+    public GerenciadorEntradas() { }
 
     //Le inteiro sem chance de outros caracteres
     public int LerIntConsole()
@@ -31,9 +31,19 @@ public class GerenciadorEntradas
 
         if (string.IsNullOrEmpty(input))
         {
-            return 0;
+            return 1000;
         }
 
         return int.Parse(input);
+    }
+    public String LerString(String msg)
+    {
+        Console.Write(msg);
+        String str;
+        do
+        {
+            str = Console.ReadLine() ?? "";
+        } while (str == "");
+        return str;
     }
 }

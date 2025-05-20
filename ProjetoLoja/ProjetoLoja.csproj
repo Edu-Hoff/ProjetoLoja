@@ -8,7 +8,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\GerenciamentoLoja\GerenciamentoLoja.csproj" />
+    <ProjectReference Include="..\GerenciamentoLoja\BaseDeDados.csproj" />
+    <ProjectReference Include="..\InterfaceConsole\InterfaceConsole.csproj" />
   </ItemGroup>
 
 </Project>

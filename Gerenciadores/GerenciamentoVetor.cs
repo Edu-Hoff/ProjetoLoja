@@ -2,7 +2,7 @@ using System;
 using System.Globalization;
 using InfoContato;
 
-namespace GerenciamentoLoja;
+namespace Gerenciadores;
 
 public abstract class GerenciamentoVetor
 {
@@ -20,18 +20,16 @@ public abstract class GerenciamentoVetor
         return novoVetor;
     }
 
-    //Passar o vetor por referencia "ref" antes da variavel 
-    //Retorna 1 se removeu, -1 se nao encontrou, e 0 se o vetor nao existia  ou se nao tinha nenhum item
     //Se nao existia (null) ele cria o vetor com 0 itens
-    public int RemoverItem<T>(ref T[] vetor, T item)
+    public T[] RemoverItem<T>(T[] vetor, T item)
     {
         if (vetor == null || vetor.Count() == 0)
         {
             vetor = new T[0];
-            return 0;
+            return vetor;
         }
         int indice = Array.IndexOf(vetor, item);
-        if (indice == -1) return -1;
+        if (indice == -1) return vetor;
 
         T[] novoVetor = new T[vetor.Length - 1];
         for (int i = 0, j = 0; i < vetor.Length; i++)
@@ -40,7 +38,7 @@ public abstract class GerenciamentoVetor
             novoVetor[j++] = vetor[i];
         }
         vetor = novoVetor;
-        return 1;
+        return novoVetor;
     }
 
     //Funcao para generica procurar um item

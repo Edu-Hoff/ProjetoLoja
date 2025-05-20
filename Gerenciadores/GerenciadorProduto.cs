@@ -1,7 +1,9 @@
 using System;
 using System.ComponentModel.DataAnnotations;
+using BaseDeDados;
+using Pedidos;
 
-namespace Pedidos;
+namespace Gerenciadores;
 
 public class GerenciadorProduto
 {

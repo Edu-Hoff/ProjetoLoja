@@ -1,4 +1,6 @@
 ﻿using System;
+using Gerenciadores;
+using ProjetoLoja;
 
 Console.WriteLine("Teste");
 
@@ -39,3 +41,10 @@ int LerInteiroPositivoDoConsole()
 
     return int.Parse(input);
 }
+/*
+
+GerenciadorLoja GL = new GerenciadorLoja();
+InterfacePrincipal IC = new InterfacePrincipal(GL);
+IC.MenuInicial();
+
+*/

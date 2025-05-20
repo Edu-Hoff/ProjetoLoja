@@ -1,17 +1,17 @@
 using System;
 using System.Data.Common;
 using Entidades;
-using ProjetoLoja;
+using BaseDeDados;
 
-namespace GerenciamentoLoja;
+namespace Gerenciadores;
 
 public class GerenciadorFornecedor:GerenciamentoVetor
 {
     public GerenciadorFornecedor(BaseDados BD)
     {
-        this.BD = BD; 
+        this.TodosFornecedores = BD.TodosFornecedores; 
     }
-    private BaseDados BD { get; set; }
+    private Fornecedor[] TodosFornecedores;
 
     public void CadastraFornecedor()
     {
@@ -25,9 +25,9 @@ public class GerenciadorFornecedor:GerenciamentoVetor
         String Email = Console.ReadLine();
 
 
-        Fornecedor novo = new Fornecedor(BD.TodosFornecedores.Length, Nome, Descricao, Telefone, Email);
+        Fornecedor novo = new Fornecedor(TodosFornecedores.Length, Nome, Descricao, Telefone, Email);
 
-        BD.TodosFornecedores = AdicionarItem(BD.TodosFornecedores, novo);
+        TodosFornecedores = AdicionarItem(TodosFornecedores, novo);
 
 
         //AdicionarItem(ref todosFornecedores,novo);
@@ -49,18 +49,18 @@ public class GerenciadorFornecedor:GerenciamentoVetor
         Console.Write("Informe o Id do fornecedor:\n");
         int IdCodigo = int.Parse(Console.ReadLine());
 
-        for (int i = 0; i < BD.TodosFornecedores.Length; i++)
+        for (int i = 0; i < TodosFornecedores.Length; i++)
         {
-            if (BD.TodosFornecedores[i].Id == IdCodigo) //se os dois códigos forem iguais, altera as informações de tal código
+            if (TodosFornecedores[i].Id == IdCodigo) //se os dois códigos forem iguais, altera as informações de tal código
             {
                 Console.Write("Novo nome do fornecedor:\n");
-                BD.TodosFornecedores[i].Nome = Console.ReadLine();
+                TodosFornecedores[i].Nome = Console.ReadLine();
                 Console.Write("Nova descrição do fornecedor:\n");
-                BD.TodosFornecedores[i].Descricao = Console.ReadLine();
+                TodosFornecedores[i].Descricao = Console.ReadLine();
                 Console.Write("Novo telefone do fornecedor:\n");
-                BD.TodosFornecedores[i].Telefone = Console.ReadLine();
+                TodosFornecedores[i].Telefone = Console.ReadLine();
                 Console.Write("Novo email do fornecedor:\n");
-                BD.TodosFornecedores[i].Email = Console.ReadLine();
+                TodosFornecedores[i].Email = Console.ReadLine();
 
                 Console.WriteLine("Fornecedor alterado com sucesso!\n");
             }
@@ -82,11 +82,11 @@ public class GerenciadorFornecedor:GerenciamentoVetor
             Console.Write("Informe o código do fornecedor: \n");
             int codigoFornecedor = int.Parse(Console.ReadLine());
 
-            for (int i = 0; i < BD.TodosFornecedores.Length; i++)
+            for (int i = 0; i < TodosFornecedores.Length; i++)
             {
-                if (codigoFornecedor == BD.TodosFornecedores[i].Id) //se o código digitado for igual ao código salvo no vetor, mostra o fornecedor
+                if (codigoFornecedor == TodosFornecedores[i].Id) //se o código digitado for igual ao código salvo no vetor, mostra o fornecedor
                 {
-                    BD.TodosFornecedores[i].ObterFornecedor();
+                    TodosFornecedores[i].ObterFornecedor();
                 }
                 else
                 {
@@ -99,11 +99,11 @@ public class GerenciadorFornecedor:GerenciamentoVetor
             Console.Write("Informe o nome do fornecedor: \n");
             String nomeFornecedor = Console.ReadLine();
 
-            for (int i = 0; i < BD.TodosFornecedores.Length; i++)
+            for (int i = 0; i < TodosFornecedores.Length; i++)
             {
-                if (nomeFornecedor == BD.TodosFornecedores[i].Nome) //se o nome digitado for igual ao nome salvo no vetor, mostra o fornecedor
+                if (nomeFornecedor == TodosFornecedores[i].Nome) //se o nome digitado for igual ao nome salvo no vetor, mostra o fornecedor
                 {
-                    BD.TodosFornecedores[i].ObterFornecedor();
+                    TodosFornecedores[i].ObterFornecedor();
                 }
                 else
                 {
