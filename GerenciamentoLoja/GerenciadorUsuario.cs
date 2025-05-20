@@ -3,13 +3,17 @@ using InfoContato;
 using System.Text;
 using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
+using ProjetoLoja;
 
 namespace GerenciamentoLoja;
 
 public class GerenciadorUsuario : GerenciamentoVetor
 {
-    public GerenciadorUsuario() { }
-    public Usuario[] TodosUsuarios = new Usuario[0];
+    public GerenciadorUsuario(BaseDados BD)
+    {
+        this.BD = BD; 
+    }
+    private BaseDados BD { get; set; }
 
     public string HashSenha(string senha)
     {
@@ -39,7 +43,7 @@ public class GerenciadorUsuario : GerenciamentoVetor
         String Nome = Console.ReadLine();
         Console.WriteLine("Senha: ");
         String Senha = Console.ReadLine();
-        foreach (Usuario user in TodosUsuarios)
+        foreach (Usuario user in BD.TodosUsuarios)
         {
             if (user.UserName == Nome && user.Senha == HashSenha(Senha))
             {

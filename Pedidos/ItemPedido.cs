@@ -2,7 +2,11 @@ using System;
 
 namespace Pedidos;
 
-public class ItemPedido : Produto
+/*public class ItemPedido : Produto
 {
-    public Produto Produto = new Produto (); 
+    //public ItemPedido(String nome, double Valor, int Quantidade)
+    {
+    }
+   // public Produto Produto = new Produto(); 
 }
+*/

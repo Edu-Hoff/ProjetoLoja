@@ -10,6 +10,5 @@ public class Transportadora : ObjetoComNome
         this.Nome = Nome;
         this.ValorPorKM = ValorPorKM;
     }
-    String Nome   { get; set; }
-    double ValorPorKM           { get; set; }
+    double ValorPorKM { get; set; }
 }

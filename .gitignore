@@ -15,7 +15,6 @@ obj/
 *.sln.docstates
 
 # Visual Studio-specific folders
-.vscode/
 .vs/
 
 # Rider-specific folders

@@ -1,20 +1,22 @@
 using System;
 using GerenciamentoLoja;
 using InfoContato;
+using InterfaceConsole;
 using Pedidos;
 
 namespace ProjetoLoja;
 
-public class InterefaceGraficaConsole
+public class InterfacePrincipal
 {
+    GerenciadorEntradas GenEnt = new GerenciadorEntradas();
     Usuario[] User = new Usuario[2]; // mover vetor p. base de dados
     public void MenuInicial()
     {
         Console.WriteLine("1 - Fazer login");
         Console.WriteLine("2 - Cadastrar novo usuário");
-        int op = int.Parse(Console.ReadLine());
         do
         {
+            int op = GenEnt.LerIntConsole();
             GerenciadorUsuario GerenciadorUser = new GerenciadorUsuario();
             if (op == 1)
             {
@@ -91,16 +93,16 @@ public class InterefaceGraficaConsole
             switch (op)
             {
                 case 1:
-                    
+
                     break;
                 case 2:
-                    
+
                     break;
                 case 3:
-                    
+
                     break;
                 case 4:
-                    
+
                     break;
                 default:
                     //exception
@@ -168,16 +170,16 @@ public class InterefaceGraficaConsole
             switch (op)
             {
                 case 1:
-                    
+
                     break;
                 case 2:
-                    
+
                     break;
                 case 3:
-                    
+
                     break;
                 case 4:
-                    
+
                     break;
                 default:
                     //exception
@@ -203,16 +205,16 @@ public class InterefaceGraficaConsole
             switch (op)
             {
                 case 1:
-                    
+
                     break;
                 case 2:
-                    
+
                     break;
                 case 3:
-                    
+
                     break;
                 case 4:
-                    
+
                     break;
                 default:
                     //exception
