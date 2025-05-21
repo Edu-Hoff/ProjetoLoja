@@ -12,8 +12,9 @@ public class BaseDados
     public Cliente[] TodosClientes { get; set; }
     public Usuario[] TodosUsuarios { get; set; }
     public Produto[] TodosProdutos { get; set;}
-    public int ContFor=100, ContTrans=100, ContCli=100, ContUsua=100, ContProd=100;
 
+    // um cont - DefineId : incrementa_cont
+    // add ou remove : vem do gerenciador(verifica se pode ser add aqui e altera prod) que vem da interface (parte escrita)
     public BaseDados()
     {
         TodosFornecedores = new Fornecedor[0];

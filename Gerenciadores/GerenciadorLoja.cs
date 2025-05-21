@@ -8,15 +8,15 @@ public class GerenciadorLoja
 {
     public GerenciadorLoja()
     {
-        BD = new BaseDados();
-        GerF = new GerenciadorFornecedor(BD);
-        GerT = new GerenciadorTransportadora(BD);
-        GerU = new GerenciadorUsuario(BD);
-        //GC = new GerenciadorCliente(BD);
+        BaseDeDados = new BaseDados();
+        GerenciadorDeFornecedor = new GerenciadorFornecedor(BaseDeDados);
+        GerenciadorDeTransportadora = new GerenciadorTransportadora(BaseDeDados);
+        GerenciadorDeUsuario = new GerenciadorUsuario(BaseDeDados);
+        //GerenciadorDeCliente = new GerenciadorCliente(BD);
     }
-    public BaseDados BD;
-    public GerenciadorFornecedor GerF;
-    public GerenciadorTransportadora GerT;
-    public GerenciadorUsuario GerU;
-    //public GerenciadorCliente GC;
+    public BaseDados BaseDeDados;
+    public GerenciadorFornecedor GerenciadorDeFornecedor;
+    public GerenciadorTransportadora GerenciadorDeTransportadora;
+    public GerenciadorUsuario GerenciadorDeUsuario;
+    //public GerenciadorCliente GerenciadorDeCliente;
 }

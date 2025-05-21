@@ -37,7 +37,7 @@ public class GerenciadorUsuario : GerenciamentoVetor
         user.Nome = username;
 
     }
-    public Usuario FazerLogin(String Nome, String Senha)
+    public Usuario? FazerLogin(String Nome, String Senha)
     {
         String HSenha = HashSenha(Senha);
         foreach (Usuario user in BD.TodosUsuarios)
@@ -47,7 +47,7 @@ public class GerenciadorUsuario : GerenciamentoVetor
                 return user;
             }
         }
-        return null; //não sei se pode
+        return null;
     }
     public bool FazerCadastro(String Nome, String Senha, String Admin)
     {

@@ -25,7 +25,6 @@ public class InterfaceProduto : GerenciadorEntradas
             switch (op)
             {
                 case 1:
-                    GerP.CadastraProduto();
                     break;
                 case 2:
                     Nome = Console.ReadLine();
@@ -34,6 +33,7 @@ public class InterfaceProduto : GerenciadorEntradas
                 case 3:
                     Nome = Console.ReadLine();
                     GerP.ExcluiProduto(Nome);
+                    //verificar se esta em algum fornecedor, chamar funcao excluir p. fornecedor tb
                     break;
                 case 4:
                     //por nome ou id

@@ -8,10 +8,10 @@ namespace ProjetoLoja;
 
 public class InterfacePrincipal : GerenciadorEntradas
 {
-    GerenciadorLoja GerL{ get; set; }
-    public InterfacePrincipal(GerenciadorLoja GerL)
+    GerenciadorLoja GerenciadorDeLoja{ get; set; }
+    public InterfacePrincipal(GerenciadorLoja GerenciadorDeLoja)
     {
-        this.GerL = GerL;
+        this.GerenciadorDeLoja = GerenciadorDeLoja;
     }
 
 
@@ -30,7 +30,7 @@ public class InterfacePrincipal : GerenciadorEntradas
                 {
                     String Nome = LerString("Informe seu username: ");
                     String Senha = LerString("Informe sua senha: ");
-                    Usuario user = GerL.GerU.FazerLogin(Nome, Senha);
+                    Usuario user = GerenciadorDeLoja.GerenciadorDeUsuario.FazerLogin(Nome, Senha);
                     if (user != null)
                     {
                         Console.Clear();
@@ -50,7 +50,7 @@ public class InterfacePrincipal : GerenciadorEntradas
                     String Senha = LerString("Informe sua senha: ");
                     String Admin = LerString("Administrador S/N: ");
                     Console.Clear();
-                    if (GerL.GerU.FazerCadastro(Nome, Senha, Admin))
+                    if (GerenciadorDeLoja.GerenciadorDeUsuario.FazerCadastro(Nome, Senha, Admin))
                     {
                         Console.WriteLine("Cadastro Realizado");
                         Console.WriteLine("---------------------------");
@@ -81,7 +81,7 @@ public class InterfacePrincipal : GerenciadorEntradas
                 case 1:
                     {
                         InterfaceFornecedor IF = new InterfaceFornecedor();
-                        IF.MenuFornecedores(GerL.GerF);
+                        IF.MenuFornecedores(GerenciadorDeLoja.GerenciadorDeFornecedor);
                         break;
                     }
                 case 2:

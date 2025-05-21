@@ -8,24 +8,11 @@ namespace Gerenciadores;
 public class GerenciadorProduto
 {
     Produto[] TodosProdutos = new Produto[5];
-   /* public void CadastraProduto()
+    public void CadastraProduto()
     {
-        Console.WriteLine("Informe o nome produto:");
-        String Nome = Console.ReadLine();
-        Console.WriteLine("Informe o valor do produto: ");
-        Double Valor = double.Parse(Console.ReadLine());
-        Console.WriteLine("Informe a quantidade de unidades do produto em estoque: ");
-        int Quantidade = int.Parse(Console.ReadLine());
-
-        Produto[] NovoVetorProdutos = new Produto[TodosProdutos.Length + 1];
-        for (int i = 0; i < TodosProdutos.Length; i++)
-        {
-            NovoVetorProdutos[i] = TodosProdutos[i];
-        }
-        NovoVetorProdutos[NovoVetorProdutos.Length - 1] = new Produto(Nome, Valor, Quantidade);
-        TodosProdutos = NovoVetorProdutos;
+        //funcao generica
     }
-    */
+//inteface - aquic modifica direto
     public void AlteraProduto(String Nome) // revisar
     {
         foreach (Produto prod in TodosProdutos)
@@ -80,12 +67,12 @@ public class GerenciadorProduto
     {
 
     }
-    public String ObterItemCodigo(int Id)
+    public void ObterItemCodigo(int Id)
     {
-        return "";
+        
     }
-    public String ObterItemNome(String Nome)
+    public void ObterItemNome(String Nome)
     {
-        return "";
+
     }
 }

@@ -15,7 +15,7 @@ public class GerenciadorFornecedor:GerenciamentoVetor
 
     public void CadastraFornecedor()
     {
-        Console.WriteLine("Nome do fornecedor: \n");
+        Console.WriteLine("Nome do fornecedor:");
         String Nome = Console.ReadLine();
         Console.WriteLine("Descrição do fornecedor: \n");
         String Descricao = Console.ReadLine();

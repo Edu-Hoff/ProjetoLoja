@@ -7,7 +7,6 @@ namespace Entidades;
 public class Fornecedor : Endereco //herda nome, telefone e email da classe Endereco
 {
     public String Descricao { get; set; }
-    public Produto[] ProdutosDisponiveis { get; set; }
 
     public Fornecedor(int Id, String Nome, String Descricao, String Telefone, String Email)
     {
@@ -16,7 +15,6 @@ public class Fornecedor : Endereco //herda nome, telefone e email da classe Ende
         this.Descricao = Descricao;
         this.Telefone = Telefone;
         this.Email = Email;
-        ProdutosDisponiveis = new Produto[0];
     }
 
     public String ObterFornecedor()
