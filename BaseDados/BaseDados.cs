@@ -1,7 +1,6 @@
 using System;
 using Entidades;
-using InfoContato;
-using Pedidos;
+
 
 namespace BaseDeDados;
 

@@ -8,7 +8,7 @@ public class InterfaceFornecedor : GerenciadorEntradas
 {
     public void MenuFornecedores(GerenciadorFornecedor GerF)
     {
-        int op;
+        int Opcao;
         do //executa enquanto o usuário não digitar 0 para sair
         {
             Console.WriteLine("-------Gerenciar fornecedores-------");
@@ -18,8 +18,8 @@ public class InterfaceFornecedor : GerenciadorEntradas
             Console.WriteLine("4 - Consultar fornecedor");
             Console.WriteLine("0 - Voltar");
             Console.Write("Escolha: \n");
-            op = LerIntConsole();
-            switch (op)
+            Opcao = LerIntConsole();
+            switch (Opcao)
             {
                 case 1:
 
@@ -38,6 +38,6 @@ public class InterfaceFornecedor : GerenciadorEntradas
                     Console.Clear();
                     break;
             }
-        } while (op != 0);
+        } while (Opcao != 0);
     }
 }

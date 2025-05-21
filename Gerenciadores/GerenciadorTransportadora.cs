@@ -5,8 +5,8 @@ namespace Gerenciadores;
 
 public class GerenciadorTransportadora
 {
-    private BaseDados BD { get; set; }
-    public GerenciadorTransportadora(BaseDados BD)
+    private BaseDados BaseDeDados { get; set; }
+    public GerenciadorTransportadora(BaseDados BaseDeDados)
     {
 
     }

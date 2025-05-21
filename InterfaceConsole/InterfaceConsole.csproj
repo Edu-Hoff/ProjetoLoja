@@ -7,8 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\BaseDados\BaseDados.csproj" />
     <ProjectReference Include="..\Gerenciadores\Gerenciadores.csproj" />
-    <ProjectReference Include="..\GerenciamentoLoja\BaseDeDados.csproj" />
   </ItemGroup>
 
 </Project>

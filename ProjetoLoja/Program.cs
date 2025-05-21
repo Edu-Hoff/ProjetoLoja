@@ -1,11 +1,10 @@
 ﻿using System;
 using Gerenciadores;
-using ProjetoLoja;
+using InterfaceConsole;
 
-/*
 
-GerenciadorLoja GL = new GerenciadorLoja();
-InterfacePrincipal IC = new InterfacePrincipal(GL);
-IC.MenuInicial();
 
-*/
+GerenciadorLoja GerenciadoDeLoja = new GerenciadorLoja();
+InterfacePrincipal InterfaceDoConsole = new InterfacePrincipal(GerenciadoDeLoja);
+InterfaceDoConsole.MenuInicial();
+

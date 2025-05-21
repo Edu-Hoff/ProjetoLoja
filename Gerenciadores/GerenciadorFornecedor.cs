@@ -7,9 +7,9 @@ namespace Gerenciadores;
 
 public class GerenciadorFornecedor:GerenciamentoVetor
 {
-    public GerenciadorFornecedor(BaseDados BD)
+    public GerenciadorFornecedor(BaseDados BaseDeDados)
     {
-        this.TodosFornecedores = BD.TodosFornecedores; 
+        this.TodosFornecedores = BaseDeDados.TodosFornecedores; 
     }
     private Fornecedor[] TodosFornecedores;
 

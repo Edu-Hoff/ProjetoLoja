@@ -1,6 +1,6 @@
 using System;
 using System.Globalization;
-using InfoContato;
+using Entidades;
 
 namespace Gerenciadores;
 
@@ -13,7 +13,7 @@ public abstract class GerenciamentoVetor
         T[] novoVetor = new T[tamanho];
         if (vetor != null)
         {
-            for (int i = 0; i < tamanho; i++)
+            for (int i = 0; i < vetor.Length; i++)
                 novoVetor[i] = vetor[i];
         }
         novoVetor[tamanho - 1] = item;

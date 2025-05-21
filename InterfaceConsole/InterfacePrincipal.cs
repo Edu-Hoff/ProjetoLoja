@@ -1,10 +1,8 @@
 using System;
 using Gerenciadores;
-using InfoContato;
-using InterfaceConsole;
-using Pedidos;
+using Entidades;
 
-namespace ProjetoLoja;
+namespace InterfaceConsole;
 
 public class InterfacePrincipal : GerenciadorEntradas
 {
@@ -19,14 +17,14 @@ public class InterfacePrincipal : GerenciadorEntradas
     {
         while (true)
         {
-            int op;
+            int Opcao;
             Console.WriteLine("1 - Fazer login");
             Console.WriteLine("2 - Cadastrar novo usuário");
             Console.WriteLine("0 - Sair");
             do
             {
-                op = LerIntConsole();
-                if (op == 1)
+                Opcao = LerIntConsole();
+                if (Opcao == 1)
                 {
                     String Nome = LerString("Informe seu username: ");
                     String Senha = LerString("Informe sua senha: ");
@@ -44,7 +42,7 @@ public class InterfacePrincipal : GerenciadorEntradas
                         }
                     }
                 }
-                else if (op == 2)
+                else if (Opcao == 2)
                 {
                     String Nome = LerString("Informe seu username: ");
                     String Senha = LerString("Informe sua senha: ");
@@ -58,15 +56,17 @@ public class InterfacePrincipal : GerenciadorEntradas
                     // else exception
                 }
                 //exception op invalida
-            } while (op != 1 && op != 2 && op != 0);
-            if (op == 0) break;
+            } while (Opcao != 1 && Opcao != 2 && Opcao != 0);
+            if (Opcao == 0) break;
         }
+        Console.WriteLine("Programa Encerrado...");
+        Console.ReadKey();
     }
 
 
     public void MenuAdmin(Usuario user)
     {
-        int op;
+        int Opcao;
         do
         {
             Console.WriteLine("-------Operações-------");
@@ -75,13 +75,13 @@ public class InterfacePrincipal : GerenciadorEntradas
             Console.WriteLine("3 - Usuario");
             Console.WriteLine("4 - Transportadora");
             Console.WriteLine("0 - Sair");
-            op = LerIntConsole();
-            switch (op)
+            Opcao = LerIntConsole();
+            switch (Opcao)
             {
                 case 1:
                     {
-                        InterfaceFornecedor IF = new InterfaceFornecedor();
-                        IF.MenuFornecedores(GerenciadorDeLoja.GerenciadorDeFornecedor);
+                        InterfaceFornecedor InterfaceDoFornecedor = new InterfaceFornecedor();
+                        InterfaceDoFornecedor.MenuFornecedores(GerenciadorDeLoja.GerenciadorDeFornecedor);
                         break;
                     }
                 case 2:
@@ -98,11 +98,11 @@ public class InterfacePrincipal : GerenciadorEntradas
                     Console.Clear();
                     break;
             }
-        } while (op != 0);
+        } while (Opcao != 0);
 
     }
     public void MenuCliente(Usuario user)
     {
-
+        Console.WriteLine("Teste");
     }
 }

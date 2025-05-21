@@ -1,5 +1,4 @@
 using System;
-using Pedidos;
 using Gerenciadores;
 
 namespace InterfaceConsole;
@@ -8,7 +7,7 @@ public class InterfaceProduto : GerenciadorEntradas
 {
     public void MenuProdutos(GerenciadorProduto GerP)
     {
-        int op;
+        int Opcao;
 
         do //executa enquanto o usuário não digitar 0 para sair
         {
@@ -20,9 +19,9 @@ public class InterfaceProduto : GerenciadorEntradas
             Console.WriteLine("0 - Voltar");
             Console.Write("Escolha: \n");
 
-            op = LerIntConsole();
+            Opcao = LerIntConsole();
             String Nome;
-            switch (op)
+            switch (Opcao)
             {
                 case 1:
                     break;
@@ -43,6 +42,6 @@ public class InterfaceProduto : GerenciadorEntradas
                     break;
             }
 
-        } while (op != 0);
+        } while (Opcao != 0);
     }
 }

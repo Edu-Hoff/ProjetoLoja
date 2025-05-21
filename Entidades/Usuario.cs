@@ -1,7 +1,6 @@
 using System;
 
-
-namespace InfoContato;
+namespace Entidades;
 
 public class Usuario : ObjetoComNome
 {

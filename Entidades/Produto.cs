@@ -1,8 +1,6 @@
 using System;
-using Entidades;
-using InfoContato;
 
-namespace Pedidos;
+namespace Entidades;
 
 public class Produto : ObjetoComNome
 {

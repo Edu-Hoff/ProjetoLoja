@@ -1,6 +1,6 @@
 using System;
 
-namespace Pedidos;
+namespace Entidades.Pedidos;
 
 /*public class ItemPedido : Produto
 {

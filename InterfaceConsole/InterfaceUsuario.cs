@@ -8,7 +8,7 @@ public class InterfaceUsuario : GerenciadorEntradas
 
     public void MenuUsuarios(GerenciadorUsuario GerU)
     {
-        int op;
+        int Opcao;
 
         do //executa enquanto o usuário não digitar 0 para sair
         {
@@ -20,8 +20,8 @@ public class InterfaceUsuario : GerenciadorEntradas
             Console.WriteLine("0 - Voltar");
             Console.Write("Escolha: \n");
 
-            op = int.Parse(Console.ReadLine());
-            switch (op)
+            Opcao = int.Parse(Console.ReadLine());
+            switch (Opcao)
             {
                 case 1:
 
@@ -39,6 +39,6 @@ public class InterfaceUsuario : GerenciadorEntradas
                     //exception
                     break;
             }
-        } while (op != 0);
+        } while (Opcao != 0);
     }
 }

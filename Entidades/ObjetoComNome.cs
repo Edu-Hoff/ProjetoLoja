@@ -1,6 +1,6 @@
 using System;
 
-namespace InfoContato;
+namespace Entidades;
 
 public abstract class ObjetoComNome : ObjetoComId
 {

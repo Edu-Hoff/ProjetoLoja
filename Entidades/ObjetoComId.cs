@@ -1,6 +1,6 @@
 using System;
 
-namespace InfoContato;
+namespace Entidades;
 // Por enquanto, coloquei a classe aqui
 public abstract class ObjetoComId
 {

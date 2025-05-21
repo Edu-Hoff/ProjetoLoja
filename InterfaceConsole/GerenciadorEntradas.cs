@@ -29,6 +29,8 @@ public class GerenciadorEntradas
         }
         while (tecla.Key != ConsoleKey.Enter);
 
+        Console.WriteLine("");
+
         if (string.IsNullOrEmpty(input))
         {
             return 1000;

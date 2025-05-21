@@ -1,19 +1,19 @@
 using System;
-using InfoContato;
 using System.Text;
 using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
 using BaseDeDados;
+using Entidades;
 
 namespace Gerenciadores;
 
 public class GerenciadorUsuario : GerenciamentoVetor
 {
-    public GerenciadorUsuario(BaseDados BD)
+    public GerenciadorUsuario(BaseDados BaseDeDados)
     {
-        this.BD = BD; 
+        this.BaseDeDados = BaseDeDados; 
     }
-    private BaseDados BD { get; set; }
+    private BaseDados BaseDeDados { get; set; }
 
     public string HashSenha(string senha)
     {
@@ -40,7 +40,7 @@ public class GerenciadorUsuario : GerenciamentoVetor
     public Usuario? FazerLogin(String Nome, String Senha)
     {
         String HSenha = HashSenha(Senha);
-        foreach (Usuario user in BD.TodosUsuarios)
+        foreach (Usuario user in BaseDeDados.TodosUsuarios)
         {
             if (user.Nome == Nome && user.Senha == HSenha)
             {
@@ -51,10 +51,10 @@ public class GerenciadorUsuario : GerenciamentoVetor
     }
     public bool FazerCadastro(String Nome, String Senha, String Admin)
     {
-        int ind = ProcuraItemExpecificoPorNome(BD.TodosUsuarios, Nome);
-        if (ind == -1)
+        int Indice = ProcuraItemExpecificoPorNome(BaseDeDados.TodosUsuarios, Nome);
+        if (Indice == -1)
         {
-            AdicionarItem(BD.TodosUsuarios, new Usuario(Nome, HashSenha(Senha), Admin == "S" || Admin == "s" ? true : false));
+           BaseDeDados.TodosUsuarios = AdicionarItem(BaseDeDados.TodosUsuarios, new Usuario(Nome, HashSenha(Senha), Admin == "S" || Admin == "s" ? true : false));
             return true;
         }
         //else exception

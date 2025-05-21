@@ -1,7 +1,7 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 using BaseDeDados;
-using Pedidos;
+using Entidades;
 
 namespace Gerenciadores;
 
