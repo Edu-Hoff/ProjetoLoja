@@ -16,5 +16,6 @@ public class Produto : ObjetoComNome
     public double Valor { get; set; }
     public int Quantidade { get; set; }
     public Fornecedor Fornecedor { get; set; } 
-
+    
+    //obter descrição ou overrride do ToString
 }

@@ -22,5 +22,5 @@ public class Fornecedor : Endereco //herda nome, telefone e email da classe Ende
         return "Nome: " + Nome + "Descrição: " + Descricao + "Telefone: " + Telefone + "Email: " + Email;
     }
 
-
+    //obter descrição ou overrride do ToString (modificar acima)
 }

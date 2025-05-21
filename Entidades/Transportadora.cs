@@ -11,4 +11,6 @@ public class Transportadora : ObjetoComNome
         this.ValorPorKM = ValorPorKM;
     }
     double ValorPorKM { get; set; }
+    
+    //obter descrição ou overrride do ToString
 }

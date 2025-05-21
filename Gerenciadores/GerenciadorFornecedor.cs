@@ -15,34 +15,7 @@ public class GerenciadorFornecedor:GerenciamentoVetor
 
     public void CadastraFornecedor()
     {
-        Console.WriteLine("Nome do fornecedor:");
-        String Nome = Console.ReadLine();
-        Console.WriteLine("Descrição do fornecedor: \n");
-        String Descricao = Console.ReadLine();
-        Console.WriteLine("Telefone do fornecedor: \n");
-        String Telefone = Console.ReadLine();
-        Console.WriteLine("Email do fornecedor: \n");
-        String Email = Console.ReadLine();
 
-
-        Fornecedor novo = new Fornecedor(TodosFornecedores.Length, Nome, Descricao, Telefone, Email);
-
-        TodosFornecedores = AdicionarItem(TodosFornecedores, novo);
-
-
-        //AdicionarItem(ref todosFornecedores,novo);
-
-        /*
-        Fornecedor[] novoVetorFornecedores = new Fornecedor[todosFornecedores.Length + 1]; //novo vetor com uma posição a mais que o original
-        //usado para copiar os elementos do antigo vetor e adicionar novos fornecedores
-
-        for (int i = 0; i < todosFornecedores.Length; i++) //copia os valores do vetor antigo no novo vetor
-        {
-            novoVetorFornecedores[i] = todosFornecedores[i];
-        }
-        novoVetorFornecedores[novoVetorFornecedores.Length - 1] = new Fornecedor(Id, Nome, Descricao, Telefone, Email); //adiciona o novo fornecedor na última posição do vetor
-        todosFornecedores = novoVetorFornecedores; //atualiza o vetor com o fornecedor recém adicionado
-        */
     }
     public void AlteraFornecedor()
     {
