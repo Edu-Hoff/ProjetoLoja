@@ -13,7 +13,17 @@ public class Produto : ObjetoComNome
     }
     public double Valor { get; set; }
     public int Quantidade { get; set; }
-    public Fornecedor Fornecedor { get; set; } 
-    
+    public Fornecedor Fornecedor { get; set; }
+
+    public override string ToString()
+    {
+        return $"{Id} - {Nome}\n{Valor:C2}";
+    }
+
+    //Apenas para Adim
+    public string ObterQuantidadeFornecedor()
+    {
+        return $"Quantidade: {Quantidade} - Fornecido por: {Fornecedor.Id} - {Fornecedor.Nome}";
+    }
     //obter descrição ou overrride do ToString
 }

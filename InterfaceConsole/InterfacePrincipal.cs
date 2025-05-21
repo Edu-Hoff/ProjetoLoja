@@ -28,7 +28,7 @@ public class InterfacePrincipal : GerenciadorEntradasSaidas
                 {
                     String Nome = LerString("Informe seu username: ");
                     String Senha = LerString("Informe sua senha: ");
-                    Usuario user = GerenciadorDeLoja.GerenciadorDeUsuario.FazerLogin(Nome, Senha);
+                    Usuario? user = GerenciadorDeLoja.GerenciadorDeUsuario.FazerLogin(Nome, Senha);
                     if (user != null)
                     {
                         LimparTela($"Seja Bem-vindo(a) {user.Nome}");
@@ -79,7 +79,7 @@ public class InterfacePrincipal : GerenciadorEntradasSaidas
             {
                 case 1:
                     {
-                        LimparTela();
+                        Console.Clear();
                         InterfaceFornecedor InterfaceDoFornecedor = new InterfaceFornecedor();
                         InterfaceDoFornecedor.MenuFornecedores(GerenciadorDeLoja.GerenciadorDeFornecedor);
                         break;

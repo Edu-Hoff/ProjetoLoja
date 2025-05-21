@@ -1,4 +1,5 @@
 using System;
+using Entidades;
 
 namespace InterfaceConsole;
 
@@ -79,7 +80,7 @@ public class GerenciadorEntradasSaidas
         return double.Parse(input);
     }
 
-
+//  Obrigatoriamente deve ser digitado algo 
     public String LerString(String msg)
     {
         Console.Write(msg);
@@ -91,6 +92,7 @@ public class GerenciadorEntradasSaidas
         return str;
     }
 
+//  Retorna vazio se so der enter ou so ter espacos
     public String LerStringAlterar(String msg)
     {
         Console.Write(msg);
@@ -108,6 +110,48 @@ public class GerenciadorEntradasSaidas
         }
     */
 
+    //Escreve qualquer vetor que tenha ToString();
+    public void EscreveVetor<T>(T[] vetor)
+    {
+        if (vetor == null || vetor.Length == 0)
+        {
+            return;
+        }
+        for (int i = 0; i < vetor.Length; i++)
+        {
+            Console.WriteLine(vetor[i]?.ToString());
+        }
+    }
+
+    //Usar so com fornecedores e clientes
+    public void EscreveVetorComEndereco<T>(T[] vetor) where T : IHasEndereco
+    {
+        if (vetor == null || vetor.Length == 0)
+        {
+            return;
+        }
+        for (int i = 0; i < vetor.Length; i++)
+        {
+            Console.WriteLine(vetor[i]?.ToString() + "/n" + vetor[i].Endereco.ObterEndereco());
+        }
+    }
+
+    //Usar so com fornecedores e clientes
+    public void EscreveVetorComQuantidadeFornecedor<T>(T[] vetor) where T : Produto
+    {
+        if (vetor == null || vetor.Length == 0)
+        {
+            return;
+        }
+        for (int i = 0; i < vetor.Length; i++)
+        {
+            Console.WriteLine(vetor[i]?.ToString() + "/n" + vetor[i].ObterQuantidadeFornecedor());
+        }
+    }
+
+    //Limpa a tela e deixa a msg do parametro no menu, como cadastro realizado, e apos isso um separador
+    //Se nao tiver nada imprime so o separador
+    //Caso nao queira nenhum e nem o outro use Console.Clear();
     public void LimparTela(String str = "")
     {
         Console.Clear();

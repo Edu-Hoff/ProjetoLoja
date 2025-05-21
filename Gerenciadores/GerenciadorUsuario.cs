@@ -54,7 +54,7 @@ public class GerenciadorUsuario : GerenciamentoVetor
         int Indice = ProcuraItemExpecificoPorNome(BaseDeDados.TodosUsuarios, Nome);
         if (Indice == -1)
         {
-           BaseDeDados.TodosUsuarios = AdicionarItem(BaseDeDados.TodosUsuarios, new Usuario(Nome, HashSenha(Senha), Admin == "S" || Admin == "s" ? true : false));
+           BaseDeDados.TodosUsuarios = BaseDeDados.AdicionarItem(BaseDeDados.TodosUsuarios, new Usuario(Nome, HashSenha(Senha), Admin == "S" || Admin == "s" ? true : false));
             return true;
         }
         //else exception

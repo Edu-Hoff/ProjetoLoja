@@ -5,13 +5,18 @@ namespace Entidades;
 public class Usuario : ObjetoComNome
 {
     //Recebe a senha depois do Hash
-    public Usuario(String name, String senha, bool admin=false)
+    public Usuario(String nome, String senha, bool admin = false)
     {
-        Nome = name;
+        Nome = nome;
         Senha = senha;
         Admin = admin;
     }
 
-    public String Senha {get;set;}
-    public bool Admin {get;set;}
+    public String Senha { get; set; }
+    public bool Admin { get; set; }
+
+    public override string ToString()
+    {
+        return $"{Id} - {Nome} - {(Admin?"Administrador":"Cliente")}";
+    }
 }

@@ -7,7 +7,11 @@ namespace Gerenciadores;
 
 public class GerenciadorProduto
 {
-    Produto[] TodosProdutos = new Produto[5];
+    public GerenciadorProduto(BaseDados BaseDeDados)
+    {
+        this.BaseDeDados = BaseDeDados;
+    }
+    private BaseDados BaseDeDados { get; set; }
     public void CadastraProduto()
     {
         //funcao generica

@@ -5,9 +5,9 @@ namespace Gerenciadores;
 
 public class GerenciadorTransportadora
 {
-    private BaseDados BaseDeDados { get; set; }
     public GerenciadorTransportadora(BaseDados BaseDeDados)
     {
-
+        this.BaseDeDados = BaseDeDados;
     }
+    private BaseDados BaseDeDados { get; set; }
 }

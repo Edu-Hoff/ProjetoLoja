@@ -3,23 +3,22 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Entidades;
 
-public class Fornecedor : Endereco //herda nome, telefone e email da classe Endereco
+public class Fornecedor : Contato, IHasEndereco//herda nome, telefone e email da classe Endereco
 {
-    public String Descricao { get; set; }
-
-    public Fornecedor(int Id, String Nome, String Descricao, String Telefone, String Email)
+    public Fornecedor(String Nome, String Descricao, String Telefone, String Email, Endereco Endereco)
     {
-        this.Id = Id;
         this.Nome = Nome;
         this.Descricao = Descricao;
         this.Telefone = Telefone;
         this.Email = Email;
+        this.Endereco = Endereco;
     }
+    public String Descricao { get; set; }
 
-    public String ObterFornecedor()
+    public Endereco Endereco { get; set; }
+
+    public override string ToString()
     {
-        return "Nome: " + Nome + "Descrição: " + Descricao + "Telefone: " + Telefone + "Email: " + Email;
+        return $"{Id} - {Nome}\n{Descricao}\n{Telefone} - {Email}";
     }
-
-    //obter descrição ou overrride do ToString (modificar acima)
 }
