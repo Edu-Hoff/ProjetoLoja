@@ -4,7 +4,7 @@ using Entidades;
 
 namespace InterfaceConsole;
 
-public class InterfacePrincipal : GerenciadorEntradas
+public class InterfacePrincipal : GerenciadorEntradasSaidas
 {
     GerenciadorLoja GerenciadorDeLoja{ get; set; }
     public InterfacePrincipal(GerenciadorLoja GerenciadorDeLoja)
@@ -31,7 +31,7 @@ public class InterfacePrincipal : GerenciadorEntradas
                     Usuario user = GerenciadorDeLoja.GerenciadorDeUsuario.FazerLogin(Nome, Senha);
                     if (user != null)
                     {
-                        Console.Clear();
+                        LimparTela($"Seja Bem-vindo(a) {user.Nome}");
                         if (user.Admin)
                         {
                             MenuAdmin(user);
@@ -50,8 +50,7 @@ public class InterfacePrincipal : GerenciadorEntradas
                     Console.Clear();
                     if (GerenciadorDeLoja.GerenciadorDeUsuario.FazerCadastro(Nome, Senha, Admin))
                     {
-                        Console.WriteLine("Cadastro Realizado");
-                        Console.WriteLine("---------------------------");
+                        LimparTela("Cadastro Realizado");
                     }
                     // else exception
                 }
@@ -59,7 +58,7 @@ public class InterfacePrincipal : GerenciadorEntradas
             } while (Opcao != 1 && Opcao != 2 && Opcao != 0);
             if (Opcao == 0) break;
         }
-        Console.WriteLine("Programa Encerrado...");
+        LimparTela("Programa Encerrado...");
         Console.ReadKey();
     }
 
@@ -80,6 +79,7 @@ public class InterfacePrincipal : GerenciadorEntradas
             {
                 case 1:
                     {
+                        LimparTela();
                         InterfaceFornecedor InterfaceDoFornecedor = new InterfaceFornecedor();
                         InterfaceDoFornecedor.MenuFornecedores(GerenciadorDeLoja.GerenciadorDeFornecedor);
                         break;
@@ -95,7 +95,7 @@ public class InterfacePrincipal : GerenciadorEntradas
                     break;
                 default:
                     //exception
-                    Console.Clear();
+                    LimparTela();
                     break;
             }
         } while (Opcao != 0);

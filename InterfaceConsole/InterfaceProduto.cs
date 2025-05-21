@@ -3,7 +3,7 @@ using Gerenciadores;
 
 namespace InterfaceConsole;
 
-public class InterfaceProduto : GerenciadorEntradas
+public class InterfaceProduto : GerenciadorEntradasSaidas
 {
     public void MenuProdutos(GerenciadorProduto GerenciadorProduto)
     {

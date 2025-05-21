@@ -3,7 +3,7 @@ using Gerenciadores;
 
 namespace InterfaceConsole;
 
-public class InterfaceTransportadora : GerenciadorEntradas
+public class InterfaceTransportadora : GerenciadorEntradasSaidas
 {
     public void MenuTransportadoras(GerenciadorTransportadora GerT)
     {

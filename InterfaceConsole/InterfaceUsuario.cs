@@ -3,7 +3,7 @@ using Gerenciadores;
 
 namespace InterfaceConsole;
 
-public class InterfaceUsuario : GerenciadorEntradas
+public class InterfaceUsuario : GerenciadorEntradasSaidas
 {
 
     public void MenuUsuarios(GerenciadorUsuario GerU)

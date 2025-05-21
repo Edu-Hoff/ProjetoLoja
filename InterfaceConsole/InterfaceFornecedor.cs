@@ -4,7 +4,7 @@ using Gerenciadores;
 
 namespace InterfaceConsole;
 
-public class InterfaceFornecedor : GerenciadorEntradas
+public class InterfaceFornecedor : GerenciadorEntradasSaidas
 {
     public void MenuFornecedores(GerenciadorFornecedor GerF)
     {
