@@ -5,9 +5,9 @@ namespace InterfaceConsole;
 
 public class InterfaceProduto : GerenciadorEntradas
 {
-    public void MenuProdutos(GerenciadorProduto GerP)
+    public void MenuProdutos(GerenciadorProduto GerenciadorProduto)
     {
-        int Opcao;
+        int Op;
 
         do //executa enquanto o usuário não digitar 0 para sair
         {
@@ -19,19 +19,19 @@ public class InterfaceProduto : GerenciadorEntradas
             Console.WriteLine("0 - Voltar");
             Console.Write("Escolha: \n");
 
-            Opcao = LerIntConsole();
+            Op = LerIntConsole();
             String Nome;
-            switch (Opcao)
+            switch (Op)
             {
                 case 1:
                     break;
                 case 2:
                     Nome = Console.ReadLine();
-                    GerP.AlteraProduto(Nome);
+                    GerenciadorProduto.AlteraProduto(Nome);
                     break;
                 case 3:
                     Nome = Console.ReadLine();
-                    GerP.ExcluiProduto(Nome);
+                    GerenciadorProduto.ExcluiProduto(Nome);
                     //verificar se esta em algum fornecedor, chamar funcao excluir p. fornecedor tb
                     break;
                 case 4:
@@ -42,6 +42,25 @@ public class InterfaceProduto : GerenciadorEntradas
                     break;
             }
 
-        } while (Opcao != 0);
+        } while (Op != 0);
+    }
+    public void ModificarProduto()
+    {
+        int Op;
+        Console.Write("Qual dos parâmetros do produto deseja modificar?\n1 - Nome\n2 - Valor\n3 - Quantidade em estoque\nEscolha: ");
+        Op = LerIntConsole();
+        switch (Op)
+        {
+            case 1:
+                String Nome = LerString("Novo nome: ");
+                break;
+            case 2:
+                double Valor = double.Parse(Console.ReadLine()); //depois adiciono uma função pra double
+                break;
+            case 3:
+                Console.Write("");
+                int Quantidade = LerIntConsole();
+                break;
+        }
     }
 }
