@@ -12,16 +12,17 @@ public class GerenciadorProduto
         this.BaseDeDados = BaseDeDados;
     }
     private BaseDados BaseDeDados { get; set; }
-    public void CadastraProduto()
+    public void CadastraProduto(String Nome, double Valor, int Quantidade, String Fornecedor)
     {
+        //verifica se fornecedor existe
         //funcao generica
     }
-//inteface - aquic modifica direto
+//inteface - aqui modifica direto
     public void AlteraProduto(String Nome) // revisar
     {
         
     }
-    public void ExcluiProduto(String Nome)
+    public void ExcluiProduto(int Id)
     {
 
     }

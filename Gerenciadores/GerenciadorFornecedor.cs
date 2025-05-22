@@ -7,7 +7,7 @@ namespace Gerenciadores;
 
 public class GerenciadorFornecedor : GerenciamentoVetor
 {
-    public GerenciadorFornecedor (BaseDados BaseDeDados)
+    public GerenciadorFornecedor(BaseDados BaseDeDados)
     {
         this.BaseDeDados = BaseDeDados;
     }
@@ -17,6 +17,7 @@ public class GerenciadorFornecedor : GerenciamentoVetor
     {
 
     }
+    //modificar - interface
     public void AlteraFornecedor()
     {
         Console.Write("Informe o Id do fornecedor:\n");

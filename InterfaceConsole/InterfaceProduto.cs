@@ -1,4 +1,6 @@
 using System;
+using BaseDeDados;
+using Entidades;
 using Gerenciadores;
 
 namespace InterfaceConsole;
@@ -24,18 +26,41 @@ public class InterfaceProduto : GerenciadorEntradasSaidas
             switch (Op)
             {
                 case 1:
+                    Nome = LerString("Nome do produto: ");
+                    Console.Write("Valor do produto: ");
+                    double Valor = LerDoubleConsole();
+                    Console.Write("Quantidade em estoque: ");
+                    int Quantidade = LerIntConsole();
+                    String Fornecedor = LerString("Fornecedor do produto: ");
+                    GerenciadorProduto.CadastraProduto(Nome, Valor, Quantidade, Fornecedor);
                     break;
                 case 2:
-                    Nome = Console.ReadLine();
-                    GerenciadorProduto.AlteraProduto(Nome);
+                    //add
                     break;
                 case 3:
-                    Nome = Console.ReadLine();
-                    GerenciadorProduto.ExcluiProduto(Nome);
+                    Console.Write("Id do item: ");
+                    int Id = LerIntConsole();
+                    GerenciadorProduto.ExcluiProduto(Id);
                     //verificar se esta em algum fornecedor, chamar funcao excluir p. fornecedor tb
                     break;
                 case 4:
-                    //por nome ou id
+                    Console.Write("1 - Consulta por nome\n2 - Consulta por código\nEscolha: ");
+                    Op = LerIntConsole();
+                    if (Op == 1)
+                    {
+                        Console.Write("Código: ");
+                        Id = LerIntConsole();
+                        GerenciadorProduto.ObterItemCodigo(Id);
+                    }
+                    else if (Op == 2)
+                    {
+                        Nome = LerString("Nome: ");
+                        GerenciadorProduto.ObterItemNome(Nome);
+                    }
+                    else
+                    {
+                        //exception    
+                    }
                     break;
                 default:
                     //exception
@@ -44,6 +69,7 @@ public class InterfaceProduto : GerenciadorEntradasSaidas
 
         } while (Op != 0);
     }
+    //deixei aqui, mas acho que nao precisa da funcao embaixo, depois vejo certinho
     public void ModificarProduto()
     {
         int Op;
@@ -55,11 +81,10 @@ public class InterfaceProduto : GerenciadorEntradasSaidas
                 String Nome = LerString("Novo nome: ");
                 break;
             case 2:
-                double Valor = double.Parse(Console.ReadLine()); //depois adiciono uma função pra double
+                Console.Write("Novo valor: ");
+                double Valor = LerDoubleConsole();
                 break;
             case 3:
-                Console.Write("");
-                int Quantidade = LerIntConsole();
                 break;
         }
     }

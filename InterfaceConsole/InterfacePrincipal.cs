@@ -21,7 +21,7 @@ public class InterfacePrincipal : GerenciadorEntradasSaidas
             Console.WriteLine("1 - Fazer login");
             Console.WriteLine("2 - Cadastrar novo usuário");
             Console.WriteLine("0 - Sair");
-            do
+            do //acho que isso vai no gerenciadorUsuario, aqui é só pegar valor, quem faz testes é o gerenciador, depois modifico
             {
                 Opcao = LerIntConsole();
                 if (Opcao == 1)
@@ -78,20 +78,24 @@ public class InterfacePrincipal : GerenciadorEntradasSaidas
             switch (Opcao)
             {
                 case 1:
-                    {
-                        Console.Clear();
-                        InterfaceFornecedor InterfaceDoFornecedor = new InterfaceFornecedor();
-                        InterfaceDoFornecedor.MenuFornecedores(GerenciadorDeLoja.GerenciadorDeFornecedor);
-                        break;
-                    }
+                    Console.Clear();
+                    InterfaceFornecedor InterfaceDoFornecedor = new InterfaceFornecedor();
+                    InterfaceDoFornecedor.MenuFornecedores(GerenciadorDeLoja.GerenciadorDeFornecedor);
+                    break;
                 case 2:
-                    //MenuProdutos();
+                    Console.Clear();
+                    InterfaceProduto InterfaceDoProduto = new InterfaceProduto();
+                    InterfaceDoProduto.MenuProdutos(GerenciadorDeLoja.GerenciadorDeProduto);                    
                     break;
                 case 3:
-                    //MenuUsuarios();
+                    Console.Clear();
+                    InterfaceUsuario InterfaceDoUsuario= new InterfaceUsuario();
+                    InterfaceDoUsuario.MenuUsuarios(GerenciadorDeLoja.GerenciadorDeUsuario);
                     break;
                 case 4:
-                    //MenuTransportadoras();
+                    Console.Clear();
+                    InterfaceTransportadora InterfaceDaTranportadora = new InterfaceTransportadora();
+                    InterfaceDaTranportadora.MenuTransportadoras(GerenciadorDeLoja.GerenciadorDeTransportadora);
                     break;
                 default:
                     //exception
