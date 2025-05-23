@@ -8,10 +8,13 @@ public class GerenciadorEntradasSaidas
     public GerenciadorEntradasSaidas() { }
 
     //Le inteiro sem chance de outros caracteres
-    public int LerIntConsole()
+    public int LerIntConsole(String msg="")
     {
+        Console.Write(msg);
         string input = "";
         ConsoleKeyInfo tecla;
+
+        Console.ForegroundColor = ConsoleColor.Yellow;
 
         do
         {
@@ -31,13 +34,18 @@ public class GerenciadorEntradasSaidas
         while (tecla.Key != ConsoleKey.Enter);
 
         Console.WriteLine("");
+        Console.ResetColor();
 
         if (string.IsNullOrEmpty(input))
         {
-            return 1000;
+            return 0;
         }
 
-        return int.Parse(input);
+        if (int.TryParse(input, out int resultado))
+            return resultado;
+        else
+            return 0;
+
     }
 
     public double LerDoubleConsole()
@@ -45,6 +53,7 @@ public class GerenciadorEntradasSaidas
         string input = "";
         ConsoleKeyInfo tecla;
         bool jaTemSeparadorDecimal = false;
+        Console.ForegroundColor = ConsoleColor.Yellow;
 
         do
         {
@@ -73,6 +82,7 @@ public class GerenciadorEntradasSaidas
         while (tecla.Key != ConsoleKey.Enter);
 
         Console.WriteLine();
+        Console.ResetColor();
 
         if (string.IsNullOrWhiteSpace(input))
             return 0.0;
@@ -84,11 +94,13 @@ public class GerenciadorEntradasSaidas
     public String LerString(String msg)
     {
         Console.Write(msg);
+        Console.ForegroundColor = ConsoleColor.Yellow;
         String str;
         do
         {
             str = Console.ReadLine() ?? "";
         } while (string.IsNullOrWhiteSpace(str));
+        Console.ResetColor();
         return str;
     }
 
@@ -96,9 +108,11 @@ public class GerenciadorEntradasSaidas
     public String LerStringAlterar(String msg)
     {
         Console.Write(msg);
+        Console.ForegroundColor = ConsoleColor.Yellow;
         String str = Console.ReadLine() ?? "";
         if (string.IsNullOrWhiteSpace(str))
             return "";
+            Console.ResetColor();
         return str;
     }
     /*
@@ -111,52 +125,115 @@ public class GerenciadorEntradasSaidas
     */
 
     //Escreve qualquer vetor que tenha ToString();
-    public void EscreveVetor<T>(T[] vetor)
+    //Se enviar um indice escreve so o item do indice
+    public void EscreveVetor<T>(T[] vetor, int ind = -1)
     {
         if (vetor == null || vetor.Length == 0)
         {
             return;
         }
-        for (int i = 0; i < vetor.Length; i++)
+        Console.ForegroundColor = ConsoleColor.Magenta;
+        if (ind != -1)
         {
-            Console.WriteLine(vetor[i]?.ToString());
+            Console.WriteLine(vetor[ind]?.ToString());
+            return;
         }
+        else for (int i = 0; i < vetor.Length; i++)
+            {
+                Console.WriteLine(vetor[i]?.ToString());
+            }
+        Console.ResetColor();
     }
 
-    //Usar so com fornecedores e clientes
-    public void EscreveVetorComEndereco<T>(T[] vetor) where T : IHasEndereco
+    //Usar so com vetores de fornecedores e clientes
+    //Se enviar um indice escreve so o item do indice
+    public void EscreveVetorComEndereco<T>(T[] vetor, int ind = -1) where T : IHasEndereco
     {
         if (vetor == null || vetor.Length == 0)
         {
             return;
         }
-        for (int i = 0; i < vetor.Length; i++)
+        Console.ForegroundColor = ConsoleColor.Magenta;
+        if (ind != -1)
         {
-            Console.WriteLine(vetor[i]?.ToString() + "/n" + vetor[i].Endereco.ObterEndereco());
+            Console.WriteLine(vetor[ind]?.ToString() + "\n" + vetor[ind].Endereco.ObterEndereco());
         }
+        else for (int i = 0; i < vetor.Length; i++)
+            {
+                Console.WriteLine(vetor[i]?.ToString() + "\n" + vetor[i].Endereco.ObterEndereco());
+            }
+        Console.ResetColor();
     }
 
-    //Usar so com fornecedores e clientes
-    public void EscreveVetorComQuantidadeFornecedor<T>(T[] vetor) where T : Produto
+    //Usar so com vetor de Produtos
+    //Se enviar um indice escreve so o item do indice
+    public void EscreveVetorComQuantidadeFornecedor<T>(T[] vetor, int ind = -1) where T : Produto
     {
         if (vetor == null || vetor.Length == 0)
         {
             return;
         }
-        for (int i = 0; i < vetor.Length; i++)
+        Console.ForegroundColor = ConsoleColor.Magenta;
+        if (ind != -1)
         {
-            Console.WriteLine(vetor[i]?.ToString() + "/n" + vetor[i].ObterQuantidadeFornecedor());
+            Console.WriteLine(vetor[ind]?.ToString() + "\n" + vetor[ind].ObterQuantidadeFornecedor());
         }
+        else for (int i = 0; i < vetor.Length; i++)
+            {
+                Console.WriteLine(vetor[i]?.ToString() + "\n" + vetor[i].ObterQuantidadeFornecedor());
+            }
+        Console.ResetColor();
+    }
+
+    public Endereco LeEndereco()
+    {
+        Endereco Endereco = new Endereco();
+        Endereco.Estado = LerString("Informe o estado: ");
+        Endereco.Cidade = LerString("Informe a cidade: ");
+        Endereco.Cep = LerString("Informe o cep: ");
+        Endereco.Bairro = LerString("Informe o bairro: ");
+        Endereco.Rua = LerString("Informe a rua: ");
+        Endereco.Numero = LerString("Informe o numero: ");
+        Endereco.Complemento = LerStringAlterar("Informe o complemento: ");
+        return Endereco;
+    }
+
+    public Endereco LeEnderecoAlterar()
+    {
+        Endereco Endereco = new Endereco();
+        Endereco.Estado = LerStringAlterar("Informe o estado: ");
+        Endereco.Cidade = LerStringAlterar("Informe a cidade: ");
+        Endereco.Cep = LerStringAlterar("Informe o cep: ");
+        Endereco.Bairro = LerStringAlterar("Informe o bairro: ");
+        Endereco.Rua = LerStringAlterar("Informe a rua: ");
+        Endereco.Numero = LerStringAlterar("Informe o numero: ");
+        Endereco.Complemento = LerStringAlterar("Informe o complemento: ");
+        return Endereco;
+    }
+
+    public Fornecedor LeFornecedorParaAlterar()
+    {
+        String Nome = LerStringAlterar("Informe o nome: ");
+        String Descricao = LerStringAlterar("Informe a descrição: ");
+        String Telefone = LerStringAlterar("Informe o telefone: ");
+        String Email = LerStringAlterar("Informe o email: ");
+        return new Fornecedor(Nome, Descricao, Telefone, Email, LeEnderecoAlterar());
     }
 
     //Limpa a tela e deixa a msg do parametro no menu, como cadastro realizado, e apos isso um separador
     //Se nao tiver nada imprime so o separador
     //Caso nao queira nenhum e nem o outro use Console.Clear();
-    public void LimparTela(String str = "")
+    public void LimparTela(String str = "", ConsoleColor cor = ConsoleColor.White)
     {
         Console.Clear();
+
+        Console.ForegroundColor = cor;
+
         if (str != "") str += "\n";
         Console.Write(str);
+
+        Console.ResetColor();
+
         Console.WriteLine("---------------------------");
     }
 }

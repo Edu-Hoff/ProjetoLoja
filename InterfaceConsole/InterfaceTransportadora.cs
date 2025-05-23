@@ -19,7 +19,7 @@ public class InterfaceTransportadora : GerenciadorEntradasSaidas
             Console.WriteLine("0 - Voltar");
             Console.Write("Escolha: \n");
 
-            Opcao = int.Parse(Console.ReadLine());
+            Opcao = LerIntConsole();
             switch (Opcao)
             {
                 case 1:
@@ -40,5 +40,25 @@ public class InterfaceTransportadora : GerenciadorEntradasSaidas
             }
 
         } while (Opcao != 0);
+    }
+
+    public void MenuCadastro()
+    {
+
+    }
+
+    public void MenuAltera()
+    {
+
+    }
+
+    public void MenuExclui()
+    {
+
+    }
+    
+    public void MenuConsulta()
+    {
+        
     }
 }

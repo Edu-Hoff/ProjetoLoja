@@ -51,7 +51,7 @@ public class GerenciadorUsuario : GerenciamentoVetor
     }
     public bool FazerCadastro(String Nome, String Senha, String Admin)
     {
-        int Indice = ProcuraItemExpecificoPorNome(BaseDeDados.TodosUsuarios, Nome);
+        int Indice = BaseDeDados.ProcuraItemExpecificoPorNome(BaseDeDados.TodosUsuarios, Nome);
         if (Indice == -1)
         {
            BaseDeDados.TodosUsuarios = BaseDeDados.AdicionarItem(BaseDeDados.TodosUsuarios, new Usuario(Nome, HashSenha(Senha), Admin == "S" || Admin == "s" ? true : false));

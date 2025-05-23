@@ -2,7 +2,7 @@ using System;
 
 namespace Entidades;
 
-public abstract class Endereco : Contato
+public class Endereco : Contato
 {
     public String? Rua {get;set;}
     public String? Numero {get;set;}
@@ -15,6 +15,6 @@ public abstract class Endereco : Contato
     //Apenas para Adim ou do proprio cliente
     public String ObterEndereco()
     {
-        return $"{Rua}, {Numero}, {Complemento} - {Cep}\n{Bairro}, {Cidade}, {Estado}";
+        return $"{Rua}, {Numero}{((Complemento=="")?"": ", ")}{Complemento} - CEP: {Cep}\n{Bairro}, {Cidade}, {Estado}";
     }
 }

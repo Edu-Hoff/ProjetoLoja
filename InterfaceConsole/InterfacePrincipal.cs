@@ -31,7 +31,7 @@ public class InterfacePrincipal : GerenciadorEntradasSaidas
                     Usuario? user = GerenciadorDeLoja.GerenciadorDeUsuario.FazerLogin(Nome, Senha);
                     if (user != null)
                     {
-                        LimparTela($"Seja Bem-vindo(a) {user.Nome}");
+                        LimparTela($"Seja Bem-vindo(a) {user.Nome}",ConsoleColor.Cyan);
                         if (user.Admin)
                         {
                             MenuAdmin(user);
@@ -50,15 +50,16 @@ public class InterfacePrincipal : GerenciadorEntradasSaidas
                     Console.Clear();
                     if (GerenciadorDeLoja.GerenciadorDeUsuario.FazerCadastro(Nome, Senha, Admin))
                     {
-                        LimparTela("Cadastro Realizado");
+                        LimparTela("Cadastro Realizado",ConsoleColor.Green);
                     }
-                    // else exception
+                    else
+                        LimparTela("Cadastro Nao Realizado",ConsoleColor.Red);
                 }
                 //exception op invalida
             } while (Opcao != 1 && Opcao != 2 && Opcao != 0);
             if (Opcao == 0) break;
         }
-        LimparTela("Programa Encerrado...");
+        LimparTela("Programa Encerrado...",ConsoleColor.Cyan);
         Console.ReadKey();
     }
 
@@ -78,25 +79,33 @@ public class InterfacePrincipal : GerenciadorEntradasSaidas
             switch (Opcao)
             {
                 case 1:
-                    Console.Clear();
-                    InterfaceFornecedor InterfaceDoFornecedor = new InterfaceFornecedor();
-                    InterfaceDoFornecedor.MenuFornecedores(GerenciadorDeLoja.GerenciadorDeFornecedor);
-                    break;
+                    {
+                        Console.Clear();
+                        InterfaceFornecedor InterfaceDoFornecedor = new InterfaceFornecedor(GerenciadorDeLoja.GerenciadorDeFornecedor);
+                        InterfaceDoFornecedor.MenuFornecedores();
+                        break;
+                    }
                 case 2:
-                    Console.Clear();
-                    InterfaceProduto InterfaceDoProduto = new InterfaceProduto();
-                    InterfaceDoProduto.MenuProdutos(GerenciadorDeLoja.GerenciadorDeProduto);                    
-                    break;
+                    {
+                        Console.Clear();
+                        InterfaceProduto InterfaceDoProduto = new InterfaceProduto();
+                        InterfaceDoProduto.MenuProdutos(GerenciadorDeLoja.GerenciadorDeProduto);
+                        break;
+                    }
                 case 3:
-                    Console.Clear();
-                    InterfaceUsuario InterfaceDoUsuario= new InterfaceUsuario();
-                    InterfaceDoUsuario.MenuUsuarios(GerenciadorDeLoja.GerenciadorDeUsuario);
-                    break;
+                    {
+                        Console.Clear();
+                        InterfaceUsuario InterfaceDoUsuario = new InterfaceUsuario();
+                        InterfaceDoUsuario.MenuUsuarios(GerenciadorDeLoja.GerenciadorDeUsuario);
+                        break;
+                    }
                 case 4:
-                    Console.Clear();
-                    InterfaceTransportadora InterfaceDaTranportadora = new InterfaceTransportadora();
-                    InterfaceDaTranportadora.MenuTransportadoras(GerenciadorDeLoja.GerenciadorDeTransportadora);
-                    break;
+                    {
+                        Console.Clear();
+                        InterfaceTransportadora InterfaceDaTranportadora = new InterfaceTransportadora();
+                        InterfaceDaTranportadora.MenuTransportadoras(GerenciadorDeLoja.GerenciadorDeTransportadora);
+                        break;
+                    }
                 default:
                     //exception
                     LimparTela();
@@ -107,6 +116,6 @@ public class InterfacePrincipal : GerenciadorEntradasSaidas
     }
     public void MenuCliente(Usuario user)
     {
-        Console.WriteLine("Teste");
+        Console.WriteLine("Este menu ainda nao esta disponivel");
     }
 }

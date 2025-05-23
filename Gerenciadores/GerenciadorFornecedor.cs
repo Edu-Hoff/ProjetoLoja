@@ -2,89 +2,63 @@ using System;
 using System.Data.Common;
 using Entidades;
 using BaseDeDados;
+using Microsoft.VisualBasic;
 
 namespace Gerenciadores;
 
 public class GerenciadorFornecedor : GerenciamentoVetor
 {
-    public GerenciadorFornecedor(BaseDados BaseDeDados)
+    public GerenciadorFornecedor (BaseDados BaseDeDados)
     {
         this.BaseDeDados = BaseDeDados;
     }
-    private BaseDados BaseDeDados { get; set; }
+    public BaseDados BaseDeDados { get; set; }
 
-    public void CadastraFornecedor()
+    public bool ProcuraFornecedor(String Nome)
     {
+        if (BaseDeDados.ProcuraItemExpecificoPorNome(BaseDeDados.TodosFornecedores, Nome) == -1)
+            return false;
+        return true;
+    }
 
+    public bool ProcuraFornecedor(int ID)
+    {
+        if (BaseDeDados.ProcuraItemPorId(BaseDeDados.TodosFornecedores, ID) == -1)
+            return false;
+        return true;
+    }
+
+    public void CadastraFornecedor(Fornecedor Fornecedor)
+    {
+        BaseDeDados.TodosFornecedores = BaseDeDados.AdicionarItem(BaseDeDados.TodosFornecedores, Fornecedor);
     }
     //modificar - interface
-    public void AlteraFornecedor()
+    public void AlteraFornecedor(int Indice, Fornecedor novosDados)
     {
-        Console.Write("Informe o Id do fornecedor:\n");
-        int IdCodigo = int.Parse(Console.ReadLine());
-
-        for (int i = 0; i < BaseDeDados.TodosFornecedores.Length; i++)
-        {
-            if (BaseDeDados.TodosFornecedores[i].Id == IdCodigo) //se os dois códigos forem iguais, altera as informações de tal código
-            {
-                Console.Write("Novo nome do fornecedor:\n");
-                BaseDeDados.TodosFornecedores[i].Nome = Console.ReadLine();
-                Console.Write("Nova descrição do fornecedor:\n");
-                BaseDeDados.TodosFornecedores[i].Descricao = Console.ReadLine();
-                Console.Write("Novo telefone do fornecedor:\n");
-                BaseDeDados.TodosFornecedores[i].Telefone = Console.ReadLine();
-                Console.Write("Novo email do fornecedor:\n");
-                BaseDeDados.TodosFornecedores[i].Email = Console.ReadLine();
-
-                Console.WriteLine("Fornecedor alterado com sucesso!\n");
-            }
-            Console.WriteLine("Fornecedor não encontrado!\n");
-        }
+        BaseDeDados.TodosFornecedores[Indice].SubstituiSeNaoVazio(novosDados);
+        
     }
-    public void ExcluiFornecedor()
+    public bool ExcluiFornecedor(int Id)
     {
-
+        int indice = BaseDeDados.ProcuraItemPorId(BaseDeDados.TodosFornecedores, Id);
+        if (indice != -1)
+        {
+            BaseDeDados.TodosFornecedores = BaseDeDados.RemoverItem(BaseDeDados.TodosFornecedores, BaseDeDados.TodosFornecedores[indice]);
+            return true;
+        }
+        return false;
     }
 
-    public void ConsultarFornecedor()
+    public bool ExcluiFornecedor(String Nome)
     {
-        Console.Write("Consultar por (1) Código ou (2) Nome: \n");
-        int opcaoFornecedor = int.Parse(Console.ReadLine());
-
-        if (opcaoFornecedor == 1) //código
+        int indice = BaseDeDados.ProcuraItemExpecificoPorNome(BaseDeDados.TodosFornecedores, Nome);
+        if (indice != -1)
         {
-            Console.Write("Informe o código do fornecedor: \n");
-            int codigoFornecedor = int.Parse(Console.ReadLine());
-
-            for (int i = 0; i < BaseDeDados.TodosFornecedores.Length; i++)
-            {
-                if (codigoFornecedor == BaseDeDados.TodosFornecedores[i].Id) //se o código digitado for igual ao código salvo no vetor, mostra o fornecedor
-                {
-                    BaseDeDados.TodosFornecedores[i].ToString();
-                }
-                else
-                {
-                    Console.WriteLine("Código de fornecedor não encontrado!\n");
-                }
-            }
+            BaseDeDados.TodosFornecedores = BaseDeDados.RemoverItem(BaseDeDados.TodosFornecedores, BaseDeDados.TodosFornecedores[indice]);
+            return true;
         }
-        else if (opcaoFornecedor == 2) //nome
-        {
-            Console.Write("Informe o nome do fornecedor: \n");
-            String nomeFornecedor = Console.ReadLine();
-
-            for (int i = 0; i < BaseDeDados.TodosFornecedores.Length; i++)
-            {
-                if (nomeFornecedor == BaseDeDados.TodosFornecedores[i].Nome) //se o nome digitado for igual ao nome salvo no vetor, mostra o fornecedor
-                {
-                    BaseDeDados.TodosFornecedores[i].ToString();
-                }
-                else
-                {
-                    Console.WriteLine("Nome de fornecedor não encontrado!\n");
-                }
-            }
-        }
+        return false;
     }
+
 }
     
