@@ -48,8 +48,9 @@ public class GerenciadorEntradasSaidas
 
     }
 
-    public double LerDoubleConsole()
+    public double LerDoubleConsole(String msg="")
     {
+        Console.Write(msg);
         string input = "";
         ConsoleKeyInfo tecla;
         bool jaTemSeparadorDecimal = false;
