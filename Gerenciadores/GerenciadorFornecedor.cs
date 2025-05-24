@@ -13,21 +13,24 @@ public class GerenciadorFornecedor : GerenciamentoVetor
         this.BaseDeDados = BaseDeDados;
     }
     public BaseDados BaseDeDados { get; set; }
-
+//preciso de uma funcao que retorne um fornecedor (para cadastrar produtos)
+    public Fornecedor ProcuraFornecedorTemporario(String Nome)
+    {
+        int i = BaseDeDados.ProcuraItemExpecificoPorNome(BaseDeDados.TodosFornecedores, Nome);
+        return BaseDeDados.TodosFornecedores[i];
+    }
     public bool ProcuraFornecedor(String Nome)
     {
         if (BaseDeDados.ProcuraItemExpecificoPorNome(BaseDeDados.TodosFornecedores, Nome) == -1)
             return false;
         return true;
     }
-
     public bool ProcuraFornecedor(int ID)
     {
         if (BaseDeDados.ProcuraItemPorId(BaseDeDados.TodosFornecedores, ID) == -1)
             return false;
         return true;
     }
-
     public void CadastraFornecedor(Fornecedor Fornecedor)
     {
         BaseDeDados.TodosFornecedores = BaseDeDados.AdicionarItem(BaseDeDados.TodosFornecedores, Fornecedor);

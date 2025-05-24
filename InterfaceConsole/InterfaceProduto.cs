@@ -28,20 +28,13 @@ public class InterfaceProduto : GerenciadorEntradasSaidas
             Console.Write("Escolha: \n");
 
             Op = LerIntConsole();
-            String Nome;
             switch (Op)
             {
                 case 1:
-                    Nome = LerString("Nome do produto: ");
-                    Console.Write("Valor do produto: ");
-                    double Valor = LerDoubleConsole();
-                    Console.Write("Quantidade em estoque: ");
-                    int Quantidade = LerIntConsole();
-                    String Fornecedor = LerString("Fornecedor do produto: ");
-                    GerenciadorDeProduto.CadastraProduto(Nome, Valor, Quantidade, Fornecedor);
+                    Cadastrar();
                     break;
                 case 2:
-                    //add
+                    Alterar();
                     break;
                 case 3:
                     Console.Write("Id do item: ");
@@ -54,14 +47,11 @@ public class InterfaceProduto : GerenciadorEntradasSaidas
                     Op = LerIntConsole();
                     if (Op == 1)
                     {
-                        Console.Write("Código: ");
-                        Id = LerIntConsole();
-                        GerenciadorDeProduto.ObterItemCodigo(Id);
+                        ConsultaNome();
                     }
                     else if (Op == 2)
                     {
-                        Nome = LerString("Nome: ");
-                        GerenciadorDeProduto.ObterItemNome(Nome);
+                        ConsultaId();
                     }
                     else
                     {
@@ -78,12 +68,20 @@ public class InterfaceProduto : GerenciadorEntradasSaidas
 
         } while (Op != 0);
     }
-    //deixei aqui, mas acho que nao precisa da funcao embaixo, depois vejo certinho
-    public void ModificarProduto()
+    public void Cadastrar()
     {
-        int Op;
+        String Nome = LerString("Nome do produto: ");
+        Console.Write("Valor do produto: ");
+        double Valor = LerDoubleConsole();
+        Console.Write("Quantidade em estoque: ");
+        int Quantidade = LerIntConsole();
+        String Fornecedor = LerString("Fornecedor do produto: ");
+        GerenciadorDeProduto.CadastraProduto(Nome, Valor, Quantidade, Fornecedor);
+    }
+    public void Alterar()
+    {
         Console.Write("Qual dos parâmetros do produto deseja modificar?\n1 - Nome\n2 - Valor\n3 - Quantidade em estoque\nEscolha: ");
-        Op = LerIntConsole();
+        int Op = LerIntConsole();
         switch (Op)
         {
             case 1:
@@ -97,4 +95,20 @@ public class InterfaceProduto : GerenciadorEntradasSaidas
                 break;
         }
     }
+    public void Excluir()
+    {
+
+    }
+    public void ConsultaNome()
+    {
+        String Nome = LerString("Nome: ");
+        GerenciadorDeProduto.ObterItemNome(Nome);
+    }
+    public void ConsultaId()
+    {
+        Console.Write("Código: ");
+        int Id = LerIntConsole();
+        GerenciadorDeProduto.ObterItemCodigo(Id);
+    }
+
 }

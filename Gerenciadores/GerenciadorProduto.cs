@@ -12,23 +12,34 @@ public class GerenciadorProduto
         this.BaseDeDados = BaseDeDados;
     }
     private BaseDados BaseDeDados { get; set; }
+//cadastro
     public void CadastraProduto(String Nome, double Valor, int Quantidade, String Fornecedor)
     {
-        //verifica se fornecedor existe
-        //funcao generica
+        GerenciadorFornecedor gerenciadorFornecedor = new GerenciadorFornecedor(BaseDeDados);
+        if (gerenciadorFornecedor.ProcuraFornecedor(Fornecedor))
+        {
+            Produto Produto = new Produto(Nome, Valor, Quantidade, gerenciadorFornecedor.ProcuraFornecedorTemporario(Fornecedor));
+            BaseDeDados.AdicionarItem(BaseDeDados.TodosProdutos, Produto);
+        }
     }
-//inteface - aqui modifica direto
-    public void AlteraProduto(String Nome) // revisar
+//alteracao
+    public void AlteraProduto(String Nome)
     {
-        
+
+    }
+//exclusao
+    public void ExcluiProduto(String Nome)
+    {
+
     }
     public void ExcluiProduto(int Id)
     {
 
     }
+//procura
     public void ObterItemCodigo(int Id)
     {
-        
+
     }
     public void ObterItemNome(String Nome)
     {

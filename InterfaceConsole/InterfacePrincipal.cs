@@ -21,7 +21,7 @@ public class InterfacePrincipal : GerenciadorEntradasSaidas
             Console.WriteLine("1 - Fazer login");
             Console.WriteLine("2 - Cadastrar novo usuário");
             Console.WriteLine("0 - Sair");
-            do //acho que isso vai no gerenciadorUsuario, aqui é só pegar valor, quem faz testes é o gerenciador, depois modifico
+            do
             {
                 Opcao = LerIntConsole();
                 if (Opcao == 1)
