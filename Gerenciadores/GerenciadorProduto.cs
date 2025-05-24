@@ -30,19 +30,46 @@ public class GerenciadorProduto
 //exclusao
     public void ExcluiProduto(String Nome)
     {
-
+        Produto Produto = ObterItemNome(Nome);
+        if (Produto != null)
+        {
+            BaseDeDados.RemoverItem(BaseDeDados.TodosProdutos, Produto);
+        }
+        else
+        {
+            //item nao existe
+        }
     }
     public void ExcluiProduto(int Id)
     {
-
+        Produto Produto = ObterItemId(Id);
+        if (Produto != null)
+        {
+            BaseDeDados.RemoverItem(BaseDeDados.TodosProdutos, Produto);
+        }
+        else
+        {
+            //item nao existe
+        }
     }
-//procura
-    public void ObterItemCodigo(int Id)
+    
+//retorna item do vetor, se encontrar
+    public Produto ObterItemId(int Id)
     {
-
+        int i = BaseDeDados.ProcuraItemPorId(BaseDeDados.TodosProdutos, Id);
+        if (i != -1)
+        {
+            return BaseDeDados.TodosProdutos[i];
+        }
+        return null;
     }
-    public void ObterItemNome(String Nome)
+    public Produto ObterItemNome(String Nome)
     {
-
+        int i = BaseDeDados.ProcuraItemExpecificoPorNome(BaseDeDados.TodosProdutos, Nome);
+        if (i != -1)
+        {
+            return BaseDeDados.TodosProdutos[i];
+        }
+        return null;
     }
 }

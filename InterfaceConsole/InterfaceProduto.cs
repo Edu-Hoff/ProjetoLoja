@@ -99,16 +99,17 @@ public class InterfaceProduto : GerenciadorEntradasSaidas
     {
 
     }
+//alterar funcoes abaixo
     public void ConsultaNome()
     {
         String Nome = LerString("Nome: ");
-        GerenciadorDeProduto.ObterItemNome(Nome);
+        Produto Produto = GerenciadorDeProduto.ObterItemNome(Nome);
     }
     public void ConsultaId()
     {
         Console.Write("Código: ");
         int Id = LerIntConsole();
-        GerenciadorDeProduto.ObterItemCodigo(Id);
+        Produto Produto = GerenciadorDeProduto.ObterItemId(Id);
     }
 
 }
