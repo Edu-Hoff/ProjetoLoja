@@ -23,7 +23,6 @@ public class InterfaceFornecedor : GerenciadorEntradasSaidas
             Console.WriteLine("3 - Remover fornecedor");
             Console.WriteLine("4 - Consultar fornecedor");
             Console.WriteLine("0 - Voltar");
-            Console.Write("Escolha: \n");
             Opcao = LerIntConsole();
             switch (Opcao)
             {
@@ -43,13 +42,13 @@ public class InterfaceFornecedor : GerenciadorEntradasSaidas
                     break;
                 default:
                     //exception
-                    LimparTela("Opcao Invalida",ConsoleColor.Red);
+                    LimparTela("Opção Invalida", ConsoleColor.DarkRed);
                     break;
             }
         } while (Opcao != 0);
     }
 
-    public void Cadastrar()
+    private void Cadastrar()
     {
         LimparTela("Cadastro de Fornecedor");
         Console.WriteLine("Digite \"0\"  no nome para cancelar");
@@ -72,10 +71,10 @@ public class InterfaceFornecedor : GerenciadorEntradasSaidas
         LimparTela("Cadastro Realizado",ConsoleColor.Green);    
     }
 
-    public void MenuAltera()
+    private void MenuAltera()
     {
         int ind;
-        LimparTela("Alteração de Fornecedor");
+        LimparTela("Edição de Fornecedor");
         Console.WriteLine("1 - Informar ID atual");
         Console.WriteLine("2 - Informar Nome atual");
         Console.WriteLine("≠ - Cancelar");
@@ -100,12 +99,17 @@ public class InterfaceFornecedor : GerenciadorEntradasSaidas
                 LimparTela("Fornecedor Não Encontrado",ConsoleColor.Red);
         }
         else
-            LimparTela("Alteração Cancelada",ConsoleColor.Blue);
+            LimparTela("Edição Cancelada",ConsoleColor.Blue);
     }
 
-    public void MenuExclui()
+    private void MenuExclui()
     {
         LimparTela("Remoção de Fornecedor");
+        if (LerIntConsole("Digite 1 se quiser a lista atual de fornecedores: ") == 1)
+        {
+            EscreveVetor(GerenciadorDeFornecedor.BaseDeDados.TodosFornecedores);
+            Console.WriteLine("------------------------------");
+        }
         Console.WriteLine("1 - Informar ID");
         Console.WriteLine("2 - Informar Nome");
         Console.WriteLine("≠ - Cancelar");
@@ -128,7 +132,7 @@ public class InterfaceFornecedor : GerenciadorEntradasSaidas
             LimparTela("Remoção Cancelada",ConsoleColor.Blue);
     }
 
-    public void MenuConsulta()
+    private void MenuConsulta()
     {
         int ind;
         LimparTela("Consulta de Fornecedor");

@@ -5,7 +5,12 @@ namespace InterfaceConsole;
 
 public class InterfaceTransportadora : GerenciadorEntradasSaidas
 {
-    public void MenuTransportadoras(GerenciadorTransportadora GerT)
+    public InterfaceTransportadora(GerenciadorTransportadora GerenciadorDeTransportadora)
+    {
+        this.GerenciadorDeTransportadora = GerenciadorDeTransportadora;
+    }
+    public GerenciadorTransportadora GerenciadorDeTransportadora;
+    public void MenuTransportadoras()
     {
         int Opcao;
 
@@ -34,8 +39,11 @@ public class InterfaceTransportadora : GerenciadorEntradasSaidas
                 case 4:
 
                     break;
+                case 0:
+                    break;
                 default:
                     //exception
+                    LimparTela("Opção Invalida", ConsoleColor.DarkRed);
                     break;
             }
 

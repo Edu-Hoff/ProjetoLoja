@@ -28,17 +28,17 @@ public class InterfacePrincipal : GerenciadorEntradasSaidas
                 {
                     String Nome = LerString("Informe seu username: ");
                     String Senha = LerString("Informe sua senha: ");
-                    Usuario? user = GerenciadorDeLoja.GerenciadorDeUsuario.FazerLogin(Nome, Senha);
-                    if (user != null)
+                    Usuario? User = GerenciadorDeLoja.GerenciadorDeUsuario.FazerLogin(Nome, Senha);
+                    if (User != null)
                     {
-                        LimparTela($"Seja Bem-vindo(a) {user.Nome}",ConsoleColor.Cyan);
-                        if (user.Admin)
+                        LimparTela($"Seja Bem-vindo(a) {User.Nome}",ConsoleColor.Cyan);
+                        if (User.Admin)
                         {
-                            MenuAdmin(user);
+                            MenuAdmin(User);
                         }
                         else
                         {
-                            MenuCliente(user);
+                            MenuCliente(User);
                         }
                     }
                 }
@@ -70,9 +70,9 @@ public class InterfacePrincipal : GerenciadorEntradasSaidas
         do
         {
             Console.WriteLine("-------Operações-------");
-            Console.WriteLine("1 - Fornecedor");
+            Console.WriteLine("1 - Usuario");
             Console.WriteLine("2 - Produto");
-            Console.WriteLine("3 - Usuario");
+            Console.WriteLine("3 - Fornecedor");
             Console.WriteLine("4 - Transportadora");
             Console.WriteLine("0 - Sair");
             Opcao = LerIntConsole();
@@ -81,34 +81,36 @@ public class InterfacePrincipal : GerenciadorEntradasSaidas
                 case 1:
                     {
                         Console.Clear();
-                        InterfaceFornecedor InterfaceDoFornecedor = new InterfaceFornecedor(GerenciadorDeLoja.GerenciadorDeFornecedor);
-                        InterfaceDoFornecedor.MenuFornecedores();
+                        InterfaceUsuario InterfaceDoUsuario = new InterfaceUsuario(GerenciadorDeLoja.GerenciadorDeUsuario);
+                        InterfaceDoUsuario.MenuUsuarios(user);
                         break;
                     }
                 case 2:
                     {
                         Console.Clear();
-                        InterfaceProduto InterfaceDoProduto = new InterfaceProduto();
-                        InterfaceDoProduto.MenuProdutos(GerenciadorDeLoja.GerenciadorDeProduto);
+                        InterfaceProduto InterfaceDoProduto = new InterfaceProduto(GerenciadorDeLoja.GerenciadorDeProduto);
+                        InterfaceDoProduto.MenuProdutos();
                         break;
                     }
                 case 3:
                     {
                         Console.Clear();
-                        InterfaceUsuario InterfaceDoUsuario = new InterfaceUsuario();
-                        InterfaceDoUsuario.MenuUsuarios(GerenciadorDeLoja.GerenciadorDeUsuario);
+                        InterfaceFornecedor InterfaceDoFornecedor = new InterfaceFornecedor(GerenciadorDeLoja.GerenciadorDeFornecedor);
+                        InterfaceDoFornecedor.MenuFornecedores();
                         break;
                     }
                 case 4:
                     {
                         Console.Clear();
-                        InterfaceTransportadora InterfaceDaTranportadora = new InterfaceTransportadora();
-                        InterfaceDaTranportadora.MenuTransportadoras(GerenciadorDeLoja.GerenciadorDeTransportadora);
+                        InterfaceTransportadora InterfaceDaTranportadora = new InterfaceTransportadora(GerenciadorDeLoja.GerenciadorDeTransportadora);
+                        InterfaceDaTranportadora.MenuTransportadoras();
                         break;
                     }
+                case 0:
+                    break;
                 default:
                     //exception
-                    LimparTela();
+                    LimparTela("Opção Invalida", ConsoleColor.DarkRed);
                     break;
             }
         } while (Opcao != 0);

@@ -7,7 +7,13 @@ namespace InterfaceConsole;
 
 public class InterfaceProduto : GerenciadorEntradasSaidas
 {
-    public void MenuProdutos(GerenciadorProduto GerenciadorProduto)
+    public InterfaceProduto(GerenciadorProduto GerenciadorDeProduto)
+    {
+        this.GerenciadorDeProduto = GerenciadorDeProduto;
+    }
+
+    public GerenciadorProduto GerenciadorDeProduto;
+    public void MenuProdutos()
     {
         int Op;
 
@@ -32,7 +38,7 @@ public class InterfaceProduto : GerenciadorEntradasSaidas
                     Console.Write("Quantidade em estoque: ");
                     int Quantidade = LerIntConsole();
                     String Fornecedor = LerString("Fornecedor do produto: ");
-                    GerenciadorProduto.CadastraProduto(Nome, Valor, Quantidade, Fornecedor);
+                    GerenciadorDeProduto.CadastraProduto(Nome, Valor, Quantidade, Fornecedor);
                     break;
                 case 2:
                     //add
@@ -40,7 +46,7 @@ public class InterfaceProduto : GerenciadorEntradasSaidas
                 case 3:
                     Console.Write("Id do item: ");
                     int Id = LerIntConsole();
-                    GerenciadorProduto.ExcluiProduto(Id);
+                    GerenciadorDeProduto.ExcluiProduto(Id);
                     //verificar se esta em algum fornecedor, chamar funcao excluir p. fornecedor tb
                     break;
                 case 4:
@@ -50,20 +56,23 @@ public class InterfaceProduto : GerenciadorEntradasSaidas
                     {
                         Console.Write("Código: ");
                         Id = LerIntConsole();
-                        GerenciadorProduto.ObterItemCodigo(Id);
+                        GerenciadorDeProduto.ObterItemCodigo(Id);
                     }
                     else if (Op == 2)
                     {
                         Nome = LerString("Nome: ");
-                        GerenciadorProduto.ObterItemNome(Nome);
+                        GerenciadorDeProduto.ObterItemNome(Nome);
                     }
                     else
                     {
                         //exception    
                     }
                     break;
+                case 0:
+                    break;
                 default:
                     //exception
+                    LimparTela("Opção Invalida", ConsoleColor.DarkRed);
                     break;
             }
 
