@@ -25,5 +25,4 @@ public class Produto : ObjetoComNome
     {
         return $"Quantidade: {Quantidade} - Fornecido por: {Fornecedor.Id} - {Fornecedor.Nome}";
     }
-    //obter descrição ou overrride do ToString
 }

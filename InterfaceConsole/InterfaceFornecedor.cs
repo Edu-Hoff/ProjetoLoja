@@ -91,7 +91,7 @@ public class InterfaceFornecedor : GerenciadorEntradasSaidas
             else
                 LimparTela("Fornecedor Não Encontrado", ConsoleColor.Red);
         }
-        else if (op == 2)
+        else if (op == 2) //pq aqui exclui o fornecedor?
         {
             if (GerenciadorDeFornecedor.ExcluiFornecedor(LerString("Informe o nome cadastrado: ")))
                 LimparTela("Fornecedor Removido",ConsoleColor.Green);

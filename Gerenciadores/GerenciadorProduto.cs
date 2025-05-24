@@ -11,8 +11,8 @@ public class GerenciadorProduto
     {
         this.BaseDeDados = BaseDeDados;
     }
-    private BaseDados BaseDeDados { get; set; }
-//cadastro
+    public BaseDados BaseDeDados { get; set; }
+    //cadastro
     public void CadastraProduto(String Nome, double Valor, int Quantidade, String Fornecedor)
     {
         GerenciadorFornecedor gerenciadorFornecedor = new GerenciadorFornecedor(BaseDeDados);
@@ -22,54 +22,52 @@ public class GerenciadorProduto
             BaseDeDados.AdicionarItem(BaseDeDados.TodosProdutos, Produto);
         }
     }
-//alteracao
-    public void AlteraProduto(String Nome)
+    //alteracao
+    public void AlteraProduto(int indice, String Nome, double Valor, int Quantidade, String Fornecedor)
     {
+        GerenciadorFornecedor gerenciadorFornecedor = new GerenciadorFornecedor(BaseDeDados);
+        if (gerenciadorFornecedor.ProcuraFornecedor(Fornecedor))
+        {
+            Produto Produto = new Produto(Nome, Valor, Quantidade, gerenciadorFornecedor.ProcuraFornecedorTemporario(Fornecedor));
+            BaseDeDados.TodosProdutos[indice] = Produto; 
+        }
+    }
+    //exclusao
+    public bool ExcluiProduto(int Id)
+    {
+        int indice = BaseDeDados.ProcuraItemPorId(BaseDeDados.TodosProdutos, Id);
+        if (indice != -1)
+        {
+            BaseDeDados.TodosProdutos = BaseDeDados.RemoverItem(BaseDeDados.TodosProdutos, BaseDeDados.TodosProdutos[indice]);
+            return true;
+        }
+        return false;
+    }
 
-    }
-//exclusao
-    public void ExcluiProduto(String Nome)
+    public bool ExcluiProduto(String Nome)
     {
-        Produto Produto = ObterItemNome(Nome);
-        if (Produto != null)
+        int indice = BaseDeDados.ProcuraItemExpecificoPorNome(BaseDeDados.TodosProdutos, Nome);
+        if (indice != -1)
         {
-            BaseDeDados.RemoverItem(BaseDeDados.TodosProdutos, Produto);
+            BaseDeDados.TodosProdutos = BaseDeDados.RemoverItem(BaseDeDados.TodosProdutos, BaseDeDados.TodosProdutos[indice]);
+            return true;
         }
-        else
-        {
-            //item nao existe
-        }
+        return false;
     }
-    public void ExcluiProduto(int Id)
+
+    //retorna item do vetor, se encontrar
+    public bool ProcuraProduto(String Nome)
     {
-        Produto Produto = ObterItemId(Id);
-        if (Produto != null)
-        {
-            BaseDeDados.RemoverItem(BaseDeDados.TodosProdutos, Produto);
-        }
-        else
-        {
-            //item nao existe
-        }
+        if (BaseDeDados.ProcuraItemExpecificoPorNome(BaseDeDados.TodosProdutos, Nome) == -1)
+            return false;
+        return true;
     }
+    public bool ProcuraProduto(int ID)
+    {
+        if (BaseDeDados.ProcuraItemPorId(BaseDeDados.TodosProdutos, ID) == -1)
+            return false;
+        return true;
+    }
+//funcao para alterar quantidade de um produto
     
-//retorna item do vetor, se encontrar
-    public Produto ObterItemId(int Id)
-    {
-        int i = BaseDeDados.ProcuraItemPorId(BaseDeDados.TodosProdutos, Id);
-        if (i != -1)
-        {
-            return BaseDeDados.TodosProdutos[i];
-        }
-        return null;
-    }
-    public Produto ObterItemNome(String Nome)
-    {
-        int i = BaseDeDados.ProcuraItemExpecificoPorNome(BaseDeDados.TodosProdutos, Nome);
-        if (i != -1)
-        {
-            return BaseDeDados.TodosProdutos[i];
-        }
-        return null;
-    }
 }

@@ -37,26 +37,10 @@ public class InterfaceProduto : GerenciadorEntradasSaidas
                     Alterar();
                     break;
                 case 3:
-                    Console.Write("Id do item: ");
-                    int Id = LerIntConsole();
-                    GerenciadorDeProduto.ExcluiProduto(Id);
-                    //verificar se esta em algum fornecedor, chamar funcao excluir p. fornecedor tb
+                    Excluir();
                     break;
                 case 4:
-                    Console.Write("1 - Consulta por nome\n2 - Consulta por código\nEscolha: ");
-                    Op = LerIntConsole();
-                    if (Op == 1)
-                    {
-                        ConsultaNome();
-                    }
-                    else if (Op == 2)
-                    {
-                        ConsultaId();
-                    }
-                    else
-                    {
-                        //exception    
-                    }
+                    Consultar();
                     break;
                 case 0:
                     break;
@@ -78,38 +62,159 @@ public class InterfaceProduto : GerenciadorEntradasSaidas
         String Fornecedor = LerString("Fornecedor do produto: ");
         GerenciadorDeProduto.CadastraProduto(Nome, Valor, Quantidade, Fornecedor);
     }
-    public void Alterar()
+    public void Alterar() //por enquanto está assim, mas qualquer coisa pode alterar
     {
-        Console.Write("Qual dos parâmetros do produto deseja modificar?\n1 - Nome\n2 - Valor\n3 - Quantidade em estoque\nEscolha: ");
-        int Op = LerIntConsole();
-        switch (Op)
+        LimparTela("Edição de produto");
+        Console.WriteLine("1 - Informar ID atual");
+        Console.WriteLine("2 - Informar Nome atual");
+        Console.WriteLine("≠ - Cancelar");
+        int op = LerIntConsole("Escolha: ");
+        int indice = -1;
+        if (op == 1)
         {
-            case 1:
-                String Nome = LerString("Novo nome: ");
-                break;
-            case 2:
-                Console.Write("Novo valor: ");
-                double Valor = LerDoubleConsole();
-                break;
-            case 3:
-                break;
+            int Id = LerIntConsole("Codigo do produto: ");
+            if (GerenciadorDeProduto.ProcuraProduto(Id))
+            {
+                indice = GerenciadorDeProduto.BaseDeDados.ProcuraItemPorId(GerenciadorDeProduto.BaseDeDados.TodosFornecedores, Id);
+                //GerenciadorDeProduto.AlteraProduto();
+            }
+            else
+                LimparTela("Produto Não Encontrado", ConsoleColor.Red);
+        }
+        else
+            if (op == 2)
+            {
+            String Nome = LerString("Nome do produto: ");
+            if (GerenciadorDeProduto.ProcuraProduto(Nome))
+            {
+                indice = GerenciadorDeProduto.BaseDeDados.ProcuraItemExpecificoPorNome(GerenciadorDeProduto.BaseDeDados.TodosFornecedores, Nome);
+                //GerenciadorDeProduto.AlteraProduto();
+            }
+            else
+                LimparTela("Produto Não Encontrado", ConsoleColor.Red);
+            }
+        if (indice != -1)
+        {
+            String Nome;
+            Double Valor;
+            int Quantidade;
+            String Fornecedor;
+            Console.WriteLine("Escolha se quer modificar cada um dos parâmetros a seguir:\n 1 - sim\n0 - não");
+            op = LerIntConsole("Nome: ");
+            if (op == 1)
+            {
+                Nome = LerString("Novo: ");
+            }
+            else
+            {
+                Nome = GerenciadorDeProduto.BaseDeDados.TodosProdutos[indice].Nome;
+            }
+
+            op = LerIntConsole("Valor: ");
+            if (op == 1)
+            {
+                Valor = LerDoubleConsole("Novo: ");
+            }
+            else
+            {
+                Valor = GerenciadorDeProduto.BaseDeDados.TodosProdutos[indice].Valor;
+            }
+
+            op = LerIntConsole("Quantidade: ");
+            if (op == 1)
+            {
+                Quantidade = LerIntConsole("Nova: ");
+            }
+            else
+            {
+                Quantidade = GerenciadorDeProduto.BaseDeDados.TodosProdutos[indice].Quantidade;
+            }
+            op = LerIntConsole("Fornecedor: ");
+            if (op == 1)
+            {
+                Fornecedor = LerString("Novo: ");
+            }
+            else
+            {
+                Fornecedor = GerenciadorDeProduto.BaseDeDados.TodosProdutos[indice].Fornecedor.Nome;
+            }
+            GerenciadorDeProduto.AlteraProduto(indice, Nome, Valor, Quantidade, Fornecedor);
         }
     }
     public void Excluir()
     {
-
+        LimparTela("Remoção de um produto");
+        if (LerIntConsole("Digite 1 se quiser a lista atual de produtos: ") == 1)
+        {
+            EscreveVetor(GerenciadorDeProduto.BaseDeDados.TodosProdutos);
+            Console.WriteLine("------------------------------");
+        }
+        Console.WriteLine("1 - Informar ID");
+        Console.WriteLine("2 - Informar Nome");
+        Console.WriteLine("≠ - Cancelar");
+        int op = LerIntConsole("Escolha: ");
+        if (op == 1)
+        {
+            if (GerenciadorDeProduto.ExcluiProduto(LerIntConsole("Informe o ID do produto: ")))
+                LimparTela("Fornecedor Removido",ConsoleColor.Green);
+            else
+                LimparTela("Fornecedor Não Encontrado",ConsoleColor.Red);
+        }
+        else if (op == 2)
+        {
+            if (GerenciadorDeProduto.ExcluiProduto(LerString("Informe o nome cadastrado: ")))
+                LimparTela("Fornecedor Removido",ConsoleColor.Green);
+            else
+                LimparTela("Fornecedor Não Encontrado",ConsoleColor.Red);
+        }
+        else
+        {
+            LimparTela("Consulta Cancelada",ConsoleColor.Blue);
+        }
     }
-//alterar funcoes abaixo
-    public void ConsultaNome()
+    private void Consultar()
     {
-        String Nome = LerString("Nome: ");
-        Produto Produto = GerenciadorDeProduto.ObterItemNome(Nome);
+        int indice;
+        LimparTela("Consulta de Fornecedor");
+        Console.WriteLine("1 - Informar ID");
+        Console.WriteLine("2 - Informar nome exato");
+        Console.WriteLine("3 - Informar parte do nome");
+        Console.WriteLine("≠ - Cancelar");
+        int op = LerIntConsole();
+        if (op == 1)
+        {
+            int Id = LerIntConsole("Informe o ID: ");
+            if (GerenciadorDeProduto.ProcuraProduto(Id))
+            {
+                indice = GerenciadorDeProduto.BaseDeDados.ProcuraItemPorId(GerenciadorDeProduto.BaseDeDados.TodosFornecedores, Id);
+                EscreveVetorComEndereco(GerenciadorDeProduto.BaseDeDados.TodosFornecedores, indice);
+            }
+            else
+                LimparTela("Fornecedor Não Encontrado", ConsoleColor.Red);
+        }
+        else if (op == 2)
+        {
+            String Nome = LerString("Informe o nome: ");
+            if (GerenciadorDeProduto.ProcuraProduto(Nome))
+            {
+                indice = GerenciadorDeProduto.BaseDeDados.ProcuraItemExpecificoPorNome(GerenciadorDeProduto.BaseDeDados.TodosFornecedores, Nome);
+                EscreveVetorComEndereco(GerenciadorDeProduto.BaseDeDados.TodosFornecedores, indice);
+            }
+            else
+                LimparTela("Fornecedor Não Encontrado", ConsoleColor.Red);
+        }
+        else if (op == 3)
+        {
+            String Nome = LerString("Informe o nome: ");
+            if (GerenciadorDeProduto.ProcuraProduto(Nome))
+            {
+                Fornecedor[] vet = GerenciadorDeProduto.BaseDeDados.ProcuraItensComNome(GerenciadorDeProduto.BaseDeDados.TodosFornecedores, Nome);
+                EscreveVetorComEndereco(vet);
+            }
+            else
+                LimparTela("Fornecedor Não Encontrado", ConsoleColor.Red);
+        }
+        else
+            LimparTela("Consulta Cancelada",ConsoleColor.Blue);
     }
-    public void ConsultaId()
-    {
-        Console.Write("Código: ");
-        int Id = LerIntConsole();
-        Produto Produto = GerenciadorDeProduto.ObterItemId(Id);
-    }
-
 }
