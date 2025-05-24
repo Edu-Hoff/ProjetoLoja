@@ -49,12 +49,24 @@ public class GerenciadorUsuario : GerenciamentoVetor
         }
         return null;
     }
+    public bool ProcuraUsuario(String Nome)
+    {
+        if (BaseDeDados.ProcuraItemExpecificoPorNome(BaseDeDados.TodosUsuarios, Nome) == -1)
+            return false;
+        return true;
+    }
+    public bool ProcuraUsuario(int ID)
+    {
+        if (BaseDeDados.ProcuraItemPorId(BaseDeDados.TodosUsuarios, ID) == -1)
+            return false;
+        return true;
+    }
     public bool FazerCadastro(String Nome, String Senha, String Admin)
     {
         int Indice = BaseDeDados.ProcuraItemExpecificoPorNome(BaseDeDados.TodosUsuarios, Nome);
         if (Indice == -1)
         {
-           BaseDeDados.TodosUsuarios = BaseDeDados.AdicionarItem(BaseDeDados.TodosUsuarios, new Usuario(Nome, HashSenha(Senha), Admin == "S" || Admin == "s" ? true : false));
+            BaseDeDados.TodosUsuarios = BaseDeDados.AdicionarItem(BaseDeDados.TodosUsuarios, new Usuario(Nome, HashSenha(Senha), Admin == "S" || Admin == "s" ? true : false));
             return true;
         }
         //else exception

@@ -1,6 +1,7 @@
 using System;
 using Entidades;
 using Gerenciadores;
+using Microsoft.VisualBasic;
 
 namespace InterfaceConsole;
 
@@ -21,7 +22,7 @@ public class InterfaceUsuario : GerenciadorEntradasSaidas
             Console.WriteLine("-------Gerenciar usuarios-------");
             Console.WriteLine("1 - Editar meu usuário");
             Console.WriteLine("2 - Excluir meu usuário");
-            Console.WriteLine("3 - Cadastrar usuário");
+            Console.WriteLine("3 - Cadastrar novo usuário");
             Console.WriteLine("4 - Editar usuários");
             Console.WriteLine("5 - Excluir usuário");
             Console.WriteLine("6 - Consultar usuário");
@@ -36,7 +37,7 @@ public class InterfaceUsuario : GerenciadorEntradasSaidas
                     AlterarUsername(User);
                     break;
                 case 3:
-
+                    CadastrarUsuario();
                     break;
                 case 4:
 
@@ -60,28 +61,27 @@ public class InterfaceUsuario : GerenciadorEntradasSaidas
     private void CadastrarUsuario()
     {
         LimparTela("Cadastro de Usuario");
-        Console.WriteLine("Digite \"0\"  no nome para cancelar");
-        String Nome = LerString("Informe o nome: ");
+        Console.WriteLine("Digite \"0\"  no username para cancelar");
+        String Nome = LerString("Informe o username: ");
         if (Nome == "0")
         {
             LimparTela("Cadastro Cancelado", ConsoleColor.Blue);
             return;
         }
-        if (GerenciadorDeUsuario.(Nome))
+        if (GerenciadorDeUsuario.ProcuraUsuario(Nome))
         {
-            LimparTela("Fornecedor já esta no sistema", ConsoleColor.Red);
+            LimparTela("Usuario já esta no sistema", ConsoleColor.Red);
             return;
         }
-        String Nome = LerString("Informe o username: ");
         String Senha = LerString("Informe a senha: ");
         String Admin = LerString("Administrador S/N: ");
         Console.Clear();
         if (GerenciadorDeUsuario.FazerCadastro(Nome, Senha, Admin))
         {
-            LimparTela("Cadastro Realizado",ConsoleColor.Green);
+            LimparTela("Cadastro Realizado", ConsoleColor.Green);
         }
         else
-            LimparTela("Cadastro Nao Realizado",ConsoleColor.Red);
+            LimparTela("Cadastro Nao Realizado", ConsoleColor.Red);
     }
 
     private void AlterarUsername(Usuario User)
@@ -109,5 +109,19 @@ public class InterfaceUsuario : GerenciadorEntradasSaidas
         }
         else
             LimparTela("Edição Cancelada", ConsoleColor.Blue);
+    }
+
+    private void ExcluirMeuUser()
+    {
+        
+    }
+
+    private bool Confirmacao(String msg)
+    {
+        Console.Write($"{msg}\nConfirmar? S/N: ");
+        String temp = LerStringAlterar("");
+        if (temp == "S" || temp == "s")
+            return true;
+        return false;
     }
 }
