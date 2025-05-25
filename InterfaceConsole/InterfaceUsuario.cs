@@ -27,7 +27,8 @@ public class InterfaceUsuario : GerenciadorEntradasSaidas
             Console.WriteLine("5 - Excluir usuário");
             Console.WriteLine("6 - Consultar usuário");
             Console.WriteLine("0 - Voltar");
-            Opcao = LerIntConsole();
+
+            Opcao = LerIntConsole("Escolha: ");
             switch (Opcao)
             {
                 case 1:
@@ -70,7 +71,7 @@ public class InterfaceUsuario : GerenciadorEntradasSaidas
         }
         if (GerenciadorDeUsuario.ProcuraUsuario(Nome))
         {
-            LimparTela("Usuario já esta no sistema", ConsoleColor.Red);
+            LimparTela("Usuario já esta no sistema", ConsoleColor.DarkRed);
             return;
         }
         String Senha = LerString("Informe a senha: ");
@@ -81,7 +82,7 @@ public class InterfaceUsuario : GerenciadorEntradasSaidas
             LimparTela("Cadastro Realizado", ConsoleColor.Green);
         }
         else
-            LimparTela("Cadastro Nao Realizado", ConsoleColor.Red);
+            LimparTela("Cadastro Nao Realizado", ConsoleColor.DarkRed);
     }
 
     private void AlterarUsuario(Usuario User)
@@ -148,9 +149,9 @@ public class InterfaceUsuario : GerenciadorEntradasSaidas
         int ind;
         LimparTela(msg);
         Console.WriteLine("1 - Informar ID");
-        Console.WriteLine("2 - Informar Nome");
+        Console.WriteLine("2 - Informar Nome atual");
         Console.WriteLine("≠ - Cancelar");
-        int op = LerIntConsole();
+        int op = LerIntConsole("Escolha: ");
         if (op == 1)
         {
             int ID;
@@ -188,7 +189,7 @@ public class InterfaceUsuario : GerenciadorEntradasSaidas
         Console.WriteLine("2 - Informar nome exato");
         Console.WriteLine("3 - Informar parte do nome");
         Console.WriteLine("≠ - Cancelar");
-        int op = LerIntConsole();
+        int op = LerIntConsole("Escolha: ");
         if (op == 1)
         {
             int ID;
@@ -223,7 +224,7 @@ public class InterfaceUsuario : GerenciadorEntradasSaidas
                 EscreveVetor(vet);
             }
             else
-                LimparTela("Usuario Não Encontrado", ConsoleColor.DarkRed);
+                LimparTela("Nenhum Usuario Encontrado", ConsoleColor.DarkRed);
         }
         else
             LimparTela("Consulta Cancelada",ConsoleColor.Blue);
@@ -231,8 +232,7 @@ public class InterfaceUsuario : GerenciadorEntradasSaidas
 
     public bool Confirmacao(String msg)
     {
-        Console.Write($"{msg}\nConfirmar? S/N: ");
-        String temp = LerStringAlterar("");
+        String temp = LerStringAlterar($"{msg}\nConfirmar? S/N: ");
         if (temp == "S" || temp == "s")
             return true;
         return false;

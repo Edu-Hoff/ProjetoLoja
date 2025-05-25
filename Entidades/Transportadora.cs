@@ -9,7 +9,7 @@ public class Transportadora : ObjetoComNome
         this.Nome = Nome;
         this.ValorPorKM = ValorPorKM;
     }
-    double ValorPorKM { get; set; }
+    public double ValorPorKM { get; set; }
 
     public override string ToString()
     {

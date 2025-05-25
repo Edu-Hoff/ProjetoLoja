@@ -12,14 +12,16 @@ public class GerenciadorTransportadora
     }
     public BaseDados BaseDeDados { get; set; }
 
-       public void CadastraTransportadora(String Nome, Double ValorPorKM)
+    public void CadastraTransportadora(String Nome, Double ValorPorKM)
     {
         Transportadora Transportadora = new Transportadora(Nome, ValorPorKM);
         BaseDeDados.TodasTransportadoras = BaseDeDados.AdicionarItem(BaseDeDados.TodasTransportadoras, Transportadora);
     }
-    public void AlteraTransportadora(int Indice)
+    public void AlteraTransportadora(int Indice, Transportadora Nova)
     {
-        //alterar
+        Transportadora temp = BaseDeDados.TodasTransportadoras[Indice];
+        if (Nova.Nome != "") temp.Nome = Nova.Nome;
+        if( Nova.ValorPorKM != -1) temp.ValorPorKM = Nova.ValorPorKM;
     }
     public bool ExcluiTransportadora(int Id)
     {

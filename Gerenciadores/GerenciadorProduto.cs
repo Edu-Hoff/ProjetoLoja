@@ -13,12 +13,12 @@ public class GerenciadorProduto
     }
     public BaseDados BaseDeDados { get; set; }
     //cadastro
-    public void CadastraProduto(String Nome, double Valor, int Quantidade, String Fornecedor)
+    public void CadastraProduto(String Nome, double Valor, int Quantidade, String NomeFornecedor)
     {
         GerenciadorFornecedor gerenciadorFornecedor = new GerenciadorFornecedor(BaseDeDados);
-        if (gerenciadorFornecedor.ProcuraFornecedor(Fornecedor))
+        if (gerenciadorFornecedor.ProcuraFornecedor(NomeFornecedor))
         {
-            Produto Produto = new Produto(Nome, Valor, Quantidade, gerenciadorFornecedor.ObtemFornecedor(Fornecedor));
+            Produto Produto = new Produto(Nome, Valor, Quantidade, gerenciadorFornecedor.ObtemFornecedor(NomeFornecedor));
             BaseDeDados.AdicionarItem(BaseDeDados.TodosProdutos, Produto);
         }
     }

@@ -23,7 +23,8 @@ public class InterfaceFornecedor : GerenciadorEntradasSaidas
             Console.WriteLine("3 - Remover fornecedor");
             Console.WriteLine("4 - Consultar fornecedor");
             Console.WriteLine("0 - Voltar");
-            Opcao = LerIntConsole();
+
+            Opcao = LerIntConsole("Escolha: ");
             switch (Opcao)
             {
                 case 1:
@@ -60,14 +61,13 @@ public class InterfaceFornecedor : GerenciadorEntradasSaidas
         }
         if (GerenciadorDeFornecedor.ProcuraFornecedor(Nome))
         {
-            LimparTela("Fornecedor já esta no sistema", ConsoleColor.Red);
+            LimparTela("Fornecedor já esta no sistema", ConsoleColor.DarkRed);
             return;
         }
         String Descricao = LerString("Informe a descrição: ");
         String Telefone = LerString("Informe o telefone: ");
         String Email = LerString("Informe o email: ");
-        Fornecedor Fornecedor = new Fornecedor(Nome, Descricao, Telefone, Email, LeEndereco());
-        GerenciadorDeFornecedor.CadastraFornecedor(Fornecedor);
+        GerenciadorDeFornecedor.CadastraFornecedor(new Fornecedor(Nome, Descricao, Telefone, Email, LeEndereco()));
         LimparTela("Cadastro Realizado",ConsoleColor.Green);    
     }
 
@@ -80,10 +80,10 @@ public class InterfaceFornecedor : GerenciadorEntradasSaidas
             EscreveVetor(GerenciadorDeFornecedor.BaseDeDados.TodosFornecedores);
             Console.WriteLine("------------------------------");
         }
-        Console.WriteLine("1 - Informar ID atual");
+        Console.WriteLine("1 - Informar ID");
         Console.WriteLine("2 - Informar Nome atual");
         Console.WriteLine("≠ - Cancelar");
-        int op = LerIntConsole();
+        int op = LerIntConsole("Escolha: ");
         if (op == 1)
         {
             int ID;
@@ -129,7 +129,7 @@ public class InterfaceFornecedor : GerenciadorEntradasSaidas
         Console.WriteLine("1 - Informar ID");
         Console.WriteLine("2 - Informar Nome");
         Console.WriteLine("≠ - Cancelar");
-        int op = LerIntConsole();
+        int op = LerIntConsole("Escolha: ");
         if (op == 1)
         {
             if (GerenciadorDeFornecedor.ExcluiFornecedor(LerIntConsole("Informe o ID do fornecedor")))
@@ -156,7 +156,7 @@ public class InterfaceFornecedor : GerenciadorEntradasSaidas
         Console.WriteLine("2 - Informar nome exato");
         Console.WriteLine("3 - Informar parte do nome");
         Console.WriteLine("≠ - Cancelar");
-        int op = LerIntConsole();
+        int op = LerIntConsole("Escolha: ");
         if (op == 1)
         {
             int ID;
@@ -191,7 +191,7 @@ public class InterfaceFornecedor : GerenciadorEntradasSaidas
                 EscreveVetorComEndereco(vet);
             }
             else
-                LimparTela("Fornecedor Não Encontrado", ConsoleColor.DarkRed);
+                LimparTela("Nenhum Fornecedor Encontrado", ConsoleColor.DarkRed);
         }
         else
             LimparTela("Consulta Cancelada",ConsoleColor.Blue);

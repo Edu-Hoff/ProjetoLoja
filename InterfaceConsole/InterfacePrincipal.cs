@@ -13,17 +13,18 @@ public class InterfacePrincipal : GerenciadorEntradasSaidas
     }
 
 
-    public void MenuInicial()
+    public void MenuInicial(String NomeLoja)
     {
         while (true)
         {
             int Opcao;
+            LimparTela(NomeLoja);
             Console.WriteLine("1 - Fazer login");
             Console.WriteLine("2 - Cadastrar novo usuário");
             Console.WriteLine("0 - Sair");
             do
             {
-                Opcao = LerIntConsole();
+                Opcao = LerIntConsole("Escolha: ");
                 if (Opcao == 1)
                 {
                     String Nome = LerString("Informe seu username: ");
@@ -53,7 +54,7 @@ public class InterfacePrincipal : GerenciadorEntradasSaidas
                         LimparTela("Cadastro Realizado",ConsoleColor.Green);
                     }
                     else
-                        LimparTela("Cadastro Nao Realizado",ConsoleColor.Red);
+                        LimparTela("Cadastro Nao Realizado",ConsoleColor.DarkRed);
                 }
                 //exception op invalida
             } while (Opcao != 1 && Opcao != 2 && Opcao != 0);
@@ -75,7 +76,8 @@ public class InterfacePrincipal : GerenciadorEntradasSaidas
             Console.WriteLine("3 - Fornecedor");
             Console.WriteLine("4 - Transportadora");
             Console.WriteLine("0 - Sair");
-            Opcao = LerIntConsole();
+            
+            Opcao = LerIntConsole("Escolha: ");
             switch (Opcao)
             {
                 case 1:
@@ -83,6 +85,7 @@ public class InterfacePrincipal : GerenciadorEntradasSaidas
                         Console.Clear();
                         InterfaceUsuario InterfaceDoUsuario = new InterfaceUsuario(GerenciadorDeLoja.GerenciadorDeUsuario);
                         InterfaceDoUsuario.MenuUsuarios(user);
+                        LimparTela("Menu Principal", ConsoleColor.Blue);
                         break;
                     }
                 case 2:

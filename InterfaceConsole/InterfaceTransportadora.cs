@@ -20,12 +20,11 @@ public class InterfaceTransportadora : GerenciadorEntradasSaidas
             Console.WriteLine("-------Gerenciar transportadoras-------");
             Console.WriteLine("1 - Cadastrar transportadora");
             Console.WriteLine("2 - Alterar transportadora");
-            Console.WriteLine("3 - Excluir transportadora");
+            Console.WriteLine("3 - Remover transportadora");
             Console.WriteLine("4 - Consultar transportadora");
             Console.WriteLine("0 - Voltar");
-            Console.Write("Escolha: \n");
 
-            Opcao = LerIntConsole();
+            Opcao = LerIntConsole("Escolha: ");
             switch (Opcao)
             {
                 case 1:
@@ -41,7 +40,6 @@ public class InterfaceTransportadora : GerenciadorEntradasSaidas
                     MenuConsulta();
                     break;
                 case 0:
-                    LimparTela("Voltando...", ConsoleColor.DarkYellow);
                     break;
                 default:
                     //exception
@@ -64,21 +62,70 @@ public class InterfaceTransportadora : GerenciadorEntradasSaidas
         }
         if (GerenciadorDeTransportadora.ProcuraTransportadora(Nome))
         {
-            LimparTela("Produto já esta cadastrado no sistema", ConsoleColor.Red);
+            LimparTela("Transportadora já esta cadastrado no sistema", ConsoleColor.DarkRed);
             return;
         }
         double ValorPorKM = LerDoubleConsole("Valor por quilômetro: ");
         GerenciadorDeTransportadora.CadastraTransportadora(Nome, ValorPorKM);
+        LimparTela("Cadastro Realizado",ConsoleColor.Green); 
     }
 
     public void MenuAltera()
     {
-        //add
+        int ind;
+        LimparTela("Edição de Transportadora");
+        if (LerIntConsole("Digite 1 se quiser a lista atual de fornecedores: ") == 1)
+        {
+            EscreveVetor(GerenciadorDeTransportadora.BaseDeDados.TodasTransportadoras);
+            Console.WriteLine("------------------------------");
+        }
+        Console.WriteLine("1 - Informar ID");
+        Console.WriteLine("2 - Informar Nome atual");
+        Console.WriteLine("≠ - Cancelar");
+        int op = LerIntConsole("Escolha: ");
+        if (op == 1)
+        {
+            int ID;
+            ID = LerIntConsole("Informe o ID da transportadora: ");
+            if (GerenciadorDeTransportadora.ProcuraTransportadora(ID))
+            {
+                ind = GerenciadorDeTransportadora.BaseDeDados.ProcuraItemPorId(GerenciadorDeTransportadora.BaseDeDados.TodasTransportadoras, ID);
+                String Nome = ""; double ValorPorKM = -1;
+                String Resposta = LerStringAlterar("Deseja alterar o nome? S/N: ");
+                if (Resposta == "S" || Resposta == "s") Nome = LerString("Informe o novo nome: ");
+                Resposta = LerStringAlterar("Deseja alterar o valor por KM? S/N: ");
+                if (Resposta == "S" || Resposta == "s") ValorPorKM = LerDoubleConsole("Informe o novo valor por KM: ");
+                Transportadora Transportadora = new Transportadora(Nome,ValorPorKM);
+                GerenciadorDeTransportadora.AlteraTransportadora(ind, Transportadora);
+            }
+            else
+                LimparTela("Transportadora Não Encontrado", ConsoleColor.DarkRed);
+        }
+        else if (op == 2)
+        {
+            String Nome;
+            Nome = LerString("Informe o nome da transportadora: ");
+            if (GerenciadorDeTransportadora.ProcuraTransportadora(Nome))
+            {
+                ind = GerenciadorDeTransportadora.BaseDeDados.ProcuraItemExpecificoPorNome(GerenciadorDeTransportadora.BaseDeDados.TodasTransportadoras, Nome);
+                String NomeNovo = ""; double ValorPorKM = -1;
+                String Resposta = LerStringAlterar("Deseja alterar o nome? S/N: ");
+                if (Resposta == "S" || Resposta == "s") NomeNovo = LerString("Informe o novo nome: ");
+                Resposta = LerStringAlterar("Deseja alterar o valor por KM? S/N: ");
+                if (Resposta == "S" || Resposta == "s") ValorPorKM = LerDoubleConsole("Informe o novo valor por KM: ");
+                Transportadora Transportadora = new Transportadora(NomeNovo,ValorPorKM);
+                GerenciadorDeTransportadora.AlteraTransportadora(ind, Transportadora);
+            }
+            else
+                LimparTela("Transportadora Não Encontrado", ConsoleColor.DarkRed);
+        }
+        else
+            LimparTela("Edição Cancelada",ConsoleColor.Blue);
     }
 
     public void MenuExclui()
     {
-        LimparTela("Remoção de uma transportadora");
+        LimparTela("Remoção de transportadora");
         if (LerIntConsole("Digite 1 se quiser a lista atual de transportadoras: ") == 1)
         {
             EscreveVetor(GerenciadorDeTransportadora.BaseDeDados.TodasTransportadoras);
@@ -93,18 +140,18 @@ public class InterfaceTransportadora : GerenciadorEntradasSaidas
             if (GerenciadorDeTransportadora.ExcluiTransportadora(LerIntConsole("Informe o ID da transportadora: ")))
                 LimparTela("Transportadora Removida",ConsoleColor.Green);
             else
-                LimparTela("Transportadora não Encontrada",ConsoleColor.Red);
+                LimparTela("Transportadora não Encontrada",ConsoleColor.DarkRed);
         }
         else if (op == 2)
         {
             if (GerenciadorDeTransportadora.ExcluiTransportadora(LerString("Informe o nome cadastrado: ")))
                 LimparTela("Transportadora Removida",ConsoleColor.Green);
             else
-                LimparTela("Transportadora Não Encontrada",ConsoleColor.Red);
+                LimparTela("Transportadora Não Encontrada",ConsoleColor.DarkRed);
         }
         else
         {
-            LimparTela("Consulta Cancelada",ConsoleColor.Blue);
+            LimparTela("Remoção Cancelada",ConsoleColor.Blue);
         }
     }
     public void MenuConsulta()
@@ -115,7 +162,7 @@ public class InterfaceTransportadora : GerenciadorEntradasSaidas
         Console.WriteLine("2 - Informar nome exato");
         Console.WriteLine("3 - Informar parte do nome");
         Console.WriteLine("≠ - Cancelar");
-        int op = LerIntConsole();
+        int op = LerIntConsole("Escolha: ");
         if (op == 1)
         {
             int Id = LerIntConsole("Informe o ID: ");
@@ -125,7 +172,7 @@ public class InterfaceTransportadora : GerenciadorEntradasSaidas
                 EscreveVetor(GerenciadorDeTransportadora.BaseDeDados.TodasTransportadoras, indice);
             }
             else
-                LimparTela("Transportadora Não Encontrada", ConsoleColor.Red);
+                LimparTela("Transportadora Não Encontrada", ConsoleColor.DarkRed);
         }
         else if (op == 2)
         {
@@ -136,7 +183,7 @@ public class InterfaceTransportadora : GerenciadorEntradasSaidas
                 EscreveVetor(GerenciadorDeTransportadora.BaseDeDados.TodasTransportadoras, indice);
             }
             else
-                LimparTela("Transportadora Não Encontrada", ConsoleColor.Red);
+                LimparTela("Transportadora Não Encontrada", ConsoleColor.DarkRed);
         }
         else if (op == 3)
         {
@@ -147,7 +194,7 @@ public class InterfaceTransportadora : GerenciadorEntradasSaidas
                 EscreveVetor(vet);
             }
             else
-                LimparTela("Transportadora Não Encontrada", ConsoleColor.Red);
+                LimparTela("Nenhuma Transportadora Encontrada", ConsoleColor.DarkRed);
         }
         else
             LimparTela("Consulta Cancelada",ConsoleColor.Blue);

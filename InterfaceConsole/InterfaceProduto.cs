@@ -25,9 +25,8 @@ public class InterfaceProduto : GerenciadorEntradasSaidas
             Console.WriteLine("3 - Excluir produto");
             Console.WriteLine("4 - Consultar produto");
             Console.WriteLine("0 - Voltar");
-            Console.Write("Escolha: \n");
 
-            Op = LerIntConsole();
+            Op = LerIntConsole("Escolha: ");
             switch (Op)
             {
                 case 1:
@@ -64,7 +63,7 @@ public class InterfaceProduto : GerenciadorEntradasSaidas
         }
         if (GerenciadorDeProduto.ProcuraProduto(Nome))
         {
-            LimparTela("Produto já esta cadastrado no sistema", ConsoleColor.Red);
+            LimparTela("Produto já esta cadastrado no sistema", ConsoleColor.DarkRed);
             return;
         }
         double Valor = LerDoubleConsole("Valor do produto: ");
@@ -75,7 +74,7 @@ public class InterfaceProduto : GerenciadorEntradasSaidas
     public void Alterar() //por enquanto está assim, mas qualquer coisa pode alterar
     {
         LimparTela("Edição de produto");
-        Console.WriteLine("1 - Informar ID atual");
+        Console.WriteLine("1 - Informar ID");
         Console.WriteLine("2 - Informar Nome atual");
         Console.WriteLine("≠ - Cancelar");
         int op = LerIntConsole("Escolha: ");
@@ -89,7 +88,7 @@ public class InterfaceProduto : GerenciadorEntradasSaidas
                 //GerenciadorDeProduto.AlteraProduto();
             }
             else
-                LimparTela("Produto Não Encontrado", ConsoleColor.Red);
+                LimparTela("Produto Não Encontrado", ConsoleColor.DarkRed);
         }
         else
             if (op == 2)
@@ -101,7 +100,7 @@ public class InterfaceProduto : GerenciadorEntradasSaidas
                 //GerenciadorDeProduto.AlteraProduto();
             }
             else
-                LimparTela("Produto Não Encontrado", ConsoleColor.Red);
+                LimparTela("Produto Não Encontrado", ConsoleColor.DarkRed);
             }
         if (indice != -1)
         {
@@ -168,14 +167,14 @@ public class InterfaceProduto : GerenciadorEntradasSaidas
             if (GerenciadorDeProduto.ExcluiProduto(LerIntConsole("Informe o ID do produto: ")))
                 LimparTela("Produto Removido",ConsoleColor.Green);
             else
-                LimparTela("Produto Não Encontrado",ConsoleColor.Red);
+                LimparTela("Produto Não Encontrado",ConsoleColor.DarkRed);
         }
         else if (op == 2)
         {
             if (GerenciadorDeProduto.ExcluiProduto(LerString("Informe o nome cadastrado: ")))
                 LimparTela("Produto Removido",ConsoleColor.Green);
             else
-                LimparTela("Produto Não Encontrado",ConsoleColor.Red);
+                LimparTela("Produto Não Encontrado",ConsoleColor.DarkRed);
         }
         else
         {
@@ -190,7 +189,7 @@ public class InterfaceProduto : GerenciadorEntradasSaidas
         Console.WriteLine("2 - Informar nome exato");
         Console.WriteLine("3 - Informar parte do nome");
         Console.WriteLine("≠ - Cancelar");
-        int op = LerIntConsole();
+        int op = LerIntConsole("Escolha: ");
         if (op == 1)
         {
             int Id = LerIntConsole("Informe o ID: ");
@@ -200,7 +199,7 @@ public class InterfaceProduto : GerenciadorEntradasSaidas
                 EscreveVetor(GerenciadorDeProduto.BaseDeDados.TodosProdutos, indice);
             }
             else
-                LimparTela("Produto Não Encontrado", ConsoleColor.Red);
+                LimparTela("Produto Não Encontrado", ConsoleColor.DarkRed);
         }
         else if (op == 2)
         {
@@ -211,7 +210,7 @@ public class InterfaceProduto : GerenciadorEntradasSaidas
                 EscreveVetor(GerenciadorDeProduto.BaseDeDados.TodosProdutos, indice);
             }
             else
-                LimparTela("Produto Não Encontrado", ConsoleColor.Red);
+                LimparTela("Produto Não Encontrado", ConsoleColor.DarkRed);
         }
         else if (op == 3)
         {
@@ -222,7 +221,7 @@ public class InterfaceProduto : GerenciadorEntradasSaidas
                 EscreveVetor(vet);
             }
             else
-                LimparTela("Produto Não Encontrado", ConsoleColor.Red);
+                LimparTela("Nenhum Produto Encontrado", ConsoleColor.DarkRed);
         }
         else
             LimparTela("Consulta Cancelada",ConsoleColor.Blue);
