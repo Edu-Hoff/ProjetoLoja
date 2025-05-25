@@ -6,15 +6,15 @@ using Microsoft.VisualBasic;
 
 namespace Gerenciadores;
 
-public class GerenciadorFornecedor : GerenciamentoVetor
+public class GerenciadorFornecedor 
 {
     public GerenciadorFornecedor (BaseDados BaseDeDados)
     {
         this.BaseDeDados = BaseDeDados;
     }
     public BaseDados BaseDeDados { get; set; }
-//preciso de uma funcao que retorne um fornecedor (para cadastrar produtos)
-    public Fornecedor ProcuraFornecedorTemporario(String Nome) //mudar nome
+
+    public Fornecedor ObtemFornecedor(String Nome)
     {
         int i = BaseDeDados.ProcuraItemExpecificoPorNome(BaseDeDados.TodosFornecedores, Nome);
         return BaseDeDados.TodosFornecedores[i];

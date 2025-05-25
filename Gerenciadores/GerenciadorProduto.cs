@@ -18,7 +18,7 @@ public class GerenciadorProduto
         GerenciadorFornecedor gerenciadorFornecedor = new GerenciadorFornecedor(BaseDeDados);
         if (gerenciadorFornecedor.ProcuraFornecedor(Fornecedor))
         {
-            Produto Produto = new Produto(Nome, Valor, Quantidade, gerenciadorFornecedor.ProcuraFornecedorTemporario(Fornecedor));
+            Produto Produto = new Produto(Nome, Valor, Quantidade, gerenciadorFornecedor.ObtemFornecedor(Fornecedor));
             BaseDeDados.AdicionarItem(BaseDeDados.TodosProdutos, Produto);
         }
     }
@@ -28,7 +28,7 @@ public class GerenciadorProduto
         GerenciadorFornecedor gerenciadorFornecedor = new GerenciadorFornecedor(BaseDeDados);
         if (gerenciadorFornecedor.ProcuraFornecedor(Fornecedor))
         {
-            Produto Produto = new Produto(Nome, Valor, Quantidade, gerenciadorFornecedor.ProcuraFornecedorTemporario(Fornecedor));
+            Produto Produto = new Produto(Nome, Valor, Quantidade, gerenciadorFornecedor.ObtemFornecedor(Fornecedor));
             BaseDeDados.TodosProdutos[indice] = Produto; 
         }
     }
