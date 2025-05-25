@@ -7,13 +7,13 @@ using Entidades;
 
 namespace Gerenciadores;
 
-public class GerenciadorUsuario : GerenciamentoVetor
+public class GerenciadorUsuario 
 {
     public GerenciadorUsuario(BaseDados BaseDeDados)
     {
         this.BaseDeDados = BaseDeDados; 
     }
-    private BaseDados BaseDeDados { get; set; }
+    public BaseDados BaseDeDados { get; set; }
 
     public string HashSenha(string senha)
     {
@@ -27,15 +27,11 @@ public class GerenciadorUsuario : GerenciamentoVetor
         }
     }
 
-    public void AlterarSenha(Usuario user, String novaSenha)
+    public void AlteraUsuario(Usuario User, Usuario UserEditado)
     {
-        user.Senha = HashSenha(novaSenha);
-    }
-
-    public void AlterarUsername(Usuario user, String username)
-    {
-        user.Nome = username;
-
+        if (UserEditado.Nome != "") User.Nome = UserEditado.Nome;
+        if (UserEditado.Senha != "") User.Senha = HashSenha(UserEditado.Senha);
+        User.Admin = UserEditado.Admin;
     }
     public Usuario? FazerLogin(String Nome, String Senha)
     {
@@ -49,6 +45,14 @@ public class GerenciadorUsuario : GerenciamentoVetor
         }
         return null;
     }
+
+    public bool ConfirmaSenha(Usuario User, String AntigaSenha)
+    {
+        if (User.Senha == HashSenha(AntigaSenha))
+            return true;
+        return false;
+    }
+
     public bool ProcuraUsuario(String Nome)
     {
         if (BaseDeDados.ProcuraItemExpecificoPorNome(BaseDeDados.TodosUsuarios, Nome) == -1)

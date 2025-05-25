@@ -31,22 +31,22 @@ public class InterfaceUsuario : GerenciadorEntradasSaidas
             switch (Opcao)
             {
                 case 1:
-
+                    AlterarUsuario(User);
                     break;
                 case 2:
-                    AlterarUsername(User);
+                    ExcluirMeuUser(User);
                     break;
                 case 3:
                     CadastrarUsuario();
                     break;
                 case 4:
-
+                    AlterarOutroUser();
                     break;
                 case 5:
-
+                    ExcluirUser();
                     break;
                 case 6:
-
+                    MenuConsulta();
                     break;
                 case 0:
                     break;
@@ -84,39 +84,152 @@ public class InterfaceUsuario : GerenciadorEntradasSaidas
             LimparTela("Cadastro Nao Realizado", ConsoleColor.Red);
     }
 
-    private void AlterarUsername(Usuario User)
+    private void AlterarUsuario(Usuario User)
     {
-        LimparTela("Edição de Usuario");
-        Console.WriteLine("1 - Alterar username");
-        Console.WriteLine("2 - Alterar senha");
+        LimparTela("Informe o novo atributo ou nada para não alterar ");
+        String NovoNome = LerStringAlterar("Informe o novo username: ");
+        String NovaSenha = LerStringAlterar("Informe a nova senha: ");
+        String Adm = LerStringAlterar("É Administrador? S/N ");
+        bool Admin;
+        if (Adm == "") Admin = User.Admin;
+        else if (Adm == "S" || Adm == "s") Admin = true;
+        else Admin = false;
+        Usuario UserAlterado = new Usuario(NovoNome, NovaSenha, Admin);
+        GerenciadorDeUsuario.AlteraUsuario(User, UserAlterado);
+        LimparTela("Usuario editado", ConsoleColor.Green);
+
+    }
+
+    private void AlterarOutroUser()
+    {
+        Usuario? Usr = EncontraUsuario("Edição de usuarios");
+        if (Usr != null)
+        {
+            AlterarUsuario(Usr);
+            if (LerIntConsole("Digite 1 se quiser a lista atual de usuarios: ") == 1)
+            {
+                EscreveVetor(GerenciadorDeUsuario.BaseDeDados.TodosUsuarios);
+                Console.WriteLine("------------------------------");
+            }
+        }
+    }
+
+    private void ExcluirMeuUser(Usuario User)
+    {
+        if (Confirmacao("Você esta prestes a excluir seu usuario."))
+        {
+            GerenciadorDeUsuario.BaseDeDados.RemoverItem(GerenciadorDeUsuario.BaseDeDados.TodosUsuarios, User);
+            LimparTela("Usuario Removido", ConsoleColor.Green);
+        }
+        else
+            LimparTela("Usuario não removido", ConsoleColor.DarkRed);
+    }
+
+    private void ExcluirUser()
+    {
+        Usuario? User = EncontraUsuario("Remoção de Usuario");
+        if (LerIntConsole("Digite 1 se quiser a lista atual de usuarios: ") == 1)
+        {
+            EscreveVetor(GerenciadorDeUsuario.BaseDeDados.TodosUsuarios);
+            Console.WriteLine("------------------------------");
+        }
+        if (User == null) return;
+        if (Confirmacao($"Você esta prestes o usuario {User.Nome}."))
+        {
+            GerenciadorDeUsuario.BaseDeDados.RemoverItem(GerenciadorDeUsuario.BaseDeDados.TodosUsuarios, User);
+            LimparTela("Usuario Removido", ConsoleColor.Green);
+        }
+        else
+            LimparTela("Usuario não removido", ConsoleColor.DarkRed);
+    }
+
+    public Usuario? EncontraUsuario(String msg = "")
+    {
+        int ind;
+        LimparTela(msg);
+        Console.WriteLine("1 - Informar ID");
+        Console.WriteLine("2 - Informar Nome");
         Console.WriteLine("≠ - Cancelar");
         int op = LerIntConsole();
         if (op == 1)
         {
-            String NovoNome = LerStringAlterar("Informe seu novo username: ");
-            String Confirmacao = LerStringAlterar($"Tem certeza que deseja trocar\n\"{User.Nome}\" por \"{NovoNome}\"")
-            if (GerenciadorDeFornecedor.ExcluiFornecedor(LerIntConsole("Informe o ID do fornecedor")))
-                LimparTela("Fornecedor Removido", ConsoleColor.Green);
+            int ID;
+            ID = LerIntConsole("Informe o ID do usuario: ");
+            if (GerenciadorDeUsuario.ProcuraUsuario(ID))
+            {
+                ind = GerenciadorDeUsuario.BaseDeDados.ProcuraItemPorId(GerenciadorDeUsuario.BaseDeDados.TodosUsuarios, ID);
+                return GerenciadorDeUsuario.BaseDeDados.TodosUsuarios[ind];
+            }
             else
-                LimparTela("Fornecedor Não Encontrado", ConsoleColor.Red);
+                LimparTela("Usuario Não Encontrado", ConsoleColor.DarkRed);
         }
         else if (op == 2)
         {
-            if (GerenciadorDeFornecedor.ExcluiFornecedor(LerString("Informe o nome cadastrado: ")))
-                LimparTela("Fornecedor Removido", ConsoleColor.Green);
+            String Nome;
+            Nome = LerString("Informe o nome do usuario: ");
+            if (GerenciadorDeUsuario.ProcuraUsuario(Nome))
+            {
+                ind = GerenciadorDeUsuario.BaseDeDados.ProcuraItemExpecificoPorNome(GerenciadorDeUsuario.BaseDeDados.TodosUsuarios, Nome);
+                return GerenciadorDeUsuario.BaseDeDados.TodosUsuarios[ind];
+            }
             else
-                LimparTela("Fornecedor Não Encontrado", ConsoleColor.Red);
+                LimparTela("Usuario Não Encontrado", ConsoleColor.DarkRed);
         }
         else
-            LimparTela("Edição Cancelada", ConsoleColor.Blue);
+            LimparTela("Ação Cancelada", ConsoleColor.Blue);
+        return null;
     }
-
-    private void ExcluirMeuUser()
+    
+    private void MenuConsulta()
     {
-        
+        int ind;
+        LimparTela("Consulta de Usuario");
+        Console.WriteLine("1 - Informar ID");
+        Console.WriteLine("2 - Informar nome exato");
+        Console.WriteLine("3 - Informar parte do nome");
+        Console.WriteLine("≠ - Cancelar");
+        int op = LerIntConsole();
+        if (op == 1)
+        {
+            int ID;
+            ID = LerIntConsole("Informe o ID: ");
+            if (GerenciadorDeUsuario.ProcuraUsuario(ID))
+            {
+                ind = GerenciadorDeUsuario.BaseDeDados.ProcuraItemPorId(GerenciadorDeUsuario.BaseDeDados.TodosUsuarios, ID);
+                EscreveVetor(GerenciadorDeUsuario.BaseDeDados.TodosUsuarios, ind);
+            }
+            else
+                LimparTela("Usuario Não Encontrado", ConsoleColor.DarkRed);
+        }
+        else if (op == 2)
+        {
+            String Nome;
+            Nome = LerString("Informe o nome: ");
+            if (GerenciadorDeUsuario.ProcuraUsuario(Nome))
+            {
+                ind = GerenciadorDeUsuario.BaseDeDados.ProcuraItemExpecificoPorNome(GerenciadorDeUsuario.BaseDeDados.TodosUsuarios, Nome);
+                EscreveVetor(GerenciadorDeUsuario.BaseDeDados.TodosUsuarios, ind);
+            }
+            else
+                LimparTela("Usuario Não Encontrado", ConsoleColor.DarkRed);
+        }
+        else if (op == 3)
+        {
+            String Nome;
+            Nome = LerString("Informe o nome: ");
+            if (GerenciadorDeUsuario.ProcuraUsuario(Nome))
+            {
+                Usuario[] vet = GerenciadorDeUsuario.BaseDeDados.ProcuraItensComNome(GerenciadorDeUsuario.BaseDeDados.TodosUsuarios, Nome);
+                EscreveVetor(vet);
+            }
+            else
+                LimparTela("Usuario Não Encontrado", ConsoleColor.DarkRed);
+        }
+        else
+            LimparTela("Consulta Cancelada",ConsoleColor.Blue);
     }
 
-    private bool Confirmacao(String msg)
+    public bool Confirmacao(String msg)
     {
         Console.Write($"{msg}\nConfirmar? S/N: ");
         String temp = LerStringAlterar("");
