@@ -54,11 +54,21 @@ public class InterfaceProduto : GerenciadorEntradasSaidas
     }
     public void Cadastrar()
     {
-        String Nome = LerString("Nome do produto: ");
-        Console.Write("Valor do produto: ");
-        double Valor = LerDoubleConsole();
-        Console.Write("Quantidade em estoque: ");
-        int Quantidade = LerIntConsole();
+        LimparTela("Cadastro de Produto");
+        Console.WriteLine("Digite \"0\" no nome para cancelar");
+        String Nome = LerString("Informe o Nome: ");
+        if (Nome == "0")
+        {
+            LimparTela("Cadastro Cancelado", ConsoleColor.Blue);
+            return;
+        }
+        if (GerenciadorDeProduto.ProcuraProduto(Nome))
+        {
+            LimparTela("Produto já esta cadastrado no sistema", ConsoleColor.Red);
+            return;
+        }
+        double Valor = LerDoubleConsole("Valor do produto: ");
+        int Quantidade = LerIntConsole("Quantidade em estoque: ");
         String Fornecedor = LerString("Fornecedor do produto: ");
         GerenciadorDeProduto.CadastraProduto(Nome, Valor, Quantidade, Fornecedor);
     }
@@ -156,16 +166,16 @@ public class InterfaceProduto : GerenciadorEntradasSaidas
         if (op == 1)
         {
             if (GerenciadorDeProduto.ExcluiProduto(LerIntConsole("Informe o ID do produto: ")))
-                LimparTela("Fornecedor Removido",ConsoleColor.Green);
+                LimparTela("Produto Removido",ConsoleColor.Green);
             else
-                LimparTela("Fornecedor Não Encontrado",ConsoleColor.Red);
+                LimparTela("Produto Não Encontrado",ConsoleColor.Red);
         }
         else if (op == 2)
         {
             if (GerenciadorDeProduto.ExcluiProduto(LerString("Informe o nome cadastrado: ")))
-                LimparTela("Fornecedor Removido",ConsoleColor.Green);
+                LimparTela("Produto Removido",ConsoleColor.Green);
             else
-                LimparTela("Fornecedor Não Encontrado",ConsoleColor.Red);
+                LimparTela("Produto Não Encontrado",ConsoleColor.Red);
         }
         else
         {
@@ -175,7 +185,7 @@ public class InterfaceProduto : GerenciadorEntradasSaidas
     private void Consultar()
     {
         int indice;
-        LimparTela("Consulta de Fornecedor");
+        LimparTela("Consulta de Produto");
         Console.WriteLine("1 - Informar ID");
         Console.WriteLine("2 - Informar nome exato");
         Console.WriteLine("3 - Informar parte do nome");
@@ -186,33 +196,33 @@ public class InterfaceProduto : GerenciadorEntradasSaidas
             int Id = LerIntConsole("Informe o ID: ");
             if (GerenciadorDeProduto.ProcuraProduto(Id))
             {
-                indice = GerenciadorDeProduto.BaseDeDados.ProcuraItemPorId(GerenciadorDeProduto.BaseDeDados.TodosFornecedores, Id);
-                EscreveVetorComEndereco(GerenciadorDeProduto.BaseDeDados.TodosFornecedores, indice);
+                indice = GerenciadorDeProduto.BaseDeDados.ProcuraItemPorId(GerenciadorDeProduto.BaseDeDados.TodosProdutos, Id);
+                EscreveVetor(GerenciadorDeProduto.BaseDeDados.TodosProdutos, indice);
             }
             else
-                LimparTela("Fornecedor Não Encontrado", ConsoleColor.Red);
+                LimparTela("Produto Não Encontrado", ConsoleColor.Red);
         }
         else if (op == 2)
         {
             String Nome = LerString("Informe o nome: ");
             if (GerenciadorDeProduto.ProcuraProduto(Nome))
             {
-                indice = GerenciadorDeProduto.BaseDeDados.ProcuraItemExpecificoPorNome(GerenciadorDeProduto.BaseDeDados.TodosFornecedores, Nome);
-                EscreveVetorComEndereco(GerenciadorDeProduto.BaseDeDados.TodosFornecedores, indice);
+                indice = GerenciadorDeProduto.BaseDeDados.ProcuraItemExpecificoPorNome(GerenciadorDeProduto.BaseDeDados.TodosProdutos, Nome);
+                EscreveVetor(GerenciadorDeProduto.BaseDeDados.TodosProdutos, indice);
             }
             else
-                LimparTela("Fornecedor Não Encontrado", ConsoleColor.Red);
+                LimparTela("Produto Não Encontrado", ConsoleColor.Red);
         }
         else if (op == 3)
         {
             String Nome = LerString("Informe o nome: ");
             if (GerenciadorDeProduto.ProcuraProduto(Nome))
             {
-                Fornecedor[] vet = GerenciadorDeProduto.BaseDeDados.ProcuraItensComNome(GerenciadorDeProduto.BaseDeDados.TodosFornecedores, Nome);
-                EscreveVetorComEndereco(vet);
+                Produto[] vet = GerenciadorDeProduto.BaseDeDados.ProcuraItensComNome(GerenciadorDeProduto.BaseDeDados.TodosProdutos, Nome);
+                EscreveVetor(vet);
             }
             else
-                LimparTela("Fornecedor Não Encontrado", ConsoleColor.Red);
+                LimparTela("Produto Não Encontrado", ConsoleColor.Red);
         }
         else
             LimparTela("Consulta Cancelada",ConsoleColor.Blue);

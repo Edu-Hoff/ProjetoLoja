@@ -14,7 +14,7 @@ public class GerenciadorFornecedor : GerenciamentoVetor
     }
     public BaseDados BaseDeDados { get; set; }
 //preciso de uma funcao que retorne um fornecedor (para cadastrar produtos)
-    public Fornecedor ProcuraFornecedorTemporario(String Nome)
+    public Fornecedor ProcuraFornecedorTemporario(String Nome) //mudar nome
     {
         int i = BaseDeDados.ProcuraItemExpecificoPorNome(BaseDeDados.TodosFornecedores, Nome);
         return BaseDeDados.TodosFornecedores[i];
