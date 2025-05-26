@@ -21,16 +21,16 @@ public class GerenciadorTransportadora
     {
         Transportadora temp = BaseDeDados.TodasTransportadoras[Indice];
         if (Nova.Nome != "" )
-            if(!ProcuraTransportadora(Nova.Nome))
-                temp.Nome = Nova.Nome;
-            //else Exception ja existe
-        if (Nova.ValorPorKM != -1) temp.ValorPorKM = Nova.ValorPorKM;
+            temp.Nome = Nova.Nome;
+        if (Nova.ValorPorKM != -1)
+            temp.ValorPorKM = Nova.ValorPorKM;
     }
     public bool ExcluiTransportadora(int Id)
     {
         int indice = BaseDeDados.ProcuraItemPorId(BaseDeDados.TodasTransportadoras, Id);
         if (indice != -1)
         {
+            Transportadora Temp = BaseDeDados.TodasTransportadoras[indice];
             BaseDeDados.TodasTransportadoras = BaseDeDados.RemoverItem(BaseDeDados.TodasTransportadoras, BaseDeDados.TodasTransportadoras[indice]);
             return true;
         }

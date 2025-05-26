@@ -30,8 +30,6 @@ public class GerenciadorProduto
         if (GerenciadorDeFornecedor.ProcuraFornecedor(Fornecedor))
         {
             Produto Produto = BaseDeDados.TodosProdutos[indice];
-            if(!ProcuraProduto(Nome))Produto.Nome = Nome;
-            //else exception
             Produto.Valor = Valor;
             Produto.Quantidade = Quantidade;
             Produto.Fornecedor = GerenciadorDeFornecedor.ObtemFornecedor(Fornecedor);

@@ -96,7 +96,13 @@ public class InterfaceFornecedor : GerenciadorEntradasSaidas
             {
                 ind = GerenciadorDeFornecedor.BaseDeDados.ProcuraItemPorId(GerenciadorDeFornecedor.BaseDeDados.TodosFornecedores, ID);
                 LimparTela("Informe o novo atributo ou nada para não alterar ", ConsoleColor.Magenta);
-                Fornecedor Fornecedor = LeFornecedorParaAlterar();
+                String Nome = LerStringAlterar("Informe o nome: ");
+                if (GerenciadorDeFornecedor.ProcuraFornecedor(Nome))
+                {
+                    LimparTela("Nome já cadastrado no sistema", ConsoleColor.DarkRed);
+                    return;
+                }
+                Fornecedor Fornecedor = LeFornecedorParaAlterar(Nome);
                 GerenciadorDeFornecedor.AlteraFornecedor(ind, Fornecedor);
                 LimparTela("Fornecedor editado", ConsoleColor.Green);
             }
@@ -111,7 +117,12 @@ public class InterfaceFornecedor : GerenciadorEntradasSaidas
             {
                 ind = GerenciadorDeFornecedor.BaseDeDados.ProcuraItemEspecificoPorNome(GerenciadorDeFornecedor.BaseDeDados.TodosFornecedores, Nome);
                 LimparTela("Informe o novo atributo ou nada para não alterar ", ConsoleColor.Magenta);
-                Fornecedor Fornecedor = LeFornecedorParaAlterar();
+                if (GerenciadorDeFornecedor.ProcuraFornecedor(Nome))
+                {
+                    LimparTela("Nome já cadastrado no sistema", ConsoleColor.DarkRed);
+                    return;
+                }
+                Fornecedor Fornecedor = LeFornecedorParaAlterar(Nome);
                 GerenciadorDeFornecedor.AlteraFornecedor(ind, Fornecedor);
                 LimparTela("Fornecedor editado", ConsoleColor.Green);
             }
@@ -190,9 +201,8 @@ public class InterfaceFornecedor : GerenciadorEntradasSaidas
             String Nome;
             Nome = LerString("Informe o nome: ");
             Fornecedor[] vet = GerenciadorDeFornecedor.BaseDeDados.ProcuraItensComNome(GerenciadorDeFornecedor.BaseDeDados.TodosFornecedores, Nome);
-            EscreveVetorComEndereco(vet);
             if(vet.Length > 0)
-                EscreveVetor(vet);
+                EscreveVetorComEndereco(vet);
             else
                 LimparTela("Nenhum Fornecedor Encontrado", ConsoleColor.DarkRed);
         }

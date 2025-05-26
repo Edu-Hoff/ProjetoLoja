@@ -33,11 +33,6 @@ public class GerenciadorFornecedor
     //modificar - interface
     public void AlteraFornecedor(int Indice, Fornecedor novosDados)
     {
-        if (ProcuraFornecedor(novosDados.Nome))
-        {
-            novosDados.Nome = BaseDeDados.TodosFornecedores[Indice].Nome;
-            //Exception nome invalido
-        }
         BaseDeDados.TodosFornecedores[Indice].SubstituiSeNaoVazio(novosDados);
     }
     public bool ExcluiFornecedor(int Id)

@@ -186,6 +186,7 @@ public class GerenciadorEntradasSaidas
             {
                 Console.WriteLine(vetor[i]?.ToString());
             }
+        Console.WriteLine("------------------------------");
         Console.ResetColor();
     }
 
@@ -253,9 +254,8 @@ public class GerenciadorEntradasSaidas
         return new Endereco(Rua,Numero,Complemento,Bairro,Cep,Cidade,Estado);
     }
 
-    public Fornecedor LeFornecedorParaAlterar()
+    public Fornecedor LeFornecedorParaAlterar(String Nome)
     {
-        String Nome = LerStringAlterar("Informe o nome: ");
         String Descricao = LerStringAlterar("Informe a descrição: ");
         String Telefone = LerStringAlterar("Informe o telefone: ");
         String Email = LerStringAlterar("Informe o email: ");

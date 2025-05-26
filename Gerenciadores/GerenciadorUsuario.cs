@@ -30,10 +30,9 @@ public class GerenciadorUsuario
     public void AlteraUsuario(Usuario User, Usuario UserEditado)
     {
         if (UserEditado.Nome != "")
-            if (!ProcuraUsuario(UserEditado.Nome))
                 User.Nome = UserEditado.Nome;
-        //else Exception ja existe
-        if (UserEditado.Senha != "") User.Senha = HashSenha(UserEditado.Senha);
+        if (UserEditado.Senha != "")
+            User.Senha = HashSenha(UserEditado.Senha);
         User.Admin = UserEditado.Admin;
     }
     public Usuario? FazerLogin(String Nome, String Senha)

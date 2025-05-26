@@ -117,6 +117,11 @@ public class InterfaceProduto : GerenciadorEntradasSaidas
             if (op == 1)
             {
                 Nome = LerString("Novo: ");
+                if (GerenciadorDeProduto.ProcuraProduto(Nome))
+                {
+                    LimparTela("Nome já cadastrado no sistema");
+                    return;
+                }
             }
             else
             {
@@ -223,9 +228,8 @@ public class InterfaceProduto : GerenciadorEntradasSaidas
         {
             String Nome = LerString("Informe o nome: ");
             Produto[] vet = GerenciadorDeProduto.BaseDeDados.ProcuraItensComNome(GerenciadorDeProduto.BaseDeDados.TodosProdutos, Nome);
-            EscreveVetor(vet);
             if(vet.Length > 0)
-                EscreveVetor(vet);
+                EscreveVetorComQuantidadeFornecedor(vet);
             else
                 LimparTela("Nenhum Produto Encontrado", ConsoleColor.DarkRed);
         }
