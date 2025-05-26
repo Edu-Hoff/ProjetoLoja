@@ -2,7 +2,6 @@ using System;
 using System.Data.Common;
 using Entidades;
 using BaseDeDados;
-using Microsoft.VisualBasic;
 
 namespace Gerenciadores;
 
@@ -21,15 +20,11 @@ public class GerenciadorFornecedor
     }
     public bool ProcuraFornecedor(String Nome)
     {
-        if (BaseDeDados.ProcuraItemEspecificoPorNome(BaseDeDados.TodosFornecedores, Nome) == -1)
-            return false;
-        return true;
+        return BaseDeDados.ProcuraItemEspecificoPorNome(BaseDeDados.TodosFornecedores, Nome) != -1;
     }
     public bool ProcuraFornecedor(int ID)
     {
-        if (BaseDeDados.ProcuraItemPorId(BaseDeDados.TodosFornecedores, ID) == -1)
-            return false;
-        return true;
+        return BaseDeDados.ProcuraItemPorId(BaseDeDados.TodosFornecedores, ID) != -1;
     }
     public void CadastraFornecedor(Fornecedor Fornecedor)
     {

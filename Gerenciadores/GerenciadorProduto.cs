@@ -64,15 +64,11 @@ public class GerenciadorProduto
     //retorna item do vetor, se encontrar
     public bool ProcuraProduto(String Nome)
     {
-        if (BaseDeDados.ProcuraItemEspecificoPorNome(BaseDeDados.TodosProdutos, Nome) == -1)
-            return false;
-        return true;
+        return BaseDeDados.ProcuraItemEspecificoPorNome(BaseDeDados.TodosProdutos, Nome) != -1;
     }
     public bool ProcuraProduto(int ID)
     {
-        if (BaseDeDados.ProcuraItemPorId(BaseDeDados.TodosProdutos, ID) == -1)
-            return false;
-        return true;
+        return BaseDeDados.ProcuraItemPorId(BaseDeDados.TodosProdutos, ID) != -1;
     }
 //funcao para alterar quantidade de um produto
     

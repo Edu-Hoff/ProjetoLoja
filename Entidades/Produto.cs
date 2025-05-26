@@ -20,7 +20,7 @@ public class Produto : ObjetoComNome
         return $"{Id} - {Nome}\n{Valor:C2}";
     }
 
-    //Apenas para Adim
+    //Apenas para Admin
     public string ObterQuantidadeFornecedor()
     {
         return $"Quantidade: {Quantidade} - Fornecido por: {Fornecedor.Id} - {Fornecedor.Nome}";

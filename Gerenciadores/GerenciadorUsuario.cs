@@ -49,31 +49,22 @@ public class GerenciadorUsuario
         return null;
     }
 
-    public bool ConfirmaSenha(Usuario User, String AntigaSenha)
-    {
-        if (User.Senha == HashSenha(AntigaSenha))
-            return true;
-        return false;
-    }
-
     public bool ProcuraUsuario(String Nome)
     {
-        if (BaseDeDados.ProcuraItemEspecificoPorNome(BaseDeDados.TodosUsuarios, Nome) == -1)
-            return false;
-        return true;
+        return BaseDeDados.ProcuraItemEspecificoPorNome(BaseDeDados.TodosUsuarios, Nome) != -1;
     }
     public bool ProcuraUsuario(int ID)
     {
-        if (BaseDeDados.ProcuraItemPorId(BaseDeDados.TodosUsuarios, ID) == -1)
-            return false;
-        return true;
+        return BaseDeDados.ProcuraItemPorId(BaseDeDados.TodosUsuarios, ID) != -1;
+
     }
     public bool FazerCadastro(String Nome, String Senha, String Admin)
     {
         int Indice = BaseDeDados.ProcuraItemEspecificoPorNome(BaseDeDados.TodosUsuarios, Nome);
         if (Indice == -1)
         {
-            BaseDeDados.TodosUsuarios = BaseDeDados.AdicionarItem(BaseDeDados.TodosUsuarios, new Usuario(Nome, HashSenha(Senha), Admin == "S" || Admin == "s" ? true : false));
+            bool isAdmin = Admin.Trim().ToUpper() == "S";
+            BaseDeDados.TodosUsuarios = BaseDeDados.AdicionarItem(BaseDeDados.TodosUsuarios, new Usuario(Nome, HashSenha(Senha), isAdmin));
             return true;
         }
         //else exception

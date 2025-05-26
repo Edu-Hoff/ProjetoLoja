@@ -15,5 +15,4 @@ public class Transportadora : ObjetoComNome
     {
         return $"{Id} - {Nome}\n{ValorPorKM:C2} por KM";
     }
-    //obter descrição ou overrride do ToString
 }

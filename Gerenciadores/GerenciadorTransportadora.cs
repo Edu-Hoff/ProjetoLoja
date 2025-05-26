@@ -50,14 +50,10 @@ public class GerenciadorTransportadora
 
     public bool ProcuraTransportadora(String Nome)
     {
-        if (BaseDeDados.ProcuraItemEspecificoPorNome(BaseDeDados.TodasTransportadoras, Nome) == -1)
-            return false;
-        return true;
+        return BaseDeDados.ProcuraItemEspecificoPorNome(BaseDeDados.TodasTransportadoras, Nome) != -1;
     }
     public bool ProcuraTransportadora(int Id)
     {
-        if (BaseDeDados.ProcuraItemPorId(BaseDeDados.TodasTransportadoras, Id) == -1)
-            return false;
-        return true;
+        return BaseDeDados.ProcuraItemPorId(BaseDeDados.TodasTransportadoras, Id) != -1;
     }
 }

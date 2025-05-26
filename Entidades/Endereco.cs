@@ -2,7 +2,7 @@ using System;
 
 namespace Entidades;
 
-public class Endereco : Contato
+public class Endereco 
 {
     public Endereco(String Rua, String Numero, String Complemento, String Bairro, String Cep, String Cidade, String Estado)
     {
@@ -14,15 +14,15 @@ public class Endereco : Contato
         this.Cidade = Cidade;
         this.Estado = Estado;
     }
-    public String? Rua { get; set; }
-    public String? Numero {get;set;}
-    public String? Complemento {get;set;}
-    public String? Bairro {get;set;}
-    public String? Cep {get;set;}
-    public String? Cidade {get;set;}
-    public String? Estado {get;set;}
+    public String Rua { get; set; }
+    public String Numero {get;set;}
+    public String Complemento {get;set;}
+    public String Bairro {get;set;}
+    public String Cep {get;set;}
+    public String Cidade {get;set;}
+    public String Estado {get;set;}
 
-    //Apenas para Adim ou do proprio cliente
+    //Apenas para Admin ou do proprio cliente
     public String ObterEndereco()
     {
         return $"{Rua}, {Numero}{((Complemento=="")?"": ", ")}{Complemento} - CEP: {Cep}\n{Bairro}, {Cidade}, {Estado}";
