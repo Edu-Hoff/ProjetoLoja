@@ -19,6 +19,7 @@ public class InterfaceTransportadora : GerenciadorEntradasSaidas
         do //executa enquanto o usuário não digitar 0 para sair
         {
             bool ExisteAlgo = GerenciadorDeTransportadora.BaseDeDados.TodasTransportadoras.Length > 0;
+            bool Limpar = false;
             Console.WriteLine("-------Gerenciar transportadoras-------");
             Console.WriteLine("1 - Cadastrar transportadora");
             if (ExisteAlgo)
@@ -39,14 +40,17 @@ public class InterfaceTransportadora : GerenciadorEntradasSaidas
                 case 2:
                     if (ExisteAlgo)
                         MenuAltera();
+                    else Limpar = true;
                     break;
                 case 3:
                     if (ExisteAlgo)
                         MenuExclui();
+                    else Limpar = true;
                     break;
                 case 4:
                     if (ExisteAlgo)
                         MenuConsulta();
+                    else Limpar = true;
                     break;
                 case 5:
                     if (ExisteAlgo)
@@ -54,6 +58,7 @@ public class InterfaceTransportadora : GerenciadorEntradasSaidas
                         Console.Clear();
                         EscreveVetor(GerenciadorDeTransportadora.BaseDeDados.TodasTransportadoras);
                     }
+                    else Limpar = true;
                     break;
                 case 0:
                     break;
@@ -62,7 +67,7 @@ public class InterfaceTransportadora : GerenciadorEntradasSaidas
                     LimparTela("Opção Invalida", ConsoleColor.DarkRed);
                     break;
             }
-
+            if (Limpar) LimparTela("Opção Invalida", ConsoleColor.DarkRed);
         } while (Opcao != 0);
     }
 

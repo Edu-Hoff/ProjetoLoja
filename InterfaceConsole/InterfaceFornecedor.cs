@@ -18,6 +18,7 @@ public class InterfaceFornecedor : GerenciadorEntradasSaidas
         do //executa enquanto o usuário não digitar 0 para sair
         {
             bool ExisteAlgo = GerenciadorDeFornecedor.BaseDeDados.TodosFornecedores.Length > 0;
+            bool Limpar = false;
             Console.WriteLine("-------Gerenciar fornecedores-------");
             Console.WriteLine("1 - Cadastrar fornecedor");
             if (ExisteAlgo)
@@ -38,14 +39,17 @@ public class InterfaceFornecedor : GerenciadorEntradasSaidas
                 case 2:
                     if (ExisteAlgo)
                         MenuAltera();
+                    else Limpar = true;
                     break;
                 case 3:
                     if (ExisteAlgo)
                         MenuExclui();
+                    else Limpar = true;
                     break;
                 case 4:
                     if (ExisteAlgo)
                         MenuConsulta();
+                    else Limpar = true;
                     break;
                 case 5:
                     if (ExisteAlgo)
@@ -53,6 +57,7 @@ public class InterfaceFornecedor : GerenciadorEntradasSaidas
                         Console.Clear();
                         EscreveVetor(GerenciadorDeFornecedor.BaseDeDados.TodosFornecedores);
                     }
+                    else Limpar = true;
                     break;
                 case 0:
                     break;
@@ -61,6 +66,7 @@ public class InterfaceFornecedor : GerenciadorEntradasSaidas
                     LimparTela("Opção Invalida", ConsoleColor.DarkRed);
                     break;
             }
+            if (Limpar) LimparTela("Opção Invalida", ConsoleColor.DarkRed);
         } while (Opcao != 0);
     }
 

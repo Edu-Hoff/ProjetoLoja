@@ -141,7 +141,7 @@ public class GerenciadorEntradasSaidas
         String str;
         do
         {
-            str = Console.ReadLine() ?? "";
+            str = (Console.ReadLine() ?? "").Trim();
         } while (string.IsNullOrWhiteSpace(str));
         Console.ResetColor();
         return str;
@@ -152,7 +152,7 @@ public class GerenciadorEntradasSaidas
     {
         Console.Write(msg);
         Console.ForegroundColor = ConsoleColor.Yellow;
-        String str = Console.ReadLine() ?? "";
+        String str = (Console.ReadLine() ?? "").Trim();
         Console.ResetColor();
         if (string.IsNullOrWhiteSpace(str))
             return "";

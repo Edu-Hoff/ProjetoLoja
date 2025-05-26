@@ -21,6 +21,7 @@ public class InterfaceProduto : GerenciadorEntradasSaidas
         do //executa enquanto o usuário não digitar 0 para sair
         {
             bool ExisteAlgo = GerenciadorDeProduto.BaseDeDados.TodosProdutos.Length > 0;
+            bool Limpar = false;
             Console.WriteLine("-------Gerenciar produtos-------");
             Console.WriteLine("1 - Cadastrar produto");
             if (ExisteAlgo)
@@ -41,14 +42,17 @@ public class InterfaceProduto : GerenciadorEntradasSaidas
                 case 2:
                     if (ExisteAlgo)
                         MenuAltera();
+                    else Limpar = true;
                     break;
                 case 3:
                     if (ExisteAlgo)
                         MenuExclui();
+                    else Limpar = true;
                     break;
                 case 4:
                     if (ExisteAlgo)
                         MenuConsulta();
+                    else Limpar = true;
                     break;
                 case 5:
                     if (ExisteAlgo)
@@ -56,6 +60,7 @@ public class InterfaceProduto : GerenciadorEntradasSaidas
                         Console.Clear();
                         EscreveVetorComQuantidadeFornecedor(GerenciadorDeProduto.BaseDeDados.TodosProdutos);
                     }
+                    else Limpar = true;
                     break;
                 case 0:
                     break;
@@ -64,7 +69,7 @@ public class InterfaceProduto : GerenciadorEntradasSaidas
                     LimparTela("Opção Invalida", ConsoleColor.DarkRed);
                     break;
             }
-
+            if (Limpar) LimparTela("Opção Invalida", ConsoleColor.DarkRed);
         } while (Op != 0);
     }
     public void MenuCadastra()
