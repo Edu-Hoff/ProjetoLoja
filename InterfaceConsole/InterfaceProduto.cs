@@ -43,7 +43,7 @@ public class InterfaceProduto : GerenciadorEntradasSaidas
                     Consultar();
                     break;
                 case 5:
-                    EscreveVetor(GerenciadorDeProduto.BaseDeDados.TodosProdutos);
+                    EscreveVetorComQuantidadeFornecedor(GerenciadorDeProduto.BaseDeDados.TodosProdutos);
                     break;
                 case 0:
                     break;
@@ -78,6 +78,10 @@ public class InterfaceProduto : GerenciadorEntradasSaidas
     public void Alterar() //por enquanto está assim, mas qualquer coisa pode alterar
     {
         LimparTela("Edição de produto");
+        if (LerIntConsole("Digite 1 se quiser a lista atual de produtos: ") == 1)
+        {
+            EscreveVetor(GerenciadorDeProduto.BaseDeDados.TodosProdutos);
+        }
         Console.WriteLine("1 - Informar ID");
         Console.WriteLine("2 - Informar Nome atual");
         Console.WriteLine("≠ - Cancelar");
@@ -88,7 +92,7 @@ public class InterfaceProduto : GerenciadorEntradasSaidas
             int Id = LerIntConsole("Codigo do produto: ");
             if (GerenciadorDeProduto.ProcuraProduto(Id))
             {
-                indice = GerenciadorDeProduto.BaseDeDados.ProcuraItemPorId(GerenciadorDeProduto.BaseDeDados.TodosFornecedores, Id);
+                indice = GerenciadorDeProduto.BaseDeDados.ProcuraItemPorId(GerenciadorDeProduto.BaseDeDados.TodosProdutos, Id);
                 //GerenciadorDeProduto.AlteraProduto();
             }
             else
@@ -100,7 +104,7 @@ public class InterfaceProduto : GerenciadorEntradasSaidas
             String Nome = LerString("Nome do produto: ");
             if (GerenciadorDeProduto.ProcuraProduto(Nome))
             {
-                indice = GerenciadorDeProduto.BaseDeDados.ProcuraItemEspecificoPorNome(GerenciadorDeProduto.BaseDeDados.TodosFornecedores, Nome);
+                indice = GerenciadorDeProduto.BaseDeDados.ProcuraItemEspecificoPorNome(GerenciadorDeProduto.BaseDeDados.TodosProdutos, Nome);
                 //GerenciadorDeProduto.AlteraProduto();
             }
             else
@@ -168,7 +172,6 @@ public class InterfaceProduto : GerenciadorEntradasSaidas
         if (LerIntConsole("Digite 1 se quiser a lista atual de produtos: ") == 1)
         {
             EscreveVetor(GerenciadorDeProduto.BaseDeDados.TodosProdutos);
-            Console.WriteLine("------------------------------");
         }
         Console.WriteLine("1 - Informar ID");
         Console.WriteLine("2 - Informar Nome");
@@ -208,7 +211,7 @@ public class InterfaceProduto : GerenciadorEntradasSaidas
             if (GerenciadorDeProduto.ProcuraProduto(Id))
             {
                 indice = GerenciadorDeProduto.BaseDeDados.ProcuraItemPorId(GerenciadorDeProduto.BaseDeDados.TodosProdutos, Id);
-                EscreveVetor(GerenciadorDeProduto.BaseDeDados.TodosProdutos, indice);
+                EscreveVetorComQuantidadeFornecedor(GerenciadorDeProduto.BaseDeDados.TodosProdutos, indice);
             }
             else
                 LimparTela("Produto Não Encontrado", ConsoleColor.DarkRed);
@@ -219,7 +222,7 @@ public class InterfaceProduto : GerenciadorEntradasSaidas
             if (GerenciadorDeProduto.ProcuraProduto(Nome))
             {
                 indice = GerenciadorDeProduto.BaseDeDados.ProcuraItemEspecificoPorNome(GerenciadorDeProduto.BaseDeDados.TodosProdutos, Nome);
-                EscreveVetor(GerenciadorDeProduto.BaseDeDados.TodosProdutos, indice);
+                EscreveVetorComQuantidadeFornecedor(GerenciadorDeProduto.BaseDeDados.TodosProdutos, indice);
             }
             else
                 LimparTela("Produto Não Encontrado", ConsoleColor.DarkRed);

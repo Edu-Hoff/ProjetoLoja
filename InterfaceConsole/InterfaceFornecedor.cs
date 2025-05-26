@@ -82,7 +82,6 @@ public class InterfaceFornecedor : GerenciadorEntradasSaidas
         if (LerIntConsole("Digite 1 se quiser a lista atual de fornecedores: ") == 1)
         {
             EscreveVetor(GerenciadorDeFornecedor.BaseDeDados.TodosFornecedores);
-            Console.WriteLine("------------------------------");
         }
         Console.WriteLine("1 - Informar ID");
         Console.WriteLine("2 - Informar Nome atual");
@@ -139,7 +138,6 @@ public class InterfaceFornecedor : GerenciadorEntradasSaidas
         if (LerIntConsole("Digite 1 se quiser a lista atual de fornecedores: ") == 1)
         {
             EscreveVetor(GerenciadorDeFornecedor.BaseDeDados.TodosFornecedores);
-            Console.WriteLine("------------------------------");
         }
         Console.WriteLine("1 - Informar ID");
         Console.WriteLine("2 - Informar Nome");

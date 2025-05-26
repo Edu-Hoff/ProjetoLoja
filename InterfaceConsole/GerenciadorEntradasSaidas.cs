@@ -207,6 +207,7 @@ public class GerenciadorEntradasSaidas
             {
                 Console.WriteLine(vetor[i]?.ToString() + "\n" + vetor[i].Endereco.ObterEndereco());
             }
+        Console.WriteLine("------------------------------");
         Console.ResetColor();
     }
 
@@ -227,6 +228,7 @@ public class GerenciadorEntradasSaidas
             {
                 Console.WriteLine(vetor[i]?.ToString() + "\n" + vetor[i].ObterQuantidadeFornecedor());
             }
+        Console.WriteLine("------------------------------");
         Console.ResetColor();
     }
 

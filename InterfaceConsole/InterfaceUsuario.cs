@@ -119,7 +119,6 @@ public class InterfaceUsuario : GerenciadorEntradasSaidas
             if (LerIntConsole("Digite 1 se quiser a lista atual de usuarios: ") == 1)
             {
                 EscreveVetor(GerenciadorDeUsuario.BaseDeDados.TodosUsuarios);
-                Console.WriteLine("------------------------------");
             }
         }
     }
@@ -155,7 +154,6 @@ public class InterfaceUsuario : GerenciadorEntradasSaidas
         if (LerIntConsole("Digite 1 se quiser a lista atual de usuarios: ") == 1)
         {
             EscreveVetor(GerenciadorDeUsuario.BaseDeDados.TodosUsuarios);
-            Console.WriteLine("------------------------------");
         }
         Console.WriteLine("1 - Informar ID");
         Console.WriteLine("2 - Informar Nome atual");

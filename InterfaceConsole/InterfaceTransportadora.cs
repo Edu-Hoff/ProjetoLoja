@@ -81,7 +81,6 @@ public class InterfaceTransportadora : GerenciadorEntradasSaidas
         if (LerIntConsole("Digite 1 se quiser a lista atual de transportadoras: ") == 1)
         {
             EscreveVetor(GerenciadorDeTransportadora.BaseDeDados.TodasTransportadoras);
-            Console.WriteLine("------------------------------");
         }
         Console.WriteLine("1 - Informar ID");
         Console.WriteLine("2 - Informar Nome atual");
