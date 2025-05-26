@@ -22,9 +22,9 @@ public class InterfaceProduto : GerenciadorEntradasSaidas
         {
             bool ExisteAlgo = GerenciadorDeProduto.BaseDeDados.TodosProdutos.Length > 0;
             Console.WriteLine("-------Gerenciar produtos-------");
+            Console.WriteLine("1 - Cadastrar produto");
             if (ExisteAlgo)
             {
-                Console.WriteLine("1 - Cadastrar produto");
                 Console.WriteLine("2 - Alterar produto");
                 Console.WriteLine("3 - Excluir produto");
                 Console.WriteLine("4 - Consultar produto");

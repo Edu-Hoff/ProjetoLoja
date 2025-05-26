@@ -19,9 +19,9 @@ public class InterfaceFornecedor : GerenciadorEntradasSaidas
         {
             bool ExisteAlgo = GerenciadorDeFornecedor.BaseDeDados.TodosFornecedores.Length > 0;
             Console.WriteLine("-------Gerenciar fornecedores-------");
+            Console.WriteLine("1 - Cadastrar fornecedor");
             if (ExisteAlgo)
             {
-                Console.WriteLine("1 - Cadastrar fornecedor");
                 Console.WriteLine("2 - Alterar fornecedor");
                 Console.WriteLine("3 - Remover fornecedor");
                 Console.WriteLine("4 - Consultar fornecedor");

@@ -20,15 +20,15 @@ public class InterfaceTransportadora : GerenciadorEntradasSaidas
         {
             bool ExisteAlgo = GerenciadorDeTransportadora.BaseDeDados.TodasTransportadoras.Length > 0;
             Console.WriteLine("-------Gerenciar transportadoras-------");
+            Console.WriteLine("1 - Cadastrar transportadora");
             if (ExisteAlgo)
             {
-                Console.WriteLine("1 - Cadastrar transportadora");
                 Console.WriteLine("2 - Alterar transportadora");
                 Console.WriteLine("3 - Remover transportadora");
                 Console.WriteLine("4 - Consultar transportadora");
                 Console.WriteLine("5 - Listar transportadoras");
-                Console.WriteLine("0 - Voltar");
             }
+            Console.WriteLine("0 - Voltar");
 
             Opcao = LerIntConsole("Escolha: ");
             switch (Opcao)
