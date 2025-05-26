@@ -1,4 +1,5 @@
 using System;
+using System.Security.Cryptography.X509Certificates;
 using Entidades;
 using Gerenciadores;
 
@@ -17,13 +18,17 @@ public class InterfaceTransportadora : GerenciadorEntradasSaidas
 
         do //executa enquanto o usuário não digitar 0 para sair
         {
+            bool ExisteAlgo = GerenciadorDeTransportadora.BaseDeDados.TodasTransportadoras.Length > 0;
             Console.WriteLine("-------Gerenciar transportadoras-------");
-            Console.WriteLine("1 - Cadastrar transportadora");
-            Console.WriteLine("2 - Alterar transportadora");
-            Console.WriteLine("3 - Remover transportadora");
-            Console.WriteLine("4 - Consultar transportadora");
-            Console.WriteLine("5 - Listar transportadoras");
-            Console.WriteLine("0 - Voltar");
+            if (ExisteAlgo)
+            {
+                Console.WriteLine("1 - Cadastrar transportadora");
+                Console.WriteLine("2 - Alterar transportadora");
+                Console.WriteLine("3 - Remover transportadora");
+                Console.WriteLine("4 - Consultar transportadora");
+                Console.WriteLine("5 - Listar transportadoras");
+                Console.WriteLine("0 - Voltar");
+            }
 
             Opcao = LerIntConsole("Escolha: ");
             switch (Opcao)
@@ -32,17 +37,23 @@ public class InterfaceTransportadora : GerenciadorEntradasSaidas
                     MenuCadastro();
                     break;
                 case 2:
-                    MenuAltera();
+                    if (ExisteAlgo)
+                        MenuAltera();
                     break;
                 case 3:
-                    MenuExclui();
+                    if (ExisteAlgo)
+                        MenuExclui();
                     break;
                 case 4:
-                    MenuConsulta();
+                    if (ExisteAlgo)
+                        MenuConsulta();
                     break;
                 case 5:
-                    Console.Clear();
-                    EscreveVetor(GerenciadorDeTransportadora.BaseDeDados.TodasTransportadoras);
+                    if (ExisteAlgo)
+                    {
+                        Console.Clear();
+                        EscreveVetor(GerenciadorDeTransportadora.BaseDeDados.TodasTransportadoras);
+                    }
                     break;
                 case 0:
                     break;

@@ -37,19 +37,19 @@ public class InterfaceUsuario : GerenciadorEntradasSaidas
                     CadastrarUsuario();
                     break;
                 case 2:
-                        if (AlterarUsuario(User, true)) return true;
+                    if (AlterarUsuario(User, true)) return true;
                     break;
                 case 3:
-                        if (ExcluirMeuUser(User)) return true;
+                    if (ExcluirMeuUser(User)) return true;
                     break;
                 case 4:
-                        if (AlterarOutroUser(User)) return true;
+                    if (AlterarOutroUser(User)) return true;
                     break;
                 case 5:
-                        if (ExcluirUser(User)) return true;
+                    if (ExcluirUser(User)) return true;
                     break;
                 case 6:
-                        MenuConsulta();
+                    MenuConsulta();
                     break;
                 case 7:
                     Console.Clear();

@@ -17,12 +17,16 @@ public class InterfaceFornecedor : GerenciadorEntradasSaidas
         int Opcao;
         do //executa enquanto o usuário não digitar 0 para sair
         {
+            bool ExisteAlgo = GerenciadorDeFornecedor.BaseDeDados.TodosFornecedores.Length > 0;
             Console.WriteLine("-------Gerenciar fornecedores-------");
-            Console.WriteLine("1 - Cadastrar fornecedor");
-            Console.WriteLine("2 - Alterar fornecedor");
-            Console.WriteLine("3 - Remover fornecedor");
-            Console.WriteLine("4 - Consultar fornecedor");
-            Console.WriteLine("5 - Listar fornecedores");
+            if (ExisteAlgo)
+            {
+                Console.WriteLine("1 - Cadastrar fornecedor");
+                Console.WriteLine("2 - Alterar fornecedor");
+                Console.WriteLine("3 - Remover fornecedor");
+                Console.WriteLine("4 - Consultar fornecedor");
+                Console.WriteLine("5 - Listar fornecedores");
+            }
             Console.WriteLine("0 - Voltar");
 
             Opcao = LerIntConsole("Escolha: ");
@@ -32,17 +36,23 @@ public class InterfaceFornecedor : GerenciadorEntradasSaidas
                     Cadastrar();
                     break;
                 case 2:
-                    MenuAltera();
+                    if (ExisteAlgo)
+                        MenuAltera();
                     break;
                 case 3:
-                    MenuExclui();
+                    if (ExisteAlgo)
+                        MenuExclui();
                     break;
                 case 4:
-                    MenuConsulta();
+                    if (ExisteAlgo)
+                        MenuConsulta();
                     break;
                 case 5:
-                    Console.Clear();
-                    EscreveVetor(GerenciadorDeFornecedor.BaseDeDados.TodosFornecedores);
+                    if (ExisteAlgo)
+                    {
+                        Console.Clear();
+                        EscreveVetor(GerenciadorDeFornecedor.BaseDeDados.TodosFornecedores);
+                    }
                     break;
                 case 0:
                     break;

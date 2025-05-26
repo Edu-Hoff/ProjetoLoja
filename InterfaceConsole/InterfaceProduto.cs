@@ -20,12 +20,16 @@ public class InterfaceProduto : GerenciadorEntradasSaidas
 
         do //executa enquanto o usuário não digitar 0 para sair
         {
+            bool ExisteAlgo = GerenciadorDeProduto.BaseDeDados.TodosProdutos.Length > 0;
             Console.WriteLine("-------Gerenciar produtos-------");
-            Console.WriteLine("1 - Cadastrar produto");
-            Console.WriteLine("2 - Alterar produto");
-            Console.WriteLine("3 - Excluir produto");
-            Console.WriteLine("4 - Consultar produto");
-            Console.WriteLine("5 - Listar produtos");
+            if (ExisteAlgo)
+            {
+                Console.WriteLine("1 - Cadastrar produto");
+                Console.WriteLine("2 - Alterar produto");
+                Console.WriteLine("3 - Excluir produto");
+                Console.WriteLine("4 - Consultar produto");
+                Console.WriteLine("5 - Listar produtos");
+            }
             Console.WriteLine("0 - Voltar");
 
             Op = LerIntConsole("Escolha: ");
@@ -35,17 +39,23 @@ public class InterfaceProduto : GerenciadorEntradasSaidas
                     MenuCadastra();
                     break;
                 case 2:
-                    MenuAltera();
+                    if (ExisteAlgo)
+                        MenuAltera();
                     break;
                 case 3:
-                    MenuExclui();
+                    if (ExisteAlgo)
+                        MenuExclui();
                     break;
                 case 4:
-                    MenuConsulta();
+                    if (ExisteAlgo)
+                        MenuConsulta();
                     break;
                 case 5:
-                    Console.Clear();
-                    EscreveVetorComQuantidadeFornecedor(GerenciadorDeProduto.BaseDeDados.TodosProdutos);
+                    if (ExisteAlgo)
+                    {
+                        Console.Clear();
+                        EscreveVetorComQuantidadeFornecedor(GerenciadorDeProduto.BaseDeDados.TodosProdutos);
+                    }
                     break;
                 case 0:
                     break;
