@@ -5,7 +5,8 @@ using InterfaceConsole;
 
 
 GerenciadorLoja GerenciadoDeLoja = new GerenciadorLoja();
-//GerenciadoDeLoja.InicializaEntidades();
+//Se quiser testar sem inicializar
+GerenciadoDeLoja.InicializaEntidades();
 InterfacePrincipal InterfaceDoConsole = new InterfacePrincipal(GerenciadoDeLoja);
 InterfaceDoConsole.MenuInicial("Mercado do Ze");//Podem mudar se quiser
 
