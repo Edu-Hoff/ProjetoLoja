@@ -85,7 +85,7 @@ public class InterfaceTransportadora : GerenciadorEntradasSaidas
         }
         Console.WriteLine("1 - Informar ID");
         Console.WriteLine("2 - Informar Nome atual");
-        Console.WriteLine("≠ - Cancelar");
+        Console.WriteLine("0 - Cancelar");
         int op = LerIntConsole("Escolha: ");
         if (op == 1)
         {
@@ -160,7 +160,7 @@ public class InterfaceTransportadora : GerenciadorEntradasSaidas
         }
         Console.WriteLine("1 - Informar ID");
         Console.WriteLine("2 - Informar Nome");
-        Console.WriteLine("≠ - Cancelar");
+        Console.WriteLine("0 - Cancelar");
         int op = LerIntConsole("Escolha: ");
         if (op == 1)
         {
@@ -188,7 +188,7 @@ public class InterfaceTransportadora : GerenciadorEntradasSaidas
         Console.WriteLine("1 - Informar ID");
         Console.WriteLine("2 - Informar nome exato");
         Console.WriteLine("3 - Informar parte do nome");
-        Console.WriteLine("≠ - Cancelar");
+        Console.WriteLine("0 - Cancelar");
         int op = LerIntConsole("Escolha: ");
         if (op == 1)
         {

@@ -66,7 +66,7 @@ public class GerenciadorFornecedor
         {
             if (prod.Fornecedor.Nome == fornecedor.Nome)
             {
-                BaseDeDados.RemoverItem(BaseDeDados.TodosProdutos, prod);
+                BaseDeDados.TodosProdutos = BaseDeDados.RemoverItem(BaseDeDados.TodosProdutos, prod);
             }
         }
     }
