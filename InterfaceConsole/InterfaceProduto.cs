@@ -132,7 +132,8 @@ public class InterfaceProduto : GerenciadorEntradasSaidas
             op = LerIntConsole("Quantidade: ");
             if (op == 1)
             {
-                Quantidade = LerIntConsole("Nova: ");
+                Console.WriteLine("Utilize +, - ou = para modificar a quantidade");
+                Quantidade = LerIntComOperacao(GerenciadorDeProduto.BaseDeDados.TodosProdutos[indice].Quantidade,"Nova: ");
             }
             else
             {

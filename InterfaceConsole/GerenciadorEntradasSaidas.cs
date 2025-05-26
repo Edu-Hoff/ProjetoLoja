@@ -47,8 +47,50 @@ public class GerenciadorEntradasSaidas
             return 0;
 
     }
+    
+    public int LerIntComOperacao(int valorBase, string msg = "")
+    {
+        Console.Write(msg);
+        string input = "";
+        char operacao = '+';
 
-    public double LerDoubleConsole(String msg="")
+        Console.ForegroundColor = ConsoleColor.Yellow;
+        ConsoleKeyInfo tecla;
+
+        do
+        {
+            tecla = Console.ReadKey(true);
+
+            if (input.Length == 0 && "+-=".Contains(tecla.KeyChar))
+                operacao = tecla.KeyChar;
+
+            if ("0123456789".Contains(tecla.KeyChar) || (input.Length == 0 && "+-=".Contains(tecla.KeyChar)))
+            {
+                input += tecla.KeyChar;
+                Console.Write(tecla.KeyChar);
+            }
+            else if (tecla.Key == ConsoleKey.Backspace && input.Length > 0)
+            {
+                if (input.Length == 1) operacao = '+';
+                input = input[..^1];
+                Console.Write("\b \b");
+            }
+        }
+        while (tecla.Key != ConsoleKey.Enter);
+
+        Console.WriteLine();
+        Console.ResetColor();
+
+        var numStr = input.TrimStart('+', '-', '=');
+        int n = int.TryParse(numStr, out int v) ? v : 0;
+
+        return operacao == '-' ? valorBase - n
+            : operacao == '=' ? n
+            : valorBase + n;
+    }
+
+
+    public double LerDoubleConsole(String msg = "")
     {
         Console.Write(msg);
         string input = "";
