@@ -33,7 +33,7 @@ public class InterfaceUsuario : GerenciadorEntradasSaidas
             switch (Opcao)
             {
                 case 1:
-                    AlterarUsuario(User);
+                    if(AlterarUsuario(User, true)) return true;
                     break;
                 case 2:
                     if (ExcluirMeuUser(User)) return true;
@@ -42,7 +42,7 @@ public class InterfaceUsuario : GerenciadorEntradasSaidas
                     CadastrarUsuario();
                     break;
                 case 4:
-                    AlterarOutroUser();
+                    if(AlterarOutroUser(User))return true;
                     break;
                 case 5:
                     if (ExcluirUser(User)) return true;
@@ -88,14 +88,16 @@ public class InterfaceUsuario : GerenciadorEntradasSaidas
             LimparTela("Cadastro não Realizado", ConsoleColor.DarkRed);
     }
 
-    private void AlterarUsuario(Usuario User)
+    private bool AlterarUsuario(Usuario User, bool atual=false)
     {
-        LimparTela("Informe o novo atributo ou nada para não alterar ");
+        LimparTela("Atuais Atributos");
+        EscreveVetor(GerenciadorDeUsuario.BaseDeDados.TodosUsuarios, GerenciadorDeUsuario.BaseDeDados.ProcuraItemPorId(GerenciadorDeUsuario.BaseDeDados.TodosUsuarios, User.Id));
+        Console.WriteLine("Informe o novo atributo ou nada para não alterar ");
         String NovoNome = LerStringAlterar("Informe o novo username: ");
         if (GerenciadorDeUsuario.ProcuraUsuario(NovoNome))
         {
             LimparTela("Username já cadastrado no sistema", ConsoleColor.DarkRed);
-            return;
+            return false;
         }
         String NovaSenha = LerStringAlterar("Informe a nova senha: ");
         String Adm = LerStringAlterar("É Administrador? S/N ");
@@ -103,17 +105,24 @@ public class InterfaceUsuario : GerenciadorEntradasSaidas
         if (Adm == "") Admin = User.Admin;
         else if (Adm == "S" || Adm == "s") Admin = true;
         else Admin = false;
+        if (!Admin && atual) return true;
         Usuario UserAlterado = new Usuario(NovoNome, NovaSenha, Admin);
         GerenciadorDeUsuario.AlteraUsuario(User, UserAlterado);
         LimparTela("Usuario editado", ConsoleColor.Green);
-
+        return false;
     }
 
-    private void AlterarOutroUser()
+    private bool AlterarOutroUser(Usuario AtualUser)
     {
         Usuario? Usr = EncontraUsuario("Edição de usuarios");
+        if (AtualUser == Usr)
+        {
+            if (AlterarUsuario(AtualUser, true)) return true;
+            return false;
+        }
         if (Usr != null)
             AlterarUsuario(Usr);
+        return false;
     }
 
     private bool ExcluirMeuUser(Usuario User)

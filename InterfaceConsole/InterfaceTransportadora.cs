@@ -97,8 +97,9 @@ public class InterfaceTransportadora : GerenciadorEntradasSaidas
                 ind = GerenciadorDeTransportadora.BaseDeDados.ProcuraItemPorId(GerenciadorDeTransportadora.BaseDeDados.TodasTransportadoras, ID);
                 EscreveVetor(GerenciadorDeTransportadora.BaseDeDados.TodasTransportadoras, ind);
                 String Nome = ""; double ValorPorKM = -1;
-                String Resposta = LerStringAlterar("Deseja alterar o nome? S/N: ");
-                if (Resposta == "S" || Resposta == "s")
+                Console.WriteLine("Escolha se quer modificar cada um dos atributos a seguir:\n1 - sim\n0 - não");
+                int Resposta = LerIntConsole("Nome: ");
+                if (Resposta == 1)
                 {
                     Nome = LerString("Informe o novo nome: ");
                     if (GerenciadorDeTransportadora.ProcuraTransportadora(Nome))
@@ -107,8 +108,8 @@ public class InterfaceTransportadora : GerenciadorEntradasSaidas
                         return;
                     }
                 }
-                Resposta = LerStringAlterar("Deseja alterar o valor por KM? S/N: ");
-                if (Resposta == "S" || Resposta == "s")
+                Resposta = LerIntConsole("Valor por KM: ");
+                if (Resposta == 1)
                     ValorPorKM = LerDoubleConsole("Informe o novo valor por KM: ");
                 Transportadora Transportadora = new Transportadora(Nome, ValorPorKM);
                 GerenciadorDeTransportadora.AlteraTransportadora(ind, Transportadora);

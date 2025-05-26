@@ -153,9 +153,9 @@ public class GerenciadorEntradasSaidas
         Console.Write(msg);
         Console.ForegroundColor = ConsoleColor.Yellow;
         String str = Console.ReadLine() ?? "";
+        Console.ResetColor();
         if (string.IsNullOrWhiteSpace(str))
             return "";
-            Console.ResetColor();
         return str;
     }
     /*
@@ -180,8 +180,6 @@ public class GerenciadorEntradasSaidas
         if (ind != -1)
         {
             Console.WriteLine(vetor[ind]?.ToString());
-            Console.ResetColor();
-            return;
         }
         else for (int i = 0; i < vetor.Length; i++)
             {

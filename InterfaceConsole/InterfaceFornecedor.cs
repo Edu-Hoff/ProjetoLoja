@@ -95,7 +95,9 @@ public class InterfaceFornecedor : GerenciadorEntradasSaidas
             if (GerenciadorDeFornecedor.ProcuraFornecedor(ID))
             {
                 ind = GerenciadorDeFornecedor.BaseDeDados.ProcuraItemPorId(GerenciadorDeFornecedor.BaseDeDados.TodosFornecedores, ID);
-                LimparTela("Informe o novo atributo ou nada para não alterar ", ConsoleColor.Magenta);
+                LimparTela("Atuais Atributos");
+                EscreveVetorComEndereco(GerenciadorDeFornecedor.BaseDeDados.TodosFornecedores, ind);
+                Console.WriteLine("Informe o novo atributo ou nada para não alterar ", ConsoleColor.Magenta);
                 String Nome = LerStringAlterar("Informe o nome: ");
                 if (GerenciadorDeFornecedor.ProcuraFornecedor(Nome))
                 {

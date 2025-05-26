@@ -15,7 +15,7 @@ public class InterfacePrincipal : GerenciadorEntradasSaidas
 
     public void MenuInicial(String NomeLoja)
     {
-        Console.WriteLine(NomeLoja);
+        LimparTela(NomeLoja,ConsoleColor.Cyan);
         while (true)
         {
             int Opcao;
@@ -35,15 +35,15 @@ public class InterfacePrincipal : GerenciadorEntradasSaidas
                         LimparTela($"Seja Bem-vindo(a) {User.Nome}", ConsoleColor.Cyan);
                         if (User.Admin)
                         {
-                            MenuAdmin(User);
+                            MenuAdmin(User, NomeLoja);
                         }
                         else
                         {
-                            MenuCliente(User);
+                            MenuCliente(User, NomeLoja);
                         }
                     }
                     else
-                        LimparTela("Username ou senha Invalido");
+                        LimparTela("Username ou senha Invalido",ConsoleColor.DarkRed);
                 }
                 else if (Opcao == 2)
                 {
@@ -67,7 +67,7 @@ public class InterfacePrincipal : GerenciadorEntradasSaidas
     }
 
 
-    public void MenuAdmin(Usuario user)
+    public void MenuAdmin(Usuario user, String nomeLoja)
     {
         int Opcao;
         do
@@ -86,7 +86,7 @@ public class InterfacePrincipal : GerenciadorEntradasSaidas
                     {
                         Console.Clear();
                         InterfaceUsuario InterfaceDoUsuario = new InterfaceUsuario(GerenciadorDeLoja.GerenciadorDeUsuario);
-                        if (InterfaceDoUsuario.MenuUsuarios(user)) {Opcao = 0; LimparTela("Seu Usuario Não existe mais",ConsoleColor.DarkRed); }
+                        if (InterfaceDoUsuario.MenuUsuarios(user)) {Opcao = 0; LimparTela("Você foi automaticamente desconectado",ConsoleColor.DarkRed); }
                         else LimparTela("Menu Principal", ConsoleColor.Blue);
                         break;
                     }
@@ -122,10 +122,10 @@ public class InterfacePrincipal : GerenciadorEntradasSaidas
                     break;
             }
         } while (Opcao != 0);
-
+        LimparTela(nomeLoja, ConsoleColor.Cyan);
     }
-    
-    public void MenuCliente(Usuario user)
+
+    public void MenuCliente(Usuario user, String nomeLoja)
     {
         Console.WriteLine("Este menu ainda nao esta disponivel");
     }

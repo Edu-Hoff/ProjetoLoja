@@ -125,7 +125,7 @@ public class InterfaceProduto : GerenciadorEntradasSaidas
             Double Valor;
             int Quantidade;
             String Fornecedor;
-            Console.WriteLine("Escolha se quer modificar cada um dos parâmetros a seguir:\n 1 - sim\n0 - não");
+            Console.WriteLine("Escolha se quer modificar cada um dos atributos a seguir:\n1 - sim\n0 - não");
             op = LerIntConsole("Nome: ");
             if (op == 1)
             {
@@ -156,6 +156,7 @@ public class InterfaceProduto : GerenciadorEntradasSaidas
             {
                 Console.WriteLine("Utilize +, - ou = para modificar a quantidade");
                 Quantidade = LerIntComOperacao(GerenciadorDeProduto.BaseDeDados.TodosProdutos[indice].Quantidade, "Nova: ");
+                if (Quantidade < 0) Quantidade = 0;
             }
             else
             {
