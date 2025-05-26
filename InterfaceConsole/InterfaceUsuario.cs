@@ -119,7 +119,7 @@ public class InterfaceUsuario : GerenciadorEntradasSaidas
     {
         if (Confirmacao("Você esta prestes a excluir seu usuario."))
         {
-            GerenciadorDeUsuario.BaseDeDados.RemoverItem(GerenciadorDeUsuario.BaseDeDados.TodosUsuarios, User);
+            GerenciadorDeUsuario.RemoverUsuario(User);
             LimparTela("Usuario Removido", ConsoleColor.Green);
         }
         else
@@ -137,7 +137,7 @@ public class InterfaceUsuario : GerenciadorEntradasSaidas
         if (User == null) return;
         if (Confirmacao($"Você esta prestes o usuario {User.Nome}."))
         {
-            GerenciadorDeUsuario.BaseDeDados.RemoverItem(GerenciadorDeUsuario.BaseDeDados.TodosUsuarios, User);
+            GerenciadorDeUsuario.RemoverUsuario(User);
             LimparTela("Usuario Removido", ConsoleColor.Green);
         }
         else

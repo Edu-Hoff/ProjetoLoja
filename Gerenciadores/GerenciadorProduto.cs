@@ -19,8 +19,9 @@ public class GerenciadorProduto
         if (gerenciadorFornecedor.ProcuraFornecedor(NomeFornecedor))
         {
             Produto Produto = new Produto(Nome, Valor, Quantidade, gerenciadorFornecedor.ObtemFornecedor(NomeFornecedor));
-            BaseDeDados.AdicionarItem(BaseDeDados.TodosProdutos, Produto);
+            BaseDeDados.TodosProdutos = BaseDeDados.AdicionarItem(BaseDeDados.TodosProdutos, Produto);
         }
+        //else Exception
     }
     //alteracao
     public void AlteraProduto(int indice, String Nome, double Valor, int Quantidade, String Fornecedor)

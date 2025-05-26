@@ -7,11 +7,11 @@ using Entidades;
 
 namespace Gerenciadores;
 
-public class GerenciadorUsuario 
+public class GerenciadorUsuario
 {
     public GerenciadorUsuario(BaseDados BaseDeDados)
     {
-        this.BaseDeDados = BaseDeDados; 
+        this.BaseDeDados = BaseDeDados;
     }
     public BaseDados BaseDeDados { get; set; }
 
@@ -30,9 +30,9 @@ public class GerenciadorUsuario
     public void AlteraUsuario(Usuario User, Usuario UserEditado)
     {
         if (UserEditado.Nome != "")
-            if(!ProcuraUsuario(UserEditado.Nome))
+            if (!ProcuraUsuario(UserEditado.Nome))
                 User.Nome = UserEditado.Nome;
-            //else Exception ja existe
+        //else Exception ja existe
         if (UserEditado.Senha != "") User.Senha = HashSenha(UserEditado.Senha);
         User.Admin = UserEditado.Admin;
     }
@@ -78,5 +78,10 @@ public class GerenciadorUsuario
         }
         //else exception
         return false;
+    }
+
+    public void RemoverUsuario(Usuario User)
+    {
+        BaseDeDados.TodosUsuarios = BaseDeDados.RemoverItem(BaseDeDados.TodosUsuarios, User);
     }
 }

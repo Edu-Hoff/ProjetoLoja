@@ -15,10 +15,10 @@ public class InterfacePrincipal : GerenciadorEntradasSaidas
 
     public void MenuInicial(String NomeLoja)
     {
+        Console.WriteLine(NomeLoja);
         while (true)
         {
             int Opcao;
-            LimparTela(NomeLoja);
             Console.WriteLine("1 - Fazer login");
             Console.WriteLine("2 - Cadastrar novo usuário");
             Console.WriteLine("0 - Sair");
@@ -32,7 +32,7 @@ public class InterfacePrincipal : GerenciadorEntradasSaidas
                     Usuario? User = GerenciadorDeLoja.GerenciadorDeUsuario.FazerLogin(Nome, Senha);
                     if (User != null)
                     {
-                        LimparTela($"Seja Bem-vindo(a) {User.Nome}",ConsoleColor.Cyan);
+                        LimparTela($"Seja Bem-vindo(a) {User.Nome}", ConsoleColor.Cyan);
                         if (User.Admin)
                         {
                             MenuAdmin(User);
@@ -51,10 +51,10 @@ public class InterfacePrincipal : GerenciadorEntradasSaidas
                     Console.Clear();
                     if (GerenciadorDeLoja.GerenciadorDeUsuario.FazerCadastro(Nome, Senha, Admin))
                     {
-                        LimparTela("Cadastro Realizado",ConsoleColor.Green);
+                        LimparTela("Cadastro Realizado", ConsoleColor.Green);
                     }
                     else
-                        LimparTela("Cadastro Nao Realizado",ConsoleColor.DarkRed);
+                        LimparTela("Cadastro Nao Realizado", ConsoleColor.DarkRed);
                 }
                 //exception op invalida
             } while (Opcao != 1 && Opcao != 2 && Opcao != 0);
