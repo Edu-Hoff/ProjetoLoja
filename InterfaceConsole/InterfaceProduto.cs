@@ -32,16 +32,16 @@ public class InterfaceProduto : GerenciadorEntradasSaidas
             switch (Op)
             {
                 case 1:
-                    Cadastrar();
+                    MenuCadastra();
                     break;
                 case 2:
-                    Alterar();
+                    MenuAltera();
                     break;
                 case 3:
-                    Excluir();
+                    MenuExclui();
                     break;
                 case 4:
-                    Consultar();
+                    MenuConsulta();
                     break;
                 case 5:
                     Console.Clear();
@@ -57,7 +57,7 @@ public class InterfaceProduto : GerenciadorEntradasSaidas
 
         } while (Op != 0);
     }
-    public void Cadastrar()
+    public void MenuCadastra()
     {
         LimparTela("Cadastro de Produto");
         Console.WriteLine("Digite \"0\" no nome para cancelar");
@@ -83,7 +83,7 @@ public class InterfaceProduto : GerenciadorEntradasSaidas
         GerenciadorDeProduto.CadastraProduto(Nome, Valor, Quantidade, Fornecedor);
         LimparTela("Produto Cadastrado", ConsoleColor.Green);
     }
-    public void Alterar()
+    public void MenuAltera()
     {
         LimparTela("Edição de produto");
         if (LerIntConsole("Digite 1 se quiser a lista atual de produtos: ") == 1)
@@ -101,7 +101,6 @@ public class InterfaceProduto : GerenciadorEntradasSaidas
             if (GerenciadorDeProduto.ProcuraProduto(Id))
             {
                 indice = GerenciadorDeProduto.BaseDeDados.ProcuraItemPorId(GerenciadorDeProduto.BaseDeDados.TodosProdutos, Id);
-                //GerenciadorDeProduto.AlteraProduto();
             }
             else
                 LimparTela("Produto não encontrado", ConsoleColor.DarkRed);
@@ -112,7 +111,6 @@ public class InterfaceProduto : GerenciadorEntradasSaidas
             if (GerenciadorDeProduto.ProcuraProduto(Nome))
             {
                 indice = GerenciadorDeProduto.BaseDeDados.ProcuraItemEspecificoPorNome(GerenciadorDeProduto.BaseDeDados.TodosProdutos, Nome);
-                //GerenciadorDeProduto.AlteraProduto();
             }
             else
                 LimparTela("Produto não encontrado", ConsoleColor.DarkRed);
@@ -121,6 +119,8 @@ public class InterfaceProduto : GerenciadorEntradasSaidas
             LimparTela("Edição Cancelada", ConsoleColor.Blue);//excepiton
         if (indice != -1)
         {
+            Console.WriteLine("Atributos atuais: ");
+            EscreveVetorComQuantidadeFornecedor(GerenciadorDeProduto.BaseDeDados.TodosProdutos, indice);
             String Nome;
             Double Valor;
             int Quantidade;
@@ -179,7 +179,7 @@ public class InterfaceProduto : GerenciadorEntradasSaidas
             LimparTela("Produto Editado", ConsoleColor.Green);
         }        
     }
-    public void Excluir()
+    public void MenuExclui()
     {
         LimparTela("Remoção de um produto");
         if (LerIntConsole("Digite 1 se quiser a lista atual de produtos: ") == 1)
@@ -209,7 +209,7 @@ public class InterfaceProduto : GerenciadorEntradasSaidas
             LimparTela("Consulta Cancelada",ConsoleColor.Blue);
         }
     }
-    private void Consultar()
+    private void MenuConsulta()
     {
         int indice;
         LimparTela("Consulta de Produto");
