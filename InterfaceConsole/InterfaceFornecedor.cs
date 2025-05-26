@@ -22,6 +22,7 @@ public class InterfaceFornecedor : GerenciadorEntradasSaidas
             Console.WriteLine("2 - Alterar fornecedor");
             Console.WriteLine("3 - Remover fornecedor");
             Console.WriteLine("4 - Consultar fornecedor");
+            Console.WriteLine("5 - Listar fornecedores");
             Console.WriteLine("0 - Voltar");
 
             Opcao = LerIntConsole("Escolha: ");
@@ -38,6 +39,9 @@ public class InterfaceFornecedor : GerenciadorEntradasSaidas
                     break;
                 case 4:
                     MenuConsulta();
+                    break;
+                case 5:
+                    EscreveVetor(GerenciadorDeFornecedor.BaseDeDados.TodosFornecedores);
                     break;
                 case 0:
                     break;

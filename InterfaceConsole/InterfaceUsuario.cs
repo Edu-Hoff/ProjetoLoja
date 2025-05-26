@@ -26,6 +26,7 @@ public class InterfaceUsuario : GerenciadorEntradasSaidas
             Console.WriteLine("4 - Editar usuários");
             Console.WriteLine("5 - Excluir usuário");
             Console.WriteLine("6 - Consultar usuário");
+            Console.WriteLine("7 - Listar usuários");
             Console.WriteLine("0 - Voltar");
 
             Opcao = LerIntConsole("Escolha: ");
@@ -48,6 +49,9 @@ public class InterfaceUsuario : GerenciadorEntradasSaidas
                     break;
                 case 6:
                     MenuConsulta();
+                    break;
+                case 7:
+                    EscreveVetor(GerenciadorDeUsuario.BaseDeDados.TodosUsuarios);
                     break;
                 case 0:
                     break;

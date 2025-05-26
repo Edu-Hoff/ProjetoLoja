@@ -22,6 +22,7 @@ public class InterfaceTransportadora : GerenciadorEntradasSaidas
             Console.WriteLine("2 - Alterar transportadora");
             Console.WriteLine("3 - Remover transportadora");
             Console.WriteLine("4 - Consultar transportadora");
+            Console.WriteLine("5 - Listar transportadoras");
             Console.WriteLine("0 - Voltar");
 
             Opcao = LerIntConsole("Escolha: ");
@@ -38,6 +39,9 @@ public class InterfaceTransportadora : GerenciadorEntradasSaidas
                     break;
                 case 4:
                     MenuConsulta();
+                    break;
+                case 5:
+                    EscreveVetor(GerenciadorDeTransportadora.BaseDeDados.TodasTransportadoras);
                     break;
                 case 0:
                     break;

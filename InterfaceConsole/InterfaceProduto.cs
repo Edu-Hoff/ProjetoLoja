@@ -24,6 +24,7 @@ public class InterfaceProduto : GerenciadorEntradasSaidas
             Console.WriteLine("2 - Alterar produto");
             Console.WriteLine("3 - Excluir produto");
             Console.WriteLine("4 - Consultar produto");
+            Console.WriteLine("5 - Listar produtos");
             Console.WriteLine("0 - Voltar");
 
             Op = LerIntConsole("Escolha: ");
@@ -40,6 +41,9 @@ public class InterfaceProduto : GerenciadorEntradasSaidas
                     break;
                 case 4:
                     Consultar();
+                    break;
+                case 5:
+                    EscreveVetor(GerenciadorDeProduto.BaseDeDados.TodosProdutos);
                     break;
                 case 0:
                     break;
