@@ -99,7 +99,7 @@ public class InterfaceTransportadora : GerenciadorEntradasSaidas
                 if (Resposta == "S" || Resposta == "s") 
                 {
                     Nome = LerString("Informe o novo nome: ");
-                    if (GerenciadorDeTranspotadora.ProcuraTransportadora(Nome))
+                    if (GerenciadorDeTransportadora.ProcuraTransportadora(Nome))
                     {
                         LimparTela("Nome já cadastrado no sistema", ConsoleColor.DarkRed);
                         return;
@@ -125,7 +125,7 @@ public class InterfaceTransportadora : GerenciadorEntradasSaidas
                 if (Resposta == "S" || Resposta == "s") 
                 {
                     Nome = LerString("Informe o novo nome: ");
-                    if (GerenciadorDeTranspotadora.ProcuraTransportadora(Nome))
+                    if (GerenciadorDeTransportadora.ProcuraTransportadora(Nome))
                     {
                         LimparTela("Nome já cadastrado no sistema", ConsoleColor.DarkRed);
                         return;
