@@ -92,7 +92,7 @@ public class InterfaceProduto : GerenciadorEntradasSaidas
         }
         else
             if (op == 2)
-            {
+        {
             String Nome = LerString("Nome do produto: ");
             if (GerenciadorDeProduto.ProcuraProduto(Nome))
             {
@@ -101,7 +101,7 @@ public class InterfaceProduto : GerenciadorEntradasSaidas
             }
             else
                 LimparTela("Produto Não Encontrado", ConsoleColor.DarkRed);
-            }
+        }
         if (indice != -1)
         {
             String Nome;
@@ -141,7 +141,7 @@ public class InterfaceProduto : GerenciadorEntradasSaidas
             op = LerIntConsole("Fornecedor: ");
             if (op == 1)
             {
-                Fornecedor = LerString("Novo: ");
+                Fornecedor = LerString("Novo(nome): ");
             }
             else
             {
@@ -149,6 +149,8 @@ public class InterfaceProduto : GerenciadorEntradasSaidas
             }
             GerenciadorDeProduto.AlteraProduto(indice, Nome, Valor, Quantidade, Fornecedor);
         }
+        else if(op != 1 && op != 2)
+            LimparTela("Edição Cancelada", ConsoleColor.Blue);//excepiton
     }
     public void Excluir()
     {

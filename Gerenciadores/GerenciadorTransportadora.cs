@@ -20,8 +20,11 @@ public class GerenciadorTransportadora
     public void AlteraTransportadora(int Indice, Transportadora Nova)
     {
         Transportadora temp = BaseDeDados.TodasTransportadoras[Indice];
-        if (Nova.Nome != "") temp.Nome = Nova.Nome;
-        if( Nova.ValorPorKM != -1) temp.ValorPorKM = Nova.ValorPorKM;
+        if (Nova.Nome != "" )
+            if(!ProcuraTransportadora(Nova.Nome))
+                temp.Nome = Nova.Nome;
+            //else Exception ja existe
+        if (Nova.ValorPorKM != -1) temp.ValorPorKM = Nova.ValorPorKM;
     }
     public bool ExcluiTransportadora(int Id)
     {

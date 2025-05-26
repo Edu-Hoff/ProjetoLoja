@@ -188,28 +188,26 @@ public class GerenciadorEntradasSaidas
 
     public Endereco LeEndereco()
     {
-        Endereco Endereco = new Endereco();
-        Endereco.Estado = LerString("Informe o estado: ");
-        Endereco.Cidade = LerString("Informe a cidade: ");
-        Endereco.Cep = LerString("Informe o cep: ");
-        Endereco.Bairro = LerString("Informe o bairro: ");
-        Endereco.Rua = LerString("Informe a rua: ");
-        Endereco.Numero = LerString("Informe o numero: ");
-        Endereco.Complemento = LerStringAlterar("Informe o complemento: ");
-        return Endereco;
+        String Estado = LerString("Informe o estado: ");
+        String Cidade = LerString("Informe a cidade: ");
+        String Cep =    LerString("Informe o cep: ");
+        String Bairro = LerString("Informe o bairro: ");
+        String Rua =    LerString("Informe a rua: ");
+        String Numero = LerString("Informe o numero: ");
+        String Complemento = LerStringAlterar("Informe o complemento: ");
+        return new Endereco(Rua,Numero,Complemento,Bairro,Cep,Cidade,Estado);
     }
 
     public Endereco LeEnderecoAlterar()
     {
-        Endereco Endereco = new Endereco();
-        Endereco.Estado = LerStringAlterar("Informe o estado: ");
-        Endereco.Cidade = LerStringAlterar("Informe a cidade: ");
-        Endereco.Cep = LerStringAlterar("Informe o cep: ");
-        Endereco.Bairro = LerStringAlterar("Informe o bairro: ");
-        Endereco.Rua = LerStringAlterar("Informe a rua: ");
-        Endereco.Numero = LerStringAlterar("Informe o numero: ");
-        Endereco.Complemento = LerStringAlterar("Informe o complemento: ");
-        return Endereco;
+        String Estado = LerStringAlterar("Informe o estado: ");
+        String Cidade = LerStringAlterar("Informe a cidade: ");
+        String Cep =    LerStringAlterar("Informe o cep: ");
+        String Bairro = LerStringAlterar("Informe o bairro: ");
+        String Rua =    LerStringAlterar("Informe a rua: ");
+        String Numero = LerStringAlterar("Informe o numero: ");
+        String Complemento = LerStringAlterar("Informe o complemento: ");
+        return new Endereco(Rua,Numero,Complemento,Bairro,Cep,Cidade,Estado);
     }
 
     public Fornecedor LeFornecedorParaAlterar()

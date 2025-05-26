@@ -25,12 +25,17 @@ public class GerenciadorProduto
     //alteracao
     public void AlteraProduto(int indice, String Nome, double Valor, int Quantidade, String Fornecedor)
     {
-        GerenciadorFornecedor gerenciadorFornecedor = new GerenciadorFornecedor(BaseDeDados);
-        if (gerenciadorFornecedor.ProcuraFornecedor(Fornecedor))
+        GerenciadorFornecedor GerenciadorDeFornecedor = new GerenciadorFornecedor(BaseDeDados);
+        if (GerenciadorDeFornecedor.ProcuraFornecedor(Fornecedor))
         {
-            Produto Produto = new Produto(Nome, Valor, Quantidade, gerenciadorFornecedor.ObtemFornecedor(Fornecedor));
-            BaseDeDados.TodosProdutos[indice] = Produto; 
+            Produto Produto = BaseDeDados.TodosProdutos[indice];
+            if(!ProcuraProduto(Nome))Produto.Nome = Nome;
+            //else exception
+            Produto.Valor = Valor;
+            Produto.Quantidade = Quantidade;
+            Produto.Fornecedor = GerenciadorDeFornecedor.ObtemFornecedor(Fornecedor);
         }
+        //else Exception
     }
     //exclusao
     public bool ExcluiProduto(int Id)
