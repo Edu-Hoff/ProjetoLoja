@@ -19,18 +19,15 @@ public class InterfaceUsuario : GerenciadorEntradasSaidas
         do //executa enquanto o usuário não digitar 0 para sair
         {
             //Todos usuarios
-            bool ExisteAlgo = GerenciadorDeUsuario.BaseDeDados.TodosUsuarios.Length > 0;
             Console.WriteLine("-------Gerenciar usuarios-------");
             Console.WriteLine("1 - Cadastrar novo usuário");
-            if(ExisteAlgo){
-                Console.WriteLine("2 - Editar meu usuário");
-                Console.WriteLine("3 - Excluir meu usuário");
-                Console.WriteLine("4 - Editar usuários");
-                Console.WriteLine("5 - Excluir usuário");
-                Console.WriteLine("6 - Consultar usuário");
-                Console.WriteLine("7 - Listar usuários");
-                Console.WriteLine("0 - Voltar");
-            }
+            Console.WriteLine("2 - Editar meu usuário");
+            Console.WriteLine("3 - Excluir meu usuário");
+            Console.WriteLine("4 - Editar usuários");
+            Console.WriteLine("5 - Excluir usuário");
+            Console.WriteLine("6 - Consultar usuário");
+            Console.WriteLine("7 - Listar usuários");
+            Console.WriteLine("0 - Voltar");
 
             Opcao = LerIntConsole("Escolha: ");
 
@@ -40,31 +37,23 @@ public class InterfaceUsuario : GerenciadorEntradasSaidas
                     CadastrarUsuario();
                     break;
                 case 2:
-                    if(ExisteAlgo)
                         if (AlterarUsuario(User, true)) return true;
                     break;
                 case 3:
-                    if(ExisteAlgo)
                         if (ExcluirMeuUser(User)) return true;
                     break;
                 case 4:
-                    if(ExisteAlgo)
                         if (AlterarOutroUser(User)) return true;
                     break;
                 case 5:
-                    if(ExisteAlgo)
                         if (ExcluirUser(User)) return true;
                     break;
                 case 6:
-                    if(ExisteAlgo)
                         MenuConsulta();
                     break;
                 case 7:
-                    if (ExisteAlgo)
-                    {
-                        Console.Clear();
-                        EscreveVetor(GerenciadorDeUsuario.BaseDeDados.TodosUsuarios);
-                    }
+                    Console.Clear();
+                    EscreveVetor(GerenciadorDeUsuario.BaseDeDados.TodosUsuarios);
                     break;
                 case 0:
                     break;
