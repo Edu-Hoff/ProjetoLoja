@@ -253,7 +253,7 @@ public class InterfaceProduto : GerenciadorEntradasSaidas
             Produto[] vet = GerenciadorDeProduto.BaseDeDados.ProcuraItensComNome(GerenciadorDeProduto.BaseDeDados.TodosProdutos, Nome);
             if (vet.Length > 0)
             {
-                LimparTela($"Todos Produtos com \"{Nome}\"",ConsoleColor.Magenta);
+                LimparTela($"Todos Produtos com \"{Nome}\"");
                 EscreveVetorComQuantidadeFornecedor(vet);
                 Console.WriteLine("Pressione para continuar\n");
                 Console.ReadKey();

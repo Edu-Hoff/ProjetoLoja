@@ -175,7 +175,7 @@ public class GerenciadorEntradasSaidas
         {
             return;
         }
-        Console.ForegroundColor = ConsoleColor.Magenta;
+        Console.ForegroundColor = ConsoleColor.DarkCyan;
         Console.WriteLine("------------------------------");
         if (ind != -1)
         {
@@ -197,7 +197,7 @@ public class GerenciadorEntradasSaidas
         {
             return;
         }
-        Console.ForegroundColor = ConsoleColor.Magenta;
+        Console.ForegroundColor = ConsoleColor.DarkCyan;
         Console.WriteLine("------------------------------");
         if (ind != -1)
         {
@@ -205,7 +205,7 @@ public class GerenciadorEntradasSaidas
         }
         else for (int i = 0; i < vetor.Length; i++)
             {
-                Console.WriteLine(vetor[i]?.ToString() + "\n" + vetor[i].Endereco.ObterEndereco());
+                Console.WriteLine(vetor[i]?.ToString() + "\n" + vetor[i].Endereco.ObterEndereco() + "\n");
             }
         Console.WriteLine("------------------------------");
         Console.ResetColor();
@@ -219,7 +219,7 @@ public class GerenciadorEntradasSaidas
         {
             return;
         }
-        Console.ForegroundColor = ConsoleColor.Magenta;
+        Console.ForegroundColor = ConsoleColor.DarkCyan;
         Console.WriteLine("------------------------------");
         if (ind != -1)
         {

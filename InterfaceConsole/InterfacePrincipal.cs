@@ -15,7 +15,7 @@ public class InterfacePrincipal : GerenciadorEntradasSaidas
 
     public void MenuInicial(String NomeLoja)
     {
-        LimparTela(NomeLoja,ConsoleColor.Cyan);
+        LimparTela(NomeLoja,ConsoleColor.DarkBlue);
         while (true)
         {
             int Opcao;
@@ -32,7 +32,7 @@ public class InterfacePrincipal : GerenciadorEntradasSaidas
                     Usuario? User = GerenciadorDeLoja.GerenciadorDeUsuario.FazerLogin(Nome, Senha);
                     if (User != null)
                     {
-                        LimparTela($"Seja Bem-vindo(a) {User.Nome}", ConsoleColor.Cyan);
+                        LimparTela($"Seja Bem-vindo(a) {User.Nome}", ConsoleColor.DarkBlue);
                         if (User.Admin)
                         {
                             MenuAdmin(User, NomeLoja);
@@ -62,7 +62,7 @@ public class InterfacePrincipal : GerenciadorEntradasSaidas
             } while (Opcao != 1 && Opcao != 2 && Opcao != 0);
             if (Opcao == 0) break;
         }
-        LimparTela("Programa Encerrado...",ConsoleColor.Cyan);
+        LimparTela("Programa Encerrado...",ConsoleColor.DarkBlue);
         Console.ReadKey();
     }
 
@@ -122,7 +122,7 @@ public class InterfacePrincipal : GerenciadorEntradasSaidas
                     break;
             }
         } while (Opcao != 0);
-        LimparTela(nomeLoja, ConsoleColor.Cyan);
+        LimparTela(nomeLoja, ConsoleColor.DarkBlue);
     }
 
     public void MenuCliente(Usuario user, String nomeLoja)

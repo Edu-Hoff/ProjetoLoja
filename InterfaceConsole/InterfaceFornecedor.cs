@@ -97,7 +97,7 @@ public class InterfaceFornecedor : GerenciadorEntradasSaidas
                 ind = GerenciadorDeFornecedor.BaseDeDados.ProcuraItemPorId(GerenciadorDeFornecedor.BaseDeDados.TodosFornecedores, ID);
                 LimparTela("Atuais Atributos");
                 EscreveVetorComEndereco(GerenciadorDeFornecedor.BaseDeDados.TodosFornecedores, ind);
-                Console.WriteLine("Informe o novo atributo ou nada para não alterar ", ConsoleColor.Magenta);
+                Console.WriteLine("Informe o novo atributo ou nada para não alterar ");
                 String Nome = LerStringAlterar("Informe o nome: ");
                 if (GerenciadorDeFornecedor.ProcuraFornecedor(Nome))
                 {
@@ -118,13 +118,14 @@ public class InterfaceFornecedor : GerenciadorEntradasSaidas
             if (GerenciadorDeFornecedor.ProcuraFornecedor(Nome))
             {
                 ind = GerenciadorDeFornecedor.BaseDeDados.ProcuraItemEspecificoPorNome(GerenciadorDeFornecedor.BaseDeDados.TodosFornecedores, Nome);
-                LimparTela("Informe o novo atributo ou nada para não alterar ", ConsoleColor.Magenta);
-                if (GerenciadorDeFornecedor.ProcuraFornecedor(Nome))
+                LimparTela("Informe o novo atributo ou nada para não alterar ");
+                String NovoNome = LerStringAlterar("Informe o nome: ");
+                if (GerenciadorDeFornecedor.ProcuraFornecedor(NovoNome))
                 {
                     LimparTela("Nome já cadastrado no sistema", ConsoleColor.DarkRed);
                     return;
                 }
-                Fornecedor Fornecedor = LeFornecedorParaAlterar(Nome);
+                Fornecedor Fornecedor = LeFornecedorParaAlterar(NovoNome);
                 GerenciadorDeFornecedor.AlteraFornecedor(ind, Fornecedor);
                 LimparTela("Fornecedor editado", ConsoleColor.Green);
             }
@@ -210,7 +211,7 @@ public class InterfaceFornecedor : GerenciadorEntradasSaidas
             Fornecedor[] vet = GerenciadorDeFornecedor.BaseDeDados.ProcuraItensComNome(GerenciadorDeFornecedor.BaseDeDados.TodosFornecedores, Nome);
             if (vet.Length > 0)
             {
-                LimparTela($"Todos Fornecedores com \"{Nome}\"",ConsoleColor.Magenta);
+                LimparTela($"Todos Fornecedores com \"{Nome}\"");
                 EscreveVetorComEndereco(vet);
                 Console.WriteLine("Pressione para continuar\n");
                 Console.ReadKey();

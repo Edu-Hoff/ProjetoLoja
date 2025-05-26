@@ -21,6 +21,7 @@ public class GerenciadorLoja
     {
         //clientes
         BaseDeDados.TodosUsuarios = BaseDeDados.AdicionarItem(BaseDeDados.TodosUsuarios, new Usuario("Cliente 1", GerenciadorDeUsuario.HashSenha("Cliente 1")));
+        BaseDeDados.TodosUsuarios = BaseDeDados.AdicionarItem(BaseDeDados.TodosUsuarios, new Usuario("Cliente 2", GerenciadorDeUsuario.HashSenha("Cliente 2")));
         //admins
         BaseDeDados.TodosUsuarios = BaseDeDados.AdicionarItem(BaseDeDados.TodosUsuarios, new Usuario("Admin 1", GerenciadorDeUsuario.HashSenha("Admin 1"), true));
         BaseDeDados.TodosUsuarios = BaseDeDados.AdicionarItem(BaseDeDados.TodosUsuarios, new Usuario("Admin 2", GerenciadorDeUsuario.HashSenha("Admin 2"), true));

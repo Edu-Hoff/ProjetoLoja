@@ -113,7 +113,7 @@ public class InterfaceTransportadora : GerenciadorEntradasSaidas
                     ValorPorKM = LerDoubleConsole("Informe o novo valor por KM: ");
                 Transportadora Transportadora = new Transportadora(Nome, ValorPorKM);
                 GerenciadorDeTransportadora.AlteraTransportadora(ind, Transportadora);
-                LimparTela("Transportadora Editada", ConsoleColor.Cyan);
+                LimparTela("Transportadora Editada", ConsoleColor.Green);
             }
             else
                 LimparTela("Transportadora não encontrada", ConsoleColor.DarkRed);
@@ -142,7 +142,7 @@ public class InterfaceTransportadora : GerenciadorEntradasSaidas
                     ValorPorKM = LerDoubleConsole("Informe o novo valor por KM: ");
                 Transportadora Transportadora = new Transportadora(NomeNovo, ValorPorKM);
                 GerenciadorDeTransportadora.AlteraTransportadora(ind, Transportadora);
-                LimparTela("Transportadora Editada", ConsoleColor.Cyan);
+                LimparTela("Transportadora Editada", ConsoleColor.Green);
             }
             else
                 LimparTela("Transportadora não encontrada", ConsoleColor.DarkRed);
@@ -224,7 +224,7 @@ public class InterfaceTransportadora : GerenciadorEntradasSaidas
             Transportadora[] vet = GerenciadorDeTransportadora.BaseDeDados.ProcuraItensComNome(GerenciadorDeTransportadora.BaseDeDados.TodasTransportadoras, Nome);
             if (vet.Length > 0)
             {
-                LimparTela($"Todas Transportadoras com \"{Nome}\"",ConsoleColor.Magenta);
+                LimparTela($"Todas Transportadoras com \"{Nome}\"");
                 EscreveVetor(vet);
                 Console.WriteLine("Pressione para continuar\n");
                 Console.ReadKey();

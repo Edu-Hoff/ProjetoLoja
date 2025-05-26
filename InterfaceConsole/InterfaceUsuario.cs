@@ -19,40 +19,52 @@ public class InterfaceUsuario : GerenciadorEntradasSaidas
         do //executa enquanto o usuário não digitar 0 para sair
         {
             //Todos usuarios
+            bool ExisteAlgo = GerenciadorDeUsuario.BaseDeDados.TodosUsuarios.Length > 0;
             Console.WriteLine("-------Gerenciar usuarios-------");
-            Console.WriteLine("1 - Editar meu usuário");
-            Console.WriteLine("2 - Excluir meu usuário");
-            Console.WriteLine("3 - Cadastrar novo usuário");
-            Console.WriteLine("4 - Editar usuários");
-            Console.WriteLine("5 - Excluir usuário");
-            Console.WriteLine("6 - Consultar usuário");
-            Console.WriteLine("7 - Listar usuários");
-            Console.WriteLine("0 - Voltar");
+            Console.WriteLine("1 - Cadastrar novo usuário");
+            if(ExisteAlgo){
+                Console.WriteLine("2 - Editar meu usuário");
+                Console.WriteLine("3 - Excluir meu usuário");
+                Console.WriteLine("4 - Editar usuários");
+                Console.WriteLine("5 - Excluir usuário");
+                Console.WriteLine("6 - Consultar usuário");
+                Console.WriteLine("7 - Listar usuários");
+                Console.WriteLine("0 - Voltar");
+            }
 
             Opcao = LerIntConsole("Escolha: ");
+
             switch (Opcao)
             {
                 case 1:
-                    if(AlterarUsuario(User, true)) return true;
-                    break;
-                case 2:
-                    if (ExcluirMeuUser(User)) return true;
-                    break;
-                case 3:
                     CadastrarUsuario();
                     break;
+                case 2:
+                    if(ExisteAlgo)
+                        if (AlterarUsuario(User, true)) return true;
+                    break;
+                case 3:
+                    if(ExisteAlgo)
+                        if (ExcluirMeuUser(User)) return true;
+                    break;
                 case 4:
-                    if(AlterarOutroUser(User))return true;
+                    if(ExisteAlgo)
+                        if (AlterarOutroUser(User)) return true;
                     break;
                 case 5:
-                    if (ExcluirUser(User)) return true;
+                    if(ExisteAlgo)
+                        if (ExcluirUser(User)) return true;
                     break;
                 case 6:
-                    MenuConsulta();
+                    if(ExisteAlgo)
+                        MenuConsulta();
                     break;
                 case 7:
-                    Console.Clear();
-                    EscreveVetor(GerenciadorDeUsuario.BaseDeDados.TodosUsuarios);
+                    if (ExisteAlgo)
+                    {
+                        Console.Clear();
+                        EscreveVetor(GerenciadorDeUsuario.BaseDeDados.TodosUsuarios);
+                    }
                     break;
                 case 0:
                     break;
@@ -105,9 +117,9 @@ public class InterfaceUsuario : GerenciadorEntradasSaidas
         if (Adm == "") Admin = User.Admin;
         else if (Adm == "S" || Adm == "s") Admin = true;
         else Admin = false;
-        if (!Admin && atual) return true;
         Usuario UserAlterado = new Usuario(NovoNome, NovaSenha, Admin);
         GerenciadorDeUsuario.AlteraUsuario(User, UserAlterado);
+        if (!Admin && atual) return true;
         LimparTela("Usuario editado", ConsoleColor.Green);
         return false;
     }
@@ -243,7 +255,7 @@ public class InterfaceUsuario : GerenciadorEntradasSaidas
             Usuario[] vet = GerenciadorDeUsuario.BaseDeDados.ProcuraItensComNome(GerenciadorDeUsuario.BaseDeDados.TodosUsuarios, Nome);
             if (vet.Length > 0)
             {
-                LimparTela($"Todos Usuarios com \"{Nome}\"",ConsoleColor.Magenta);
+                LimparTela($"Todos Usuarios com \"{Nome}\"");
                 EscreveVetor(vet);
                 Console.WriteLine("Pressione para continuar\n");
                 Console.ReadKey();
