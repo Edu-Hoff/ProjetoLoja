@@ -39,7 +39,7 @@ public class GerenciadorTransportadora
 
     public bool ExcluiTransportadora(String Nome)
     {
-        int indice = BaseDeDados.ProcuraItemExpecificoPorNome(BaseDeDados.TodasTransportadoras, Nome);
+        int indice = BaseDeDados.ProcuraItemEspecificoPorNome(BaseDeDados.TodasTransportadoras, Nome);
         if (indice != -1)
         {
             BaseDeDados.TodasTransportadoras = BaseDeDados.RemoverItem(BaseDeDados.TodasTransportadoras, BaseDeDados.TodasTransportadoras[indice]);
@@ -50,7 +50,7 @@ public class GerenciadorTransportadora
 
     public bool ProcuraTransportadora(String Nome)
     {
-        if (BaseDeDados.ProcuraItemExpecificoPorNome(BaseDeDados.TodasTransportadoras, Nome) == -1)
+        if (BaseDeDados.ProcuraItemEspecificoPorNome(BaseDeDados.TodasTransportadoras, Nome) == -1)
             return false;
         return true;
     }

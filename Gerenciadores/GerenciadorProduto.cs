@@ -52,7 +52,7 @@ public class GerenciadorProduto
 
     public bool ExcluiProduto(String Nome)
     {
-        int indice = BaseDeDados.ProcuraItemExpecificoPorNome(BaseDeDados.TodosProdutos, Nome);
+        int indice = BaseDeDados.ProcuraItemEspecificoPorNome(BaseDeDados.TodosProdutos, Nome);
         if (indice != -1)
         {
             BaseDeDados.TodosProdutos = BaseDeDados.RemoverItem(BaseDeDados.TodosProdutos, BaseDeDados.TodosProdutos[indice]);
@@ -64,7 +64,7 @@ public class GerenciadorProduto
     //retorna item do vetor, se encontrar
     public bool ProcuraProduto(String Nome)
     {
-        if (BaseDeDados.ProcuraItemExpecificoPorNome(BaseDeDados.TodosProdutos, Nome) == -1)
+        if (BaseDeDados.ProcuraItemEspecificoPorNome(BaseDeDados.TodosProdutos, Nome) == -1)
             return false;
         return true;
     }

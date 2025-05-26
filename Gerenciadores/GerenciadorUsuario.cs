@@ -58,7 +58,7 @@ public class GerenciadorUsuario
 
     public bool ProcuraUsuario(String Nome)
     {
-        if (BaseDeDados.ProcuraItemExpecificoPorNome(BaseDeDados.TodosUsuarios, Nome) == -1)
+        if (BaseDeDados.ProcuraItemEspecificoPorNome(BaseDeDados.TodosUsuarios, Nome) == -1)
             return false;
         return true;
     }
@@ -70,7 +70,7 @@ public class GerenciadorUsuario
     }
     public bool FazerCadastro(String Nome, String Senha, String Admin)
     {
-        int Indice = BaseDeDados.ProcuraItemExpecificoPorNome(BaseDeDados.TodosUsuarios, Nome);
+        int Indice = BaseDeDados.ProcuraItemEspecificoPorNome(BaseDeDados.TodosUsuarios, Nome);
         if (Indice == -1)
         {
             BaseDeDados.TodosUsuarios = BaseDeDados.AdicionarItem(BaseDeDados.TodosUsuarios, new Usuario(Nome, HashSenha(Senha), Admin == "S" || Admin == "s" ? true : false));

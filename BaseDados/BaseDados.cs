@@ -65,7 +65,6 @@ public class BaseDados
     {
         if (vetor == null || vetor.Length == 0)
         {
-            vetor = new T[0];
             return -1;
         }
 
@@ -81,7 +80,7 @@ public class BaseDados
 
     //Funcao para generica procurar um item
     //Retorna o indice do item no vetor, -1 se nao esta no vetor 
-    public int ProcuraItemExpecificoPorNome<T>(T[] vetor, String Nome) where T : ObjetoComNome
+    public int ProcuraItemEspecificoPorNome<T>(T[] vetor, String Nome) where T : ObjetoComNome
     {
         if (vetor == null || vetor.Length == 0)
         {
@@ -97,6 +96,20 @@ public class BaseDados
         }
         return -1;
     }
+    
+    public T[] AdicionarItemAoVetor<T>(T[] vetor, T item) where T : ObjetoComNome
+    {
+        int tamanho = (vetor != null) ? vetor.Length + 1 : 1;
+        T[] novoVetor = new T[tamanho];
+        if (vetor != null)
+        {
+            for (int i = 0; i < vetor.Length; i++)
+                novoVetor[i] = vetor[i];
+        }
+        novoVetor[tamanho - 1] = item;
+        return novoVetor;
+    }
+
 
     //Funcao para generica procurar itens que contenham uma string no nome
     //Retorna vetor com os itens encontrados, ou vetor vazio [0]
@@ -107,12 +120,11 @@ public class BaseDados
         {
             return newVet;
         }
-        BaseDados BaseDeDados = new BaseDados(); 
         for (int i = 0; i < vetor.Length; i++)
         {
             if (vetor[i].Nome.Contains(Nome))
             {
-                newVet = BaseDeDados.AdicionarItem(newVet, vetor[i]);
+                newVet = AdicionarItemAoVetor(newVet, vetor[i]);
             }
         }
         return newVet;

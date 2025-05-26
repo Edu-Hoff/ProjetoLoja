@@ -105,7 +105,7 @@ public class InterfaceFornecedor : GerenciadorEntradasSaidas
             Nome = LerString("Informe o nome do fornecedor: ");
             if (GerenciadorDeFornecedor.ProcuraFornecedor(Nome))
             {
-                ind = GerenciadorDeFornecedor.BaseDeDados.ProcuraItemExpecificoPorNome(GerenciadorDeFornecedor.BaseDeDados.TodosFornecedores, Nome);
+                ind = GerenciadorDeFornecedor.BaseDeDados.ProcuraItemEspecificoPorNome(GerenciadorDeFornecedor.BaseDeDados.TodosFornecedores, Nome);
                 LimparTela("Informe o novo atributo ou nada para não alterar ", ConsoleColor.Magenta);
                 Fornecedor Fornecedor = LeFornecedorParaAlterar();
                 GerenciadorDeFornecedor.AlteraFornecedor(ind, Fornecedor);
@@ -175,7 +175,7 @@ public class InterfaceFornecedor : GerenciadorEntradasSaidas
             Nome = LerString("Informe o nome: ");
             if (GerenciadorDeFornecedor.ProcuraFornecedor(Nome))
             {
-                ind = GerenciadorDeFornecedor.BaseDeDados.ProcuraItemExpecificoPorNome(GerenciadorDeFornecedor.BaseDeDados.TodosFornecedores, Nome);
+                ind = GerenciadorDeFornecedor.BaseDeDados.ProcuraItemEspecificoPorNome(GerenciadorDeFornecedor.BaseDeDados.TodosFornecedores, Nome);
                 EscreveVetorComEndereco(GerenciadorDeFornecedor.BaseDeDados.TodosFornecedores, ind);
             }
             else

@@ -107,7 +107,7 @@ public class InterfaceTransportadora : GerenciadorEntradasSaidas
             Nome = LerString("Informe o nome da transportadora: ");
             if (GerenciadorDeTransportadora.ProcuraTransportadora(Nome))
             {
-                ind = GerenciadorDeTransportadora.BaseDeDados.ProcuraItemExpecificoPorNome(GerenciadorDeTransportadora.BaseDeDados.TodasTransportadoras, Nome);
+                ind = GerenciadorDeTransportadora.BaseDeDados.ProcuraItemEspecificoPorNome(GerenciadorDeTransportadora.BaseDeDados.TodasTransportadoras, Nome);
                 String NomeNovo = ""; double ValorPorKM = -1;
                 String Resposta = LerStringAlterar("Deseja alterar o nome? S/N: ");
                 if (Resposta == "S" || Resposta == "s") NomeNovo = LerString("Informe o novo nome: ");
@@ -179,7 +179,7 @@ public class InterfaceTransportadora : GerenciadorEntradasSaidas
             String Nome = LerString("Informe o nome: ");
             if (GerenciadorDeTransportadora.ProcuraTransportadora(Nome))
             {
-                indice = GerenciadorDeTransportadora.BaseDeDados.ProcuraItemExpecificoPorNome(GerenciadorDeTransportadora.BaseDeDados.TodasTransportadoras, Nome);
+                indice = GerenciadorDeTransportadora.BaseDeDados.ProcuraItemEspecificoPorNome(GerenciadorDeTransportadora.BaseDeDados.TodasTransportadoras, Nome);
                 EscreveVetor(GerenciadorDeTransportadora.BaseDeDados.TodasTransportadoras, indice);
             }
             else

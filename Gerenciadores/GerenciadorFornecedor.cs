@@ -16,12 +16,12 @@ public class GerenciadorFornecedor
 
     public Fornecedor ObtemFornecedor(String Nome)
     {
-        int i = BaseDeDados.ProcuraItemExpecificoPorNome(BaseDeDados.TodosFornecedores, Nome);
+        int i = BaseDeDados.ProcuraItemEspecificoPorNome(BaseDeDados.TodosFornecedores, Nome);
         return BaseDeDados.TodosFornecedores[i];
     }
     public bool ProcuraFornecedor(String Nome)
     {
-        if (BaseDeDados.ProcuraItemExpecificoPorNome(BaseDeDados.TodosFornecedores, Nome) == -1)
+        if (BaseDeDados.ProcuraItemEspecificoPorNome(BaseDeDados.TodosFornecedores, Nome) == -1)
             return false;
         return true;
     }
@@ -58,7 +58,7 @@ public class GerenciadorFornecedor
 
     public bool ExcluiFornecedor(String Nome)
     {
-        int indice = BaseDeDados.ProcuraItemExpecificoPorNome(BaseDeDados.TodosFornecedores, Nome);
+        int indice = BaseDeDados.ProcuraItemEspecificoPorNome(BaseDeDados.TodosFornecedores, Nome);
         if (indice != -1)
         {
             BaseDeDados.TodosFornecedores = BaseDeDados.RemoverItem(BaseDeDados.TodosFornecedores, BaseDeDados.TodosFornecedores[indice]);

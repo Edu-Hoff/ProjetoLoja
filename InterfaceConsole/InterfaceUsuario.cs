@@ -170,7 +170,7 @@ public class InterfaceUsuario : GerenciadorEntradasSaidas
             Nome = LerString("Informe o nome do usuario: ");
             if (GerenciadorDeUsuario.ProcuraUsuario(Nome))
             {
-                ind = GerenciadorDeUsuario.BaseDeDados.ProcuraItemExpecificoPorNome(GerenciadorDeUsuario.BaseDeDados.TodosUsuarios, Nome);
+                ind = GerenciadorDeUsuario.BaseDeDados.ProcuraItemEspecificoPorNome(GerenciadorDeUsuario.BaseDeDados.TodosUsuarios, Nome);
                 return GerenciadorDeUsuario.BaseDeDados.TodosUsuarios[ind];
             }
             else
@@ -208,7 +208,7 @@ public class InterfaceUsuario : GerenciadorEntradasSaidas
             Nome = LerString("Informe o nome: ");
             if (GerenciadorDeUsuario.ProcuraUsuario(Nome))
             {
-                ind = GerenciadorDeUsuario.BaseDeDados.ProcuraItemExpecificoPorNome(GerenciadorDeUsuario.BaseDeDados.TodosUsuarios, Nome);
+                ind = GerenciadorDeUsuario.BaseDeDados.ProcuraItemEspecificoPorNome(GerenciadorDeUsuario.BaseDeDados.TodosUsuarios, Nome);
                 EscreveVetor(GerenciadorDeUsuario.BaseDeDados.TodosUsuarios, ind);
             }
             else

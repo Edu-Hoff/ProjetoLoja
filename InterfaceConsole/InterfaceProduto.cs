@@ -96,7 +96,7 @@ public class InterfaceProduto : GerenciadorEntradasSaidas
             String Nome = LerString("Nome do produto: ");
             if (GerenciadorDeProduto.ProcuraProduto(Nome))
             {
-                indice = GerenciadorDeProduto.BaseDeDados.ProcuraItemExpecificoPorNome(GerenciadorDeProduto.BaseDeDados.TodosFornecedores, Nome);
+                indice = GerenciadorDeProduto.BaseDeDados.ProcuraItemEspecificoPorNome(GerenciadorDeProduto.BaseDeDados.TodosFornecedores, Nome);
                 //GerenciadorDeProduto.AlteraProduto();
             }
             else
@@ -208,7 +208,7 @@ public class InterfaceProduto : GerenciadorEntradasSaidas
             String Nome = LerString("Informe o nome: ");
             if (GerenciadorDeProduto.ProcuraProduto(Nome))
             {
-                indice = GerenciadorDeProduto.BaseDeDados.ProcuraItemExpecificoPorNome(GerenciadorDeProduto.BaseDeDados.TodosProdutos, Nome);
+                indice = GerenciadorDeProduto.BaseDeDados.ProcuraItemEspecificoPorNome(GerenciadorDeProduto.BaseDeDados.TodosProdutos, Nome);
                 EscreveVetor(GerenciadorDeProduto.BaseDeDados.TodosProdutos, indice);
             }
             else
