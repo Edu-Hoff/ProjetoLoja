@@ -96,7 +96,15 @@ public class InterfaceTransportadora : GerenciadorEntradasSaidas
                 ind = GerenciadorDeTransportadora.BaseDeDados.ProcuraItemPorId(GerenciadorDeTransportadora.BaseDeDados.TodasTransportadoras, ID);
                 String Nome = ""; double ValorPorKM = -1;
                 String Resposta = LerStringAlterar("Deseja alterar o nome? S/N: ");
-                if (Resposta == "S" || Resposta == "s") Nome = LerString("Informe o novo nome: ");
+                if (Resposta == "S" || Resposta == "s") 
+                {
+                    Nome = LerString("Informe o novo nome: ");
+                    if (GerenciadorDeTranspotadora.ProcuraTransportadora(Nome))
+                    {
+                        LimparTela("Nome já cadastrado no sistema", ConsoleColor.DarkRed);
+                        return;
+                    }
+                }
                 Resposta = LerStringAlterar("Deseja alterar o valor por KM? S/N: ");
                 if (Resposta == "S" || Resposta == "s") ValorPorKM = LerDoubleConsole("Informe o novo valor por KM: ");
                 Transportadora Transportadora = new Transportadora(Nome,ValorPorKM);
@@ -114,7 +122,15 @@ public class InterfaceTransportadora : GerenciadorEntradasSaidas
                 ind = GerenciadorDeTransportadora.BaseDeDados.ProcuraItemEspecificoPorNome(GerenciadorDeTransportadora.BaseDeDados.TodasTransportadoras, Nome);
                 String NomeNovo = ""; double ValorPorKM = -1;
                 String Resposta = LerStringAlterar("Deseja alterar o nome? S/N: ");
-                if (Resposta == "S" || Resposta == "s") NomeNovo = LerString("Informe o novo nome: ");
+                if (Resposta == "S" || Resposta == "s") 
+                {
+                    Nome = LerString("Informe o novo nome: ");
+                    if (GerenciadorDeTranspotadora.ProcuraTransportadora(Nome))
+                    {
+                        LimparTela("Nome já cadastrado no sistema", ConsoleColor.DarkRed);
+                        return;
+                    }
+                }
                 Resposta = LerStringAlterar("Deseja alterar o valor por KM? S/N: ");
                 if (Resposta == "S" || Resposta == "s") ValorPorKM = LerDoubleConsole("Informe o novo valor por KM: ");
                 Transportadora Transportadora = new Transportadora(NomeNovo,ValorPorKM);
@@ -192,11 +208,10 @@ public class InterfaceTransportadora : GerenciadorEntradasSaidas
         else if (op == 3)
         {
             String Nome = LerString("Informe o nome: ");
-            if (GerenciadorDeTransportadora.ProcuraTransportadora(Nome))
-            {
-                Transportadora[] vet = GerenciadorDeTransportadora.BaseDeDados.ProcuraItensComNome(GerenciadorDeTransportadora.BaseDeDados.TodasTransportadoras, Nome);
+            Transportadora[] vet = GerenciadorDeTransportadora.BaseDeDados.ProcuraItensComNome(GerenciadorDeTransportadora.BaseDeDados.TodasTransportadoras, Nome);
+            EscreveVetor(vet);
+            if(vet.Length > 0)
                 EscreveVetor(vet);
-            }
             else
                 LimparTela("Nenhuma Transportadora Encontrada", ConsoleColor.DarkRed);
         }

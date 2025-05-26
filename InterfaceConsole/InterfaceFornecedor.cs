@@ -189,11 +189,10 @@ public class InterfaceFornecedor : GerenciadorEntradasSaidas
         {
             String Nome;
             Nome = LerString("Informe o nome: ");
-            if (GerenciadorDeFornecedor.ProcuraFornecedor(Nome))
-            {
-                Fornecedor[] vet = GerenciadorDeFornecedor.BaseDeDados.ProcuraItensComNome(GerenciadorDeFornecedor.BaseDeDados.TodosFornecedores, Nome);
-                EscreveVetorComEndereco(vet);
-            }
+            Fornecedor[] vet = GerenciadorDeFornecedor.BaseDeDados.ProcuraItensComNome(GerenciadorDeFornecedor.BaseDeDados.TodosFornecedores, Nome);
+            EscreveVetorComEndereco(vet);
+            if(vet.Length > 0)
+                EscreveVetor(vet);
             else
                 LimparTela("Nenhum Fornecedor Encontrado", ConsoleColor.DarkRed);
         }

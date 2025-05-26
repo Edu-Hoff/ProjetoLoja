@@ -222,11 +222,10 @@ public class InterfaceProduto : GerenciadorEntradasSaidas
         else if (op == 3)
         {
             String Nome = LerString("Informe o nome: ");
-            if (GerenciadorDeProduto.ProcuraProduto(Nome))
-            {
-                Produto[] vet = GerenciadorDeProduto.BaseDeDados.ProcuraItensComNome(GerenciadorDeProduto.BaseDeDados.TodosProdutos, Nome);
+            Produto[] vet = GerenciadorDeProduto.BaseDeDados.ProcuraItensComNome(GerenciadorDeProduto.BaseDeDados.TodosProdutos, Nome);
+            EscreveVetor(vet);
+            if(vet.Length > 0)
                 EscreveVetor(vet);
-            }
             else
                 LimparTela("Nenhum Produto Encontrado", ConsoleColor.DarkRed);
         }

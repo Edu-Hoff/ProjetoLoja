@@ -93,6 +93,7 @@ public class InterfacePrincipal : GerenciadorEntradasSaidas
                         Console.Clear();
                         InterfaceProduto InterfaceDoProduto = new InterfaceProduto(GerenciadorDeLoja.GerenciadorDeProduto);
                         InterfaceDoProduto.MenuProdutos();
+                        LimparTela("Menu Principal", ConsoleColor.Blue);
                         break;
                     }
                 case 3:
@@ -100,6 +101,7 @@ public class InterfacePrincipal : GerenciadorEntradasSaidas
                         Console.Clear();
                         InterfaceFornecedor InterfaceDoFornecedor = new InterfaceFornecedor(GerenciadorDeLoja.GerenciadorDeFornecedor);
                         InterfaceDoFornecedor.MenuFornecedores();
+                        LimparTela("Menu Principal", ConsoleColor.Blue);
                         break;
                     }
                 case 4:
@@ -107,6 +109,7 @@ public class InterfacePrincipal : GerenciadorEntradasSaidas
                         Console.Clear();
                         InterfaceTransportadora InterfaceDaTranportadora = new InterfaceTransportadora(GerenciadorDeLoja.GerenciadorDeTransportadora);
                         InterfaceDaTranportadora.MenuTransportadoras();
+                        LimparTela("Menu Principal", ConsoleColor.Blue);
                         break;
                     }
                 case 0:
