@@ -107,7 +107,7 @@ public class InterfaceFornecedor : GerenciadorEntradasSaidas
                 LimparTela("Fornecedor editado", ConsoleColor.Green);
             }
             else
-                LimparTela("Fornecedor Não Encontrado", ConsoleColor.DarkRed);
+                LimparTela("Fornecedor não encontrado", ConsoleColor.DarkRed);
         }
         else if (op == 2)
         {
@@ -127,7 +127,7 @@ public class InterfaceFornecedor : GerenciadorEntradasSaidas
                 LimparTela("Fornecedor editado", ConsoleColor.Green);
             }
             else
-                LimparTela("Fornecedor Não Encontrado", ConsoleColor.DarkRed);
+                LimparTela("Fornecedor não encontrado", ConsoleColor.DarkRed);
         }
         else
             LimparTela("Edição Cancelada",ConsoleColor.Blue);
@@ -146,17 +146,17 @@ public class InterfaceFornecedor : GerenciadorEntradasSaidas
         int op = LerIntConsole("Escolha: ");
         if (op == 1)
         {
-            if (GerenciadorDeFornecedor.ExcluiFornecedor(LerIntConsole("Informe o ID do fornecedor")))
+            if (GerenciadorDeFornecedor.ExcluiFornecedor(LerIntConsole("Informe o ID do fornecedor: ")))
                 LimparTela("Fornecedor Removido",ConsoleColor.Green);
             else
-                LimparTela("Fornecedor Não Encontrado",ConsoleColor.DarkRed);
+                LimparTela("Fornecedor não Encontrado",ConsoleColor.DarkRed);
         }
         else if (op == 2)
         {
             if (GerenciadorDeFornecedor.ExcluiFornecedor(LerString("Informe o nome cadastrado: ")))
                 LimparTela("Fornecedor Removido",ConsoleColor.Green);
             else
-                LimparTela("Fornecedor Não Encontrado",ConsoleColor.DarkRed);
+                LimparTela("Fornecedor não Encontrado",ConsoleColor.DarkRed);
         }
         else
             LimparTela("Remoção Cancelada",ConsoleColor.Blue);
@@ -184,7 +184,7 @@ public class InterfaceFornecedor : GerenciadorEntradasSaidas
                 Console.Clear();
             }
             else
-                LimparTela("Fornecedor Não Encontrado", ConsoleColor.DarkRed);
+                LimparTela("Fornecedor não encontrado", ConsoleColor.DarkRed);
         }
         else if (op == 2)
         {
@@ -199,7 +199,7 @@ public class InterfaceFornecedor : GerenciadorEntradasSaidas
                 Console.Clear();
             }
             else
-                LimparTela("Fornecedor Não Encontrado", ConsoleColor.DarkRed);
+                LimparTela("Fornecedor não encontrado", ConsoleColor.DarkRed);
         }
         else if (op == 3)
         {
@@ -208,6 +208,7 @@ public class InterfaceFornecedor : GerenciadorEntradasSaidas
             Fornecedor[] vet = GerenciadorDeFornecedor.BaseDeDados.ProcuraItensComNome(GerenciadorDeFornecedor.BaseDeDados.TodosFornecedores, Nome);
             if (vet.Length > 0)
             {
+                LimparTela($"Todos Fornecedores com \"{Nome}\"",ConsoleColor.Magenta);
                 EscreveVetorComEndereco(vet);
                 Console.WriteLine("Pressione para continuar\n");
                 Console.ReadKey();

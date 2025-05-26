@@ -113,7 +113,7 @@ public class InterfaceTransportadora : GerenciadorEntradasSaidas
                 LimparTela("Transportadora Editada", ConsoleColor.Cyan);
             }
             else
-                LimparTela("Transportadora Não Encontrado", ConsoleColor.DarkRed);
+                LimparTela("Transportadora não encontrada", ConsoleColor.DarkRed);
         }
         else if (op == 2)
         {
@@ -141,7 +141,7 @@ public class InterfaceTransportadora : GerenciadorEntradasSaidas
                 LimparTela("Transportadora Editada", ConsoleColor.Cyan);
             }
             else
-                LimparTela("Transportadora Não Encontrado", ConsoleColor.DarkRed);
+                LimparTela("Transportadora não encontrada", ConsoleColor.DarkRed);
         }
         else
             LimparTela("Edição Cancelada",ConsoleColor.Blue);
@@ -170,7 +170,7 @@ public class InterfaceTransportadora : GerenciadorEntradasSaidas
             if (GerenciadorDeTransportadora.ExcluiTransportadora(LerString("Informe o nome cadastrado: ")))
                 LimparTela("Transportadora Removida",ConsoleColor.Green);
             else
-                LimparTela("Transportadora Não Encontrada",ConsoleColor.DarkRed);
+                LimparTela("Transportadora não Encontrada",ConsoleColor.DarkRed);
         }
         else
         {
@@ -198,7 +198,7 @@ public class InterfaceTransportadora : GerenciadorEntradasSaidas
                 Console.Clear();
             }
             else
-                LimparTela("Transportadora Não Encontrada", ConsoleColor.DarkRed);
+                LimparTela("Transportadora não encontrada", ConsoleColor.DarkRed);
         }
         else if (op == 2)
         {
@@ -212,7 +212,7 @@ public class InterfaceTransportadora : GerenciadorEntradasSaidas
                 Console.Clear();
             }
             else
-                LimparTela("Transportadora Não Encontrada", ConsoleColor.DarkRed);
+                LimparTela("Transportadora não encontrada", ConsoleColor.DarkRed);
         }
         else if (op == 3)
         {
@@ -220,6 +220,7 @@ public class InterfaceTransportadora : GerenciadorEntradasSaidas
             Transportadora[] vet = GerenciadorDeTransportadora.BaseDeDados.ProcuraItensComNome(GerenciadorDeTransportadora.BaseDeDados.TodasTransportadoras, Nome);
             if (vet.Length > 0)
             {
+                LimparTela($"Todas Transportadoras com \"{Nome}\"",ConsoleColor.Magenta);
                 EscreveVetor(vet);
                 Console.WriteLine("Pressione para continuar\n");
                 Console.ReadKey();

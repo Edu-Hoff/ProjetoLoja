@@ -81,8 +81,9 @@ public class InterfaceProduto : GerenciadorEntradasSaidas
             return;
         }
         GerenciadorDeProduto.CadastraProduto(Nome, Valor, Quantidade, Fornecedor);
+        LimparTela("Produto Cadastrado", ConsoleColor.Green);
     }
-    public void Alterar() //por enquanto está assim, mas qualquer coisa pode alterar
+    public void Alterar()
     {
         LimparTela("Edição de produto");
         if (LerIntConsole("Digite 1 se quiser a lista atual de produtos: ") == 1)
@@ -103,10 +104,9 @@ public class InterfaceProduto : GerenciadorEntradasSaidas
                 //GerenciadorDeProduto.AlteraProduto();
             }
             else
-                LimparTela("Produto Não Encontrado", ConsoleColor.DarkRed);
+                LimparTela("Produto não encontrado", ConsoleColor.DarkRed);
         }
-        else
-            if (op == 2)
+        else if (op == 2)
         {
             String Nome = LerString("Nome do produto: ");
             if (GerenciadorDeProduto.ProcuraProduto(Nome))
@@ -115,8 +115,10 @@ public class InterfaceProduto : GerenciadorEntradasSaidas
                 //GerenciadorDeProduto.AlteraProduto();
             }
             else
-                LimparTela("Produto Não Encontrado", ConsoleColor.DarkRed);
+                LimparTela("Produto não encontrado", ConsoleColor.DarkRed);
         }
+        else 
+            LimparTela("Edição Cancelada", ConsoleColor.Blue);//excepiton
         if (indice != -1)
         {
             String Nome;
@@ -153,7 +155,7 @@ public class InterfaceProduto : GerenciadorEntradasSaidas
             if (op == 1)
             {
                 Console.WriteLine("Utilize +, - ou = para modificar a quantidade");
-                Quantidade = LerIntComOperacao(GerenciadorDeProduto.BaseDeDados.TodosProdutos[indice].Quantidade,"Nova: ");
+                Quantidade = LerIntComOperacao(GerenciadorDeProduto.BaseDeDados.TodosProdutos[indice].Quantidade, "Nova: ");
             }
             else
             {
@@ -174,9 +176,8 @@ public class InterfaceProduto : GerenciadorEntradasSaidas
                 Fornecedor = GerenciadorDeProduto.BaseDeDados.TodosProdutos[indice].Fornecedor.Nome;
             }
             GerenciadorDeProduto.AlteraProduto(indice, Nome, Valor, Quantidade, Fornecedor);
-        }
-        else if(op != 1 && op != 2)
-            LimparTela("Edição Cancelada", ConsoleColor.Blue);//excepiton
+            LimparTela("Produto Editado", ConsoleColor.Green);
+        }        
     }
     public void Excluir()
     {
@@ -194,14 +195,14 @@ public class InterfaceProduto : GerenciadorEntradasSaidas
             if (GerenciadorDeProduto.ExcluiProduto(LerIntConsole("Informe o ID do produto: ")))
                 LimparTela("Produto Removido",ConsoleColor.Green);
             else
-                LimparTela("Produto Não Encontrado",ConsoleColor.DarkRed);
+                LimparTela("Produto não encontrado",ConsoleColor.DarkRed);
         }
         else if (op == 2)
         {
             if (GerenciadorDeProduto.ExcluiProduto(LerString("Informe o nome cadastrado: ")))
                 LimparTela("Produto Removido",ConsoleColor.Green);
             else
-                LimparTela("Produto Não Encontrado",ConsoleColor.DarkRed);
+                LimparTela("Produto não encontrado",ConsoleColor.DarkRed);
         }
         else
         {
@@ -229,7 +230,7 @@ public class InterfaceProduto : GerenciadorEntradasSaidas
                 Console.Clear();
             }
             else
-                LimparTela("Produto Não Encontrado", ConsoleColor.DarkRed);
+                LimparTela("Produto não encontrado", ConsoleColor.DarkRed);
         }
         else if (op == 2)
         {
@@ -243,7 +244,7 @@ public class InterfaceProduto : GerenciadorEntradasSaidas
                 Console.Clear();
             }
             else
-                LimparTela("Produto Não Encontrado", ConsoleColor.DarkRed);
+                LimparTela("Produto não encontrado", ConsoleColor.DarkRed);
         }
         else if (op == 3)
         {
@@ -251,6 +252,7 @@ public class InterfaceProduto : GerenciadorEntradasSaidas
             Produto[] vet = GerenciadorDeProduto.BaseDeDados.ProcuraItensComNome(GerenciadorDeProduto.BaseDeDados.TodosProdutos, Nome);
             if (vet.Length > 0)
             {
+                LimparTela($"Todos Produtos com \"{Nome}\"",ConsoleColor.Magenta);
                 EscreveVetorComQuantidadeFornecedor(vet);
                 Console.WriteLine("Pressione para continuar\n");
                 Console.ReadKey();

@@ -42,6 +42,8 @@ public class InterfacePrincipal : GerenciadorEntradasSaidas
                             MenuCliente(User);
                         }
                     }
+                    else
+                        LimparTela("Username ou senha Invalido");
                 }
                 else if (Opcao == 2)
                 {
@@ -122,6 +124,7 @@ public class InterfacePrincipal : GerenciadorEntradasSaidas
         } while (Opcao != 0);
 
     }
+    
     public void MenuCliente(Usuario user)
     {
         Console.WriteLine("Este menu ainda nao esta disponivel");

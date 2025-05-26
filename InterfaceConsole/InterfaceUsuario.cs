@@ -82,13 +82,10 @@ public class InterfaceUsuario : GerenciadorEntradasSaidas
         }
         String Senha = LerString("Informe a senha: ");
         String Admin = LerString("Administrador S/N: ");
-        Console.Clear();
         if (GerenciadorDeUsuario.FazerCadastro(Nome, Senha, Admin))
-        {
             LimparTela("Cadastro Realizado", ConsoleColor.Green);
-        }
         else
-            LimparTela("Cadastro Nao Realizado", ConsoleColor.DarkRed);
+            LimparTela("Cadastro não Realizado", ConsoleColor.DarkRed);
     }
 
     private void AlterarUsuario(Usuario User)
@@ -116,18 +113,12 @@ public class InterfaceUsuario : GerenciadorEntradasSaidas
     {
         Usuario? Usr = EncontraUsuario("Edição de usuarios");
         if (Usr != null)
-        {
             AlterarUsuario(Usr);
-            if (LerIntConsole("Digite 1 se quiser a lista atual de usuarios: ") == 1)
-            {
-                EscreveVetor(GerenciadorDeUsuario.BaseDeDados.TodosUsuarios);
-            }
-        }
     }
 
     private bool ExcluirMeuUser(Usuario User)
     {
-        if (Confirmacao("Você esta prestes a excluir seu usuario."))
+        if (Confirmacao("Você esta prestes a excluir o seu usuario."))
         {
             GerenciadorDeUsuario.RemoverUsuario(User);
             LimparTela("Usuario Removido", ConsoleColor.Green);
@@ -178,7 +169,7 @@ public class InterfaceUsuario : GerenciadorEntradasSaidas
                 return GerenciadorDeUsuario.BaseDeDados.TodosUsuarios[ind];
             }
             else
-                LimparTela("Usuario Não Encontrado", ConsoleColor.DarkRed);
+                LimparTela("Usuario não encontrado", ConsoleColor.DarkRed);
         }
         else if (op == 2)
         {
@@ -190,7 +181,7 @@ public class InterfaceUsuario : GerenciadorEntradasSaidas
                 return GerenciadorDeUsuario.BaseDeDados.TodosUsuarios[ind];
             }
             else
-                LimparTela("Usuario Não Encontrado", ConsoleColor.DarkRed);
+                LimparTela("Usuario não encontrado", ConsoleColor.DarkRed);
         }
         else
             LimparTela("Ação Cancelada", ConsoleColor.Blue);
@@ -219,7 +210,7 @@ public class InterfaceUsuario : GerenciadorEntradasSaidas
                 Console.Clear();
             }
             else
-                LimparTela("Usuario Não Encontrado", ConsoleColor.DarkRed);
+                LimparTela("Usuario não encontrado", ConsoleColor.DarkRed);
         }
         else if (op == 2)
         {
@@ -234,7 +225,7 @@ public class InterfaceUsuario : GerenciadorEntradasSaidas
                 Console.Clear();
             }
             else
-                LimparTela("Usuario Não Encontrado", ConsoleColor.DarkRed);
+                LimparTela("Usuario não encontrado", ConsoleColor.DarkRed);
         }
         else if (op == 3)
         {
@@ -243,6 +234,7 @@ public class InterfaceUsuario : GerenciadorEntradasSaidas
             Usuario[] vet = GerenciadorDeUsuario.BaseDeDados.ProcuraItensComNome(GerenciadorDeUsuario.BaseDeDados.TodosUsuarios, Nome);
             if (vet.Length > 0)
             {
+                LimparTela($"Todos Usuarios com \"{Nome}\"",ConsoleColor.Magenta);
                 EscreveVetor(vet);
                 Console.WriteLine("Pressione para continuar\n");
                 Console.ReadKey();
