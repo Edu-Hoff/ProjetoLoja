@@ -176,6 +176,7 @@ public class GerenciadorEntradasSaidas
             return;
         }
         Console.ForegroundColor = ConsoleColor.Magenta;
+        Console.WriteLine("------------------------------");
         if (ind != -1)
         {
             Console.WriteLine(vetor[ind]?.ToString());
@@ -199,6 +200,7 @@ public class GerenciadorEntradasSaidas
             return;
         }
         Console.ForegroundColor = ConsoleColor.Magenta;
+        Console.WriteLine("------------------------------");
         if (ind != -1)
         {
             Console.WriteLine(vetor[ind]?.ToString() + "\n" + vetor[ind].Endereco.ObterEndereco());
@@ -220,6 +222,7 @@ public class GerenciadorEntradasSaidas
             return;
         }
         Console.ForegroundColor = ConsoleColor.Magenta;
+        Console.WriteLine("------------------------------");
         if (ind != -1)
         {
             Console.WriteLine(vetor[ind]?.ToString() + "\n" + vetor[ind].ObterQuantidadeFornecedor());

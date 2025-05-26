@@ -1,4 +1,5 @@
 using System;
+using System.Runtime.InteropServices;
 using BaseDeDados;
 using Entidades;
 using Gerenciadores;
@@ -43,6 +44,7 @@ public class InterfaceProduto : GerenciadorEntradasSaidas
                     Consultar();
                     break;
                 case 5:
+                    Console.Clear();
                     EscreveVetorComQuantidadeFornecedor(GerenciadorDeProduto.BaseDeDados.TodosProdutos);
                     break;
                 case 0:
@@ -73,6 +75,11 @@ public class InterfaceProduto : GerenciadorEntradasSaidas
         double Valor = LerDoubleConsole("Valor do produto: ");
         int Quantidade = LerIntConsole("Quantidade em estoque: ");
         String Fornecedor = LerString("Fornecedor do produto: ");
+        if (-1 == GerenciadorDeProduto.BaseDeDados.ProcuraItemEspecificoPorNome(GerenciadorDeProduto.BaseDeDados.TodosFornecedores, Fornecedor))
+        {
+            LimparTela("Fornecedor não encontrado", ConsoleColor.DarkRed);
+            return;
+        }
         GerenciadorDeProduto.CadastraProduto(Nome, Valor, Quantidade, Fornecedor);
     }
     public void Alterar() //por enquanto está assim, mas qualquer coisa pode alterar
@@ -156,6 +163,11 @@ public class InterfaceProduto : GerenciadorEntradasSaidas
             if (op == 1)
             {
                 Fornecedor = LerString("Novo(nome): ");
+                if (-1 == GerenciadorDeProduto.BaseDeDados.ProcuraItemEspecificoPorNome(GerenciadorDeProduto.BaseDeDados.TodosFornecedores, Fornecedor))
+                {
+                    LimparTela("Fornecedor não encontrado", ConsoleColor.DarkRed);
+                    return;
+                }
             }
             else
             {
@@ -212,6 +224,9 @@ public class InterfaceProduto : GerenciadorEntradasSaidas
             {
                 indice = GerenciadorDeProduto.BaseDeDados.ProcuraItemPorId(GerenciadorDeProduto.BaseDeDados.TodosProdutos, Id);
                 EscreveVetorComQuantidadeFornecedor(GerenciadorDeProduto.BaseDeDados.TodosProdutos, indice);
+                Console.WriteLine("Pressione para continuar\n");
+                Console.ReadKey();
+                Console.Clear();
             }
             else
                 LimparTela("Produto Não Encontrado", ConsoleColor.DarkRed);
@@ -223,6 +238,9 @@ public class InterfaceProduto : GerenciadorEntradasSaidas
             {
                 indice = GerenciadorDeProduto.BaseDeDados.ProcuraItemEspecificoPorNome(GerenciadorDeProduto.BaseDeDados.TodosProdutos, Nome);
                 EscreveVetorComQuantidadeFornecedor(GerenciadorDeProduto.BaseDeDados.TodosProdutos, indice);
+                Console.WriteLine("Pressione para continuar\n");
+                Console.ReadKey();
+                Console.Clear();
             }
             else
                 LimparTela("Produto Não Encontrado", ConsoleColor.DarkRed);
@@ -231,8 +249,13 @@ public class InterfaceProduto : GerenciadorEntradasSaidas
         {
             String Nome = LerString("Informe o nome: ");
             Produto[] vet = GerenciadorDeProduto.BaseDeDados.ProcuraItensComNome(GerenciadorDeProduto.BaseDeDados.TodosProdutos, Nome);
-            if(vet.Length > 0)
+            if (vet.Length > 0)
+            {
                 EscreveVetorComQuantidadeFornecedor(vet);
+                Console.WriteLine("Pressione para continuar\n");
+                Console.ReadKey();
+                Console.Clear();
+            }
             else
                 LimparTela("Nenhum Produto Encontrado", ConsoleColor.DarkRed);
         }

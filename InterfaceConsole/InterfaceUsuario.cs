@@ -12,7 +12,7 @@ public class InterfaceUsuario : GerenciadorEntradasSaidas
         this.GerenciadorDeUsuario = GerenciadorDeUsuario;
     }
     public GerenciadorUsuario GerenciadorDeUsuario;
-    public void MenuUsuarios(Usuario User)
+    public bool MenuUsuarios(Usuario User)
     {
         int Opcao;
 
@@ -36,7 +36,7 @@ public class InterfaceUsuario : GerenciadorEntradasSaidas
                     AlterarUsuario(User);
                     break;
                 case 2:
-                    ExcluirMeuUser(User);
+                    if (ExcluirMeuUser(User)) return true;
                     break;
                 case 3:
                     CadastrarUsuario();
@@ -45,12 +45,13 @@ public class InterfaceUsuario : GerenciadorEntradasSaidas
                     AlterarOutroUser();
                     break;
                 case 5:
-                    ExcluirUser();
+                    if (ExcluirUser(User)) return true;
                     break;
                 case 6:
                     MenuConsulta();
                     break;
                 case 7:
+                    Console.Clear();
                     EscreveVetor(GerenciadorDeUsuario.BaseDeDados.TodosUsuarios);
                     break;
                 case 0:
@@ -61,6 +62,7 @@ public class InterfaceUsuario : GerenciadorEntradasSaidas
                     break;
             }
         } while (Opcao != 0);
+        return false;
     }
 
     private void CadastrarUsuario()
@@ -123,21 +125,27 @@ public class InterfaceUsuario : GerenciadorEntradasSaidas
         }
     }
 
-    private void ExcluirMeuUser(Usuario User)
+    private bool ExcluirMeuUser(Usuario User)
     {
         if (Confirmacao("Você esta prestes a excluir seu usuario."))
         {
             GerenciadorDeUsuario.RemoverUsuario(User);
             LimparTela("Usuario Removido", ConsoleColor.Green);
+            return true;
         }
-        else
-            LimparTela("Usuario não removido", ConsoleColor.DarkRed);
+        LimparTela("Usuario não removido", ConsoleColor.DarkRed);
+        return false;
     }
 
-    private void ExcluirUser()
+    private bool ExcluirUser(Usuario AtualUser)
     {
         Usuario? User = EncontraUsuario("Remoção de Usuario");
-        if(User == null) return;
+        if (User == null) return false;
+        if (AtualUser == User)
+        {
+            ExcluirMeuUser(AtualUser);
+            return true;
+        }
         if (Confirmacao($"Você esta prestes a excluir o usuario {User.Nome}."))
         {
             GerenciadorDeUsuario.RemoverUsuario(User);
@@ -145,6 +153,7 @@ public class InterfaceUsuario : GerenciadorEntradasSaidas
         }
         else
             LimparTela("Usuario não removido", ConsoleColor.DarkRed);
+        return false;
     }
 
     public Usuario? EncontraUsuario(String msg = "")
@@ -205,6 +214,9 @@ public class InterfaceUsuario : GerenciadorEntradasSaidas
             {
                 ind = GerenciadorDeUsuario.BaseDeDados.ProcuraItemPorId(GerenciadorDeUsuario.BaseDeDados.TodosUsuarios, ID);
                 EscreveVetor(GerenciadorDeUsuario.BaseDeDados.TodosUsuarios, ind);
+                Console.WriteLine("Pressione para continuar\n");
+                Console.ReadKey();
+                Console.Clear();
             }
             else
                 LimparTela("Usuario Não Encontrado", ConsoleColor.DarkRed);
@@ -217,6 +229,9 @@ public class InterfaceUsuario : GerenciadorEntradasSaidas
             {
                 ind = GerenciadorDeUsuario.BaseDeDados.ProcuraItemEspecificoPorNome(GerenciadorDeUsuario.BaseDeDados.TodosUsuarios, Nome);
                 EscreveVetor(GerenciadorDeUsuario.BaseDeDados.TodosUsuarios, ind);
+                Console.WriteLine("Pressione para continuar\n");
+                Console.ReadKey();
+                Console.Clear();
             }
             else
                 LimparTela("Usuario Não Encontrado", ConsoleColor.DarkRed);
@@ -226,8 +241,13 @@ public class InterfaceUsuario : GerenciadorEntradasSaidas
             String Nome;
             Nome = LerString("Informe o nome: ");
             Usuario[] vet = GerenciadorDeUsuario.BaseDeDados.ProcuraItensComNome(GerenciadorDeUsuario.BaseDeDados.TodosUsuarios, Nome);
-            if(vet.Length > 0)
+            if (vet.Length > 0)
+            {
                 EscreveVetor(vet);
+                Console.WriteLine("Pressione para continuar\n");
+                Console.ReadKey();
+                Console.Clear();
+            }
             else
                 LimparTela("Nenhum Usuario Encontrado", ConsoleColor.DarkRed);
         }

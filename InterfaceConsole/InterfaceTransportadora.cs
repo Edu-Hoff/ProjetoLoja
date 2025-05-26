@@ -41,6 +41,7 @@ public class InterfaceTransportadora : GerenciadorEntradasSaidas
                     MenuConsulta();
                     break;
                 case 5:
+                    Console.Clear();
                     EscreveVetor(GerenciadorDeTransportadora.BaseDeDados.TodasTransportadoras);
                     break;
                 case 0:
@@ -192,6 +193,9 @@ public class InterfaceTransportadora : GerenciadorEntradasSaidas
             {
                 indice = GerenciadorDeTransportadora.BaseDeDados.ProcuraItemPorId(GerenciadorDeTransportadora.BaseDeDados.TodasTransportadoras, Id);
                 EscreveVetor(GerenciadorDeTransportadora.BaseDeDados.TodasTransportadoras, indice);
+                Console.WriteLine("Pressione para continuar\n");
+                Console.ReadKey();
+                Console.Clear();
             }
             else
                 LimparTela("Transportadora Não Encontrada", ConsoleColor.DarkRed);
@@ -203,6 +207,9 @@ public class InterfaceTransportadora : GerenciadorEntradasSaidas
             {
                 indice = GerenciadorDeTransportadora.BaseDeDados.ProcuraItemEspecificoPorNome(GerenciadorDeTransportadora.BaseDeDados.TodasTransportadoras, Nome);
                 EscreveVetor(GerenciadorDeTransportadora.BaseDeDados.TodasTransportadoras, indice);
+                Console.WriteLine("Pressione para continuar\n");
+                Console.ReadKey();
+                Console.Clear();
             }
             else
                 LimparTela("Transportadora Não Encontrada", ConsoleColor.DarkRed);
@@ -211,8 +218,13 @@ public class InterfaceTransportadora : GerenciadorEntradasSaidas
         {
             String Nome = LerString("Informe o nome: ");
             Transportadora[] vet = GerenciadorDeTransportadora.BaseDeDados.ProcuraItensComNome(GerenciadorDeTransportadora.BaseDeDados.TodasTransportadoras, Nome);
-            if(vet.Length > 0)
+            if (vet.Length > 0)
+            {
                 EscreveVetor(vet);
+                Console.WriteLine("Pressione para continuar\n");
+                Console.ReadKey();
+                Console.Clear();
+            }
             else
                 LimparTela("Nenhuma Transportadora Encontrada", ConsoleColor.DarkRed);
         }

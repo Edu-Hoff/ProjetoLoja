@@ -41,6 +41,7 @@ public class InterfaceFornecedor : GerenciadorEntradasSaidas
                     MenuConsulta();
                     break;
                 case 5:
+                    Console.Clear();
                     EscreveVetor(GerenciadorDeFornecedor.BaseDeDados.TodosFornecedores);
                     break;
                 case 0:
@@ -178,6 +179,9 @@ public class InterfaceFornecedor : GerenciadorEntradasSaidas
             {
                 ind = GerenciadorDeFornecedor.BaseDeDados.ProcuraItemPorId(GerenciadorDeFornecedor.BaseDeDados.TodosFornecedores, ID);
                 EscreveVetorComEndereco(GerenciadorDeFornecedor.BaseDeDados.TodosFornecedores, ind);
+                Console.WriteLine("Pressione para continuar\n");
+                Console.ReadKey();
+                Console.Clear();
             }
             else
                 LimparTela("Fornecedor Não Encontrado", ConsoleColor.DarkRed);
@@ -190,6 +194,9 @@ public class InterfaceFornecedor : GerenciadorEntradasSaidas
             {
                 ind = GerenciadorDeFornecedor.BaseDeDados.ProcuraItemEspecificoPorNome(GerenciadorDeFornecedor.BaseDeDados.TodosFornecedores, Nome);
                 EscreveVetorComEndereco(GerenciadorDeFornecedor.BaseDeDados.TodosFornecedores, ind);
+                Console.WriteLine("Pressione para continuar\n");
+                Console.ReadKey();
+                Console.Clear();
             }
             else
                 LimparTela("Fornecedor Não Encontrado", ConsoleColor.DarkRed);
@@ -199,8 +206,13 @@ public class InterfaceFornecedor : GerenciadorEntradasSaidas
             String Nome;
             Nome = LerString("Informe o nome: ");
             Fornecedor[] vet = GerenciadorDeFornecedor.BaseDeDados.ProcuraItensComNome(GerenciadorDeFornecedor.BaseDeDados.TodosFornecedores, Nome);
-            if(vet.Length > 0)
+            if (vet.Length > 0)
+            {
                 EscreveVetorComEndereco(vet);
+                Console.WriteLine("Pressione para continuar\n");
+                Console.ReadKey();
+                Console.Clear();
+            }
             else
                 LimparTela("Nenhum Fornecedor Encontrado", ConsoleColor.DarkRed);
         }

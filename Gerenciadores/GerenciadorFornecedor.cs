@@ -5,9 +5,9 @@ using BaseDeDados;
 
 namespace Gerenciadores;
 
-public class GerenciadorFornecedor 
+public class GerenciadorFornecedor
 {
-    public GerenciadorFornecedor (BaseDados BaseDeDados)
+    public GerenciadorFornecedor(BaseDados BaseDeDados)
     {
         this.BaseDeDados = BaseDeDados;
     }
@@ -40,6 +40,7 @@ public class GerenciadorFornecedor
         int indice = BaseDeDados.ProcuraItemPorId(BaseDeDados.TodosFornecedores, Id);
         if (indice != -1)
         {
+            ExcluiProdutos(BaseDeDados.TodosFornecedores[indice]);
             BaseDeDados.TodosFornecedores = BaseDeDados.RemoverItem(BaseDeDados.TodosFornecedores, BaseDeDados.TodosFornecedores[indice]);
             return true;
         }
@@ -51,11 +52,23 @@ public class GerenciadorFornecedor
         int indice = BaseDeDados.ProcuraItemEspecificoPorNome(BaseDeDados.TodosFornecedores, Nome);
         if (indice != -1)
         {
+            ExcluiProdutos(BaseDeDados.TodosFornecedores[indice]);
             BaseDeDados.TodosFornecedores = BaseDeDados.RemoverItem(BaseDeDados.TodosFornecedores, BaseDeDados.TodosFornecedores[indice]);
             return true;
         }
         return false;
     }
 
+    private void ExcluiProdutos(Fornecedor fornecedor)
+    {
+        Produto[] Todos = BaseDeDados.TodosProdutos.ToArray();
+        foreach (Produto prod in Todos)
+        {
+            if (prod.Fornecedor.Nome == fornecedor.Nome)
+            {
+                BaseDeDados.RemoverItem(BaseDeDados.TodosProdutos, prod);
+            }
+        }
+    }
 }
     

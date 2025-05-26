@@ -84,8 +84,8 @@ public class InterfacePrincipal : GerenciadorEntradasSaidas
                     {
                         Console.Clear();
                         InterfaceUsuario InterfaceDoUsuario = new InterfaceUsuario(GerenciadorDeLoja.GerenciadorDeUsuario);
-                        InterfaceDoUsuario.MenuUsuarios(user);
-                        LimparTela("Menu Principal", ConsoleColor.Blue);
+                        if (InterfaceDoUsuario.MenuUsuarios(user)) {Opcao = 0; LimparTela("Seu Usuario Não existe mais",ConsoleColor.DarkRed); }
+                        else LimparTela("Menu Principal", ConsoleColor.Blue);
                         break;
                     }
                 case 2:
