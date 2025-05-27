@@ -233,18 +233,6 @@ public class GerenciadorEntradasSaidas
         Console.ResetColor();
     }
 
-    public Endereco LeEndereco()
-    {
-        String Estado = LerString("Informe o estado: ");
-        String Cidade = LerString("Informe a cidade: ");
-        String Cep =    LerString("Informe o cep: ");
-        String Bairro = LerString("Informe o bairro: ");
-        String Rua =    LerString("Informe a rua: ");
-        String Numero = LerString("Informe o numero: ");
-        String Complemento = LerStringAlterar("Informe o complemento: ");
-        return new Endereco(Rua,Numero,Complemento,Bairro,Cep,Cidade,Estado);
-    }
-
     public Endereco LeEnderecoAlterar()
     {
         String Estado = LerStringAlterar("Informe o estado: ");

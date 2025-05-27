@@ -26,9 +26,9 @@ public class GerenciadorFornecedor
     {
         return BaseDeDados.ProcuraItemPorId(BaseDeDados.TodosFornecedores, ID) != -1;
     }
-    public void CadastraFornecedor(Fornecedor Fornecedor)
+    public void CadastraFornecedor(String Nome, String Descricao, String Telefone, String Email, String Estado, String Cidade, String Cep, String Beirro, String Rua, String Numero, String Complemento)
     {
-        BaseDeDados.TodosFornecedores = BaseDeDados.AdicionarItem(BaseDeDados.TodosFornecedores, Fornecedor);
+        BaseDeDados.TodosFornecedores = BaseDeDados.AdicionarItem(BaseDeDados.TodosFornecedores, new Fornecedor(Nome,Descricao,Telefone,Email,new Endereco(Rua,Numero,Complemento,Beirro,Cep,Cidade,Estado)));
     }
     //modificar - interface
     public void AlteraFornecedor(int Indice, Fornecedor novosDados)

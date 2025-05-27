@@ -85,10 +85,17 @@ public class InterfaceFornecedor : GerenciadorEntradasSaidas
             LimparTela("Fornecedor já esta no sistema", ConsoleColor.DarkRed);
             return;
         }
-        String Descricao = LerString("Informe a descrição: ");
-        String Telefone = LerString("Informe o telefone: ");
-        String Email = LerString("Informe o email: ");
-        GerenciadorDeFornecedor.CadastraFornecedor(new Fornecedor(Nome, Descricao, Telefone, Email, LeEndereco()));
+        String Descricao =  LerString("Informe a descrição: ");
+        String Telefone =   LerString("Informe o telefone: ");
+        String Email =      LerString("Informe o email: ");
+        String Estado =     LerString("Informe o estado: ");
+        String Cidade =     LerString("Informe a cidade: ");
+        String Cep =        LerString("Informe o cep: ");
+        String Bairro =     LerString("Informe o bairro: ");
+        String Rua =        LerString("Informe a rua: ");
+        String Numero =     LerString("Informe o numero: ");
+        String Complemento = LerStringAlterar("Informe o complemento: ");
+        GerenciadorDeFornecedor.CadastraFornecedor(Nome, Descricao, Telefone, Email, Estado, Cidade, Cep, Bairro, Rua, Numero, Complemento);
         LimparTela("Cadastro Realizado",ConsoleColor.Green);    
     }
 
